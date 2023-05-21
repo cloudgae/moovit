@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".onboarding.TypeTest_9">
+
+    <!--    자바에서 컨트롤 해야 하는 항목들에는 아이디 추가
+            (현재는 임의의 아이디명, 필요에 따라 변경)-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:text="홈화면으로" />
+
+        <!--    이미지뷰도 데이터베이스에서 받아와 변경(자바파일에서 컨트롤)-->
+        <ImageView
+            android:id="@+id/sampleimg"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_above="@+id/txtview1"
+            android:layout_gravity="center"
+            android:src="@drawable/circle"
+            android:layout_marginTop="30dp"/>
+
+        <!--    유형 이름 데이터베이스에서 받아와 변경(자바파일에서 컨트롤)-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="000님은" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="열정 넘치는 무버"
+            android:textSize="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="이런 특성이 있어요" />
+
+        <!--    1.추후 background (배경)설정하기
+                2.visibility 속성 => invisible로 설정해놓고
+                자바에서 '유형의 특성' 데이터를 받아와 텍스트 내용 변경하고 visible로 변경-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="아직 경험이 부족하여 차근차근 배우길 원해요" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="수강생들끼리 서로 상호작용하고 응원해주는 분위기봐는 수업에 집중할 수 있는 분위기를 선호해요" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="다른 사람에게 매력을 표현할 수 있는 분위기의 춤을 추는 걸 선호해요" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="65dp"
+            android:text="카드 뽑기"
+            android:layout_gravity="left|bottom"
+            android:layout_marginRight="5dp"/>
+
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="65dp"
+            android:text="추천 강의 보기"
+            android:layout_gravity="right|bottom"
+            android:layout_marginLeft="5dp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="onboarding.TypeTest_1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:max="100"
+            android:progress="16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="선호하는 춤의 장르가\n무엇인가요?"
+            android:textSize="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="40dp"
+            android:text="관심 있는 장르를 모두 선택해주세요"
+            android:textSize="15dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp">
+            <CheckBox
+                android:id="@+id/chkT1_kpop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:drawableLeft="@drawable/circle"
+                android:padding="20dp"
+                android:text="  K-POP"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="20dp" />
+
+            <CheckBox
+                android:id="@+id/chkT1_street"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:drawableLeft="@drawable/circle"
+                android:padding="20dp"
+                android:text="  스트릿 댄스"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="20dp" />
+
+            <CheckBox
+                android:id="@+id/chk1_choreo"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:drawableLeft="@drawable/circle"
+                android:padding="20dp"
+                android:text="  코레오그래피"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnT1_next"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="계속하기"
+            android:textSize="15dp"
+            android:layout_marginTop="0dp" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
