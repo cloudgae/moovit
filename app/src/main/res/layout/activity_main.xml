@@ -33,13 +33,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="클래스"
-                        android:layout_margin="5dp"/>
+                        android:textSize="18dp"
+                        android:layout_margin="5dp"
+                        android:backgroundTint="#CCCCCC"
+                        />
                     <Button
                         android:id="@+id/btnDancer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="댄서"
-                        android:layout_margin="5dp"/>
+                        android:textSize="18dp"
+                        android:layout_margin="5dp"
+                        android:backgroundTint="#CCCCCC"/>
                 </LinearLayout>
 <!--추후 배너 이미지 추가 -->
 <!--                <ImageView-->
@@ -360,30 +365,46 @@
 
         <TableRow>
             <Button
+                android:id="@+id/gotobtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="1"/>
+                android:text="1"
+
+                android:foreground="#808080"
+                android:textColor="#FFFFFF" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="2"/>
+                android:text="2"
+
+                android:foreground="#808080"
+                android:textColor="#FFFFFF" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="3"/>
+                android:text="3"
+
+                android:foreground="#808080"
+                android:textColor="#FFFFFF" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="4"/>
+                android:text="4"
+
+                android:foreground="#808080"
+                android:textColor="#FFFFFF" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5"/>
+                android:text="5"
+
+                android:foreground="#808080"
+                android:textColor="#FFFFFF" />
         </TableRow>
     </TableLayout>
 </LinearLayout>
