@@ -44,7 +44,6 @@ public class TypeTest_2 extends AppCompatActivity {
         DocumentReference classscale = db.collection("TypeTest").document("Q2");
 
         //라디오 버튼 중 하나가 눌리면 다음 액티비티로 전환
-        //클릭리스너 내부, if문 내부 다 안됨..
 
         rbArray_T2[0].setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,26 +68,5 @@ public class TypeTest_2 extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-//ㅈ전환이왜안되노
-//        if(rbArray_T2[0].isChecked() == true || rbArray_T2[1].isChecked() ==true){
-//            Intent i = new Intent(TypeTest_2.this, TypeTest_3.class);
-//        }
-
-
-//        rbgT2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-//
-//
-//            }
-//        });
-
-//        rbgT2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-//                Intent i2 = new Intent(TypeTest_2.this, TypeTest_3.class);
-//            }
-//        });
     }
 }
