@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -19,6 +20,7 @@ public class TypeTest_6 extends AppCompatActivity {
 
     RadioGroup rbg_T6;
     RadioButton rbT6_1, rbT6_2, rbT6_3, rbT6_4;
+    ProgressBar prbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class TypeTest_6 extends AppCompatActivity {
         rbT6_2 = (RadioButton) findViewById(R.id.rbT6_2);
         rbT6_3 = (RadioButton) findViewById(R.id.rbT6_3);
         rbT6_4 = (RadioButton) findViewById(R.id.rbT6_4);
+
+        prbar = (ProgressBar) findViewById(R.id.progressbar);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -54,8 +58,11 @@ public class TypeTest_6 extends AppCompatActivity {
                     grade.update("3", false);
                     grade.update("4", false);
                 }
-//                Intent i = new Intent(TypeTest_6.this, TypeTest_6.class);
-//                startActivity(i); 결과 화면 전환
+                prbar.setIndeterminate(false);
+                prbar.setProgress(100);
+
+                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
+                startActivity(i);
             }
         });
 
@@ -68,8 +75,11 @@ public class TypeTest_6 extends AppCompatActivity {
                     grade.update("3", false);
                     grade.update("4", false);
                 }
-//                Intent i = new Intent(TypeTest_6.this, TypeTest_6.class);
-//                startActivity(i); 결과 화면 전환
+                prbar.setIndeterminate(false);
+                prbar.setProgress(100);
+
+                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
+                startActivity(i);
             }
         });
 
@@ -82,8 +92,11 @@ public class TypeTest_6 extends AppCompatActivity {
                     grade.update("3", true);
                     grade.update("4", false);
                 }
-//                Intent i = new Intent(TypeTest_6.this, TypeTest_6.class);
-//                startActivity(i); 결과 화면 전환
+                prbar.setIndeterminate(false);
+                prbar.setProgress(100);
+
+                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
+                startActivity(i);
             }
         });
 
@@ -96,8 +109,11 @@ public class TypeTest_6 extends AppCompatActivity {
                     grade.update("3", false);
                     grade.update("4", true);
                 }
-//                Intent i = new Intent(TypeTest_6.this, TypeTest_6.class);
-//                startActivity(i); 결과 화면 전환
+                prbar.setIndeterminate(false);
+                prbar.setProgress(100);
+
+                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
+                startActivity(i);
             }
         });
     }
