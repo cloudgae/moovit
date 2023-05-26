@@ -30,22 +30,23 @@ public class TypeTest_3 extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Map<String, Object> test3 = new HashMap<>();
-        test3.put("1day", false);
-        test3.put("nday", false);
+//        Map<String, Object> test3 = new HashMap<>();
+//        test3.put("1day", false);
+//        test3.put("nday", false);
+//
+//        db.collection("TypeTest")
+//                .document("Q3")
+//                .set(test3);
 
-        db.collection("TypeTest")
-                .document("Q3")
-                .set(test3);
-
-        DocumentReference period = db.collection("TypeTest").document("Q3");
+        DocumentReference dbref = db.collection("TypeTest").document("User");
 
         rbT3_1day.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(rbT3_1day.isChecked() == true){
-                    period.update("1day", true);
-                    period.update("nday", false);
+//                    period.update("1day", true);
+//                    period.update("nday", false);
+                    dbref.update("Q3", "1day");
                 }
                 Intent i = new Intent(TypeTest_3.this, TypeTest_4.class);
                 startActivity(i);
@@ -56,8 +57,9 @@ public class TypeTest_3 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT3_nday.isChecked() == true){
-                    period.update("1day", false);
-                    period.update("nday", true);
+//                    period.update("1day", false);
+//                    period.update("nday", true);
+                    dbref.update("Q3", "nday");
                 }
                 Intent i = new Intent(TypeTest_3.this, TypeTest_4.class);
                 startActivity(i);

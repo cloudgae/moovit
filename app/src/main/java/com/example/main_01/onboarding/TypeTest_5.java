@@ -31,22 +31,23 @@ public class TypeTest_5 extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Map<String, Object> test3 = new HashMap<>();
-        test3.put("cheer", false);
-        test3.put("concentrate", false);
+//        Map<String, Object> test3 = new HashMap<>();
+//        test3.put("cheer", false);
+//        test3.put("concentrate", false);
+//
+//        db.collection("TypeTest")
+//                .document("Q5")
+//                .set(test3);
 
-        db.collection("TypeTest")
-                .document("Q5")
-                .set(test3);
-
-        DocumentReference classmood = db.collection("TypeTest").document("Q5");
+        DocumentReference dbref = db.collection("TypeTest").document("User");
 
         rbT5_cheer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(rbT5_cheer.isChecked() == true){
-                    classmood.update("cheer", true);
-                    classmood.update("concentrate", false);
+//                    classmood.update("cheer", true);
+//                    classmood.update("concentrate", false);
+                    dbref.update("Q5", "cheer");
                 }
                 Intent i = new Intent(TypeTest_5.this, TypeTest_6.class);
                 startActivity(i);
@@ -57,8 +58,9 @@ public class TypeTest_5 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT5_concentrate.isChecked() == true){
-                    classmood.update("cheer", false);
-                    classmood.update("concentrate", true);
+//                    classmood.update("cheer", false);
+//                    classmood.update("concentrate", true);
+                    dbref.update("Q5", "concentrate");
                 }
                 Intent i = new Intent(TypeTest_5.this, TypeTest_6.class);
                 startActivity(i);

@@ -35,31 +35,32 @@ public class TypeTest_4 extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Map<String, Object> test4 = new HashMap<>();
-        test4.put("hip", false);
-        test4.put("nice", false);
-        test4.put("hot", false);
-        test4.put("conf", false);
-        test4.put("unique", false);
-        test4.put("enjoy", false);
+//        Map<String, Object> test4 = new HashMap<>();
+//        test4.put("hip", false);
+//        test4.put("nice", false);
+//        test4.put("hot", false);
+//        test4.put("conf", false);
+//        test4.put("unique", false);
+//        test4.put("enjoy", false);
+//
+//        db.collection("TypeTest")
+//                .document("Q4")
+//                .set(test4);
 
-        db.collection("TypeTest")
-                .document("Q4")
-                .set(test4);
-
-        DocumentReference mood = db.collection("TypeTest").document("Q4");
+        DocumentReference dbref = db.collection("TypeTest").document("User");
 
         //ischecked==false 추가해서 각 해당항목만 컨트롤할지 고민
         rbT4_hip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(rbT4_hip.isChecked() == true){
-                    mood.update("hip", true);
-                    mood.update("nice", false);
-                    mood.update("hot", false);
-                    mood.update("conf", false);
-                    mood.update("unique", false);
-                    mood.update("enjoy", false);
+//                    mood.update("hip", true);
+//                    mood.update("nice", false);
+//                    mood.update("hot", false);
+//                    mood.update("conf", false);
+//                    mood.update("unique", false);
+//                    mood.update("enjoy", false);
+                    dbref.update("Q4", "hip");
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -70,12 +71,13 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_nice.isChecked() == true){
-                    mood.update("hip", false);
-                    mood.update("nice", true);
-                    mood.update("hot", false);
-                    mood.update("conf", false);
-                    mood.update("unique", false);
-                    mood.update("enjoy", false);
+//                    mood.update("hip", false);
+//                    mood.update("nice", true);
+//                    mood.update("hot", false);
+//                    mood.update("conf", false);
+//                    mood.update("unique", false);
+//                    mood.update("enjoy", false);
+                    dbref.update("Q4", "nice");
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -86,12 +88,13 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_hot.isChecked() == true){
-                    mood.update("hip", false);
-                    mood.update("nice", false);
-                    mood.update("hot", true);
-                    mood.update("conf", false);
-                    mood.update("unique", false);
-                    mood.update("enjoy", false);
+//                    mood.update("hip", false);
+//                    mood.update("nice", false);
+//                    mood.update("hot", true);
+//                    mood.update("conf", false);
+//                    mood.update("unique", false);
+//                    mood.update("enjoy", false);
+                    dbref.update("Q4", "hot");
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -102,12 +105,13 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_conf.isChecked() == true){
-                    mood.update("hip", false);
-                    mood.update("nice", false);
-                    mood.update("hot", false);
-                    mood.update("conf", true);
-                    mood.update("unique", false);
-                    mood.update("enjoy", false);
+//                    mood.update("hip", false);
+//                    mood.update("nice", false);
+//                    mood.update("hot", false);
+//                    mood.update("conf", true);
+//                    mood.update("unique", false);
+//                    mood.update("enjoy", false);
+                    dbref.update("Q4", "conf");
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -118,12 +122,13 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_unique.isChecked() == true){
-                    mood.update("hip", false);
-                    mood.update("nice", false);
-                    mood.update("hot", false);
-                    mood.update("conf", false);
-                    mood.update("unique", true);
-                    mood.update("enjoy", false);
+//                    mood.update("hip", false);
+//                    mood.update("nice", false);
+//                    mood.update("hot", false);
+//                    mood.update("conf", false);
+//                    mood.update("unique", true);
+//                    mood.update("enjoy", false);
+                    dbref.update("Q4", "unique");
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -134,12 +139,13 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_enjoy.isChecked() == true){
-                    mood.update("hip", false);
-                    mood.update("nice", false);
-                    mood.update("hot", false);
-                    mood.update("conf", false);
-                    mood.update("unique", false);
-                    mood.update("enjoy", true);
+//                    mood.update("hip", false);
+//                    mood.update("nice", false);
+//                    mood.update("hot", false);
+//                    mood.update("conf", false);
+//                    mood.update("unique", false);
+//                    mood.update("enjoy", true);
+                    dbref.update("Q4", "enjoy");
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);

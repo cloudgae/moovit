@@ -37,26 +37,27 @@ public class TypeTest_6 extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Map<String, Object> test6 = new HashMap<>();
-        test6.put("1", false);
-        test6.put("2", false);
-        test6.put("3", false);
-        test6.put("4", false);
+//        Map<String, Object> test6 = new HashMap<>();
+//        test6.put("1", false);
+//        test6.put("2", false);
+//        test6.put("3", false);
+//        test6.put("4", false);
+//
+//        db.collection("TypeTest")
+//                .document("Q6")
+//                .set(test6);
 
-        db.collection("TypeTest")
-                .document("Q6")
-                .set(test6);
-
-        DocumentReference grade = db.collection("TypeTest").document("Q6");
+        DocumentReference dbref = db.collection("TypeTest").document("User");
 
         rbT6_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(rbT6_1.isChecked() == true){
-                    grade.update("1", true);
-                    grade.update("2", false);
-                    grade.update("3", false);
-                    grade.update("4", false);
+//                    grade.update("1", true);
+//                    grade.update("2", false);
+//                    grade.update("3", false);
+//                    grade.update("4", false);
+                    dbref.update("Q6", "1");
                 }
                 prbar.setIndeterminate(false);
                 prbar.setProgress(100);
@@ -70,10 +71,11 @@ public class TypeTest_6 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT6_2.isChecked() == true){
-                    grade.update("1", false);
-                    grade.update("2", true);
-                    grade.update("3", false);
-                    grade.update("4", false);
+//                    grade.update("1", false);
+//                    grade.update("2", true);
+//                    grade.update("3", false);
+//                    grade.update("4", false);
+                    dbref.update("Q6", "2");
                 }
                 prbar.setIndeterminate(false);
                 prbar.setProgress(100);
@@ -87,10 +89,11 @@ public class TypeTest_6 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT6_3.isChecked() == true){
-                    grade.update("1", false);
-                    grade.update("2", false);
-                    grade.update("3", true);
-                    grade.update("4", false);
+//                    grade.update("1", false);
+//                    grade.update("2", false);
+//                    grade.update("3", true);
+//                    grade.update("4", false);
+                    dbref.update("Q6", "3");
                 }
                 prbar.setIndeterminate(false);
                 prbar.setProgress(100);
@@ -104,10 +107,11 @@ public class TypeTest_6 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT6_4.isChecked() == true){
-                    grade.update("1", false);
-                    grade.update("2", false);
-                    grade.update("3", false);
-                    grade.update("4", true);
+//                    grade.update("1", false);
+//                    grade.update("2", false);
+//                    grade.update("3", false);
+//                    grade.update("4", true);
+                    dbref.update("Q6", "4");
                 }
                 prbar.setIndeterminate(false);
                 prbar.setProgress(100);

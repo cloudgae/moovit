@@ -27,6 +27,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class TypeTest_1 extends AppCompatActivity {
 
     CheckBox chkT1_kpop, chkT1_street, chkT1_choreo;
@@ -37,36 +38,29 @@ public class TypeTest_1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_type_test1);
 
-//        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
         chkT1_kpop = (CheckBox) findViewById(R.id.chkT1_kpop);
         chkT1_street = (CheckBox) findViewById(R.id.chkT1_street);
         chkT1_choreo = (CheckBox) findViewById(R.id.chk1_choreo);
         btnT1_next = (Button) findViewById(R.id.btnT1_next);
 
-
+//Cloud Firestore 인스턴스를 초기화합니다.
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Map<String, Object> test1 = new HashMap<>();
-        test1.put("kpop", false);
-        test1.put("street", false);
-        test1.put("choreo", false);
-        db.collection("TypeTest")
-                .document("Q1")
-                .set(test1);
+       // Map<String, Object> test1 = new HashMap<>();
 
-        DocumentReference genre = db.collection("TypeTest").document("Q1");
+        DocumentReference dbref = db.collection("TypeTest").document("User");
 
+        //배열의 0번에 kpop, 1번에 street, 2번에 choreo 자리가 지정되어 있도록 하는법 고민-자료가 별로 없는듯..
+        //체크가 되는 순서대로 인덱스 0,1,2에 저장됨-이렇게 되도 탐색에 문제 없을지?
         chkT1_kpop.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 //checked가 true면 firestore에 저장
                 if (chkT1_kpop.isChecked() == true) {
-
-                    genre.update("kpop", true);
+                    dbref.update("Q1",FieldValue.arrayUnion("kpop"));
                 }
                 else{
-                    genre.update("kpop",false);
+                    dbref.update("Q1",FieldValue.arrayRemove("kpop"));
                 }
             }
         });
@@ -76,10 +70,11 @@ public class TypeTest_1 extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 //checked가 true면 firestore에 저장
                 if (chkT1_street.isChecked() == true) {
-                    genre.update("street", true);
+                    dbref.update("Q1",FieldValue.arrayUnion("street"));
+
                 }
                 else{
-                    genre.update("street",false);
+                    dbref.update("Q1",FieldValue.arrayRemove("street"));
                 }
             }
         });
@@ -89,10 +84,10 @@ public class TypeTest_1 extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 //checked가 true면 firestore에 저장
                 if (chkT1_choreo.isChecked() == true) {
-                    genre.update("choreo", true);
+                    dbref.update("Q1",FieldValue.arrayUnion("choreo"));
                 }
                 else{
-                    genre.update("choreo",false);
+                    dbref.update("Q1",FieldValue.arrayRemove("choreo"));
                 }
             }
         });
@@ -106,8 +101,5 @@ public class TypeTest_1 extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
     }
-
 }
