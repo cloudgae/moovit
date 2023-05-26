@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="40dp"
-                android:text="춤을 출 때 어떤 분위기를\n표현하고 싶으신가요?"
+                android:text="어떤 분위기의 춤을\n배워보고 싶으신가요?"
                 android:textSize="25dp" />
 
 
@@ -106,7 +106,7 @@
                     android:button="@null"
                     android:drawableLeft="@drawable/circle"
                     android:padding="20dp"
-                    android:text="  개성적인"
+                    android:text="  독특한"
                     android:textColor="@drawable/selector_radio_text"
                     android:textSize="20dp" />
 
@@ -120,7 +120,7 @@
                     android:button="@null"
                     android:drawableLeft="@drawable/circle"
                     android:padding="20dp"
-                    android:text="  즐기며 몰입하는"
+                    android:text="  몰입감 있는"
                     android:textColor="@drawable/selector_radio_text"
                     android:textSize="20dp" />
 

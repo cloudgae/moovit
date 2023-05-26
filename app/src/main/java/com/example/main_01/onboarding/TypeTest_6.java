@@ -31,21 +31,10 @@ public class TypeTest_6 extends AppCompatActivity {
         rbT6_1 = (RadioButton) findViewById(R.id.rbT6_1);
         rbT6_2 = (RadioButton) findViewById(R.id.rbT6_2);
         rbT6_3 = (RadioButton) findViewById(R.id.rbT6_3);
-        rbT6_4 = (RadioButton) findViewById(R.id.rbT6_4);
 
         prbar = (ProgressBar) findViewById(R.id.progressbar);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-//        Map<String, Object> test6 = new HashMap<>();
-//        test6.put("1", false);
-//        test6.put("2", false);
-//        test6.put("3", false);
-//        test6.put("4", false);
-//
-//        db.collection("TypeTest")
-//                .document("Q6")
-//                .set(test6);
 
         DocumentReference dbref = db.collection("TypeTest").document("User");
 
@@ -94,24 +83,6 @@ public class TypeTest_6 extends AppCompatActivity {
 //                    grade.update("3", true);
 //                    grade.update("4", false);
                     dbref.update("Q6", "3");
-                }
-                prbar.setIndeterminate(false);
-                prbar.setProgress(100);
-
-                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
-                startActivity(i);
-            }
-        });
-
-        rbT6_4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(rbT6_4.isChecked() == true){
-//                    grade.update("1", false);
-//                    grade.update("2", false);
-//                    grade.update("3", false);
-//                    grade.update("4", true);
-                    dbref.update("Q6", "4");
                 }
                 prbar.setIndeterminate(false);
                 prbar.setProgress(100);
