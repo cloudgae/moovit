@@ -10,13 +10,17 @@ import android.widget.RadioGroup;
 
 import com.example.main_01.*;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class TypeTest_4 extends AppCompatActivity {
 
+    public String A4;
     RadioGroup rbg_T4;
     RadioButton rbT4_hip, rbT4_nice, rbT4_hot, rbT4_conf, rbT4_unique, rbT4_enjoy;
 
@@ -35,18 +39,6 @@ public class TypeTest_4 extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-//        Map<String, Object> test4 = new HashMap<>();
-//        test4.put("hip", false);
-//        test4.put("nice", false);
-//        test4.put("hot", false);
-//        test4.put("conf", false);
-//        test4.put("unique", false);
-//        test4.put("enjoy", false);
-//
-//        db.collection("TypeTest")
-//                .document("Q4")
-//                .set(test4);
-
         DocumentReference dbref = db.collection("TypeTest").document("User");
 
         //ischecked==false 추가해서 각 해당항목만 컨트롤할지 고민
@@ -54,13 +46,10 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_hip.isChecked() == true){
-//                    mood.update("hip", true);
-//                    mood.update("nice", false);
-//                    mood.update("hot", false);
-//                    mood.update("conf", false);
-//                    mood.update("unique", false);
-//                    mood.update("enjoy", false);
-                    dbref.update("Q4", "hip");
+//                    dbref.update("Q4", "hip");
+                    dbref.update("Q4", "P");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("P"));
+//                    dbref.update("P", true);
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -71,13 +60,10 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_nice.isChecked() == true){
-//                    mood.update("hip", false);
-//                    mood.update("nice", true);
-//                    mood.update("hot", false);
-//                    mood.update("conf", false);
-//                    mood.update("unique", false);
-//                    mood.update("enjoy", false);
-                    dbref.update("Q4", "nice");
+//                    dbref.update("Q4", "nice");
+                    dbref.update("Q4", "P");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("P"));
+//                    dbref.update("P", true);
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -88,13 +74,10 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_hot.isChecked() == true){
-//                    mood.update("hip", false);
-//                    mood.update("nice", false);
-//                    mood.update("hot", true);
-//                    mood.update("conf", false);
-//                    mood.update("unique", false);
-//                    mood.update("enjoy", false);
-                    dbref.update("Q4", "hot");
+//                    dbref.update("Q4", "hot");
+                    dbref.update("Q4", "P");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("P"));
+//                    dbref.update("P", true);
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -105,13 +88,10 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_conf.isChecked() == true){
-//                    mood.update("hip", false);
-//                    mood.update("nice", false);
-//                    mood.update("hot", false);
-//                    mood.update("conf", true);
-//                    mood.update("unique", false);
-//                    mood.update("enjoy", false);
-                    dbref.update("Q4", "conf");
+//                    dbref.update("Q4", "conf");
+                    dbref.update("Q4", "U");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("U"));
+//                    dbref.update("U", true);
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -122,13 +102,10 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_unique.isChecked() == true){
-//                    mood.update("hip", false);
-//                    mood.update("nice", false);
-//                    mood.update("hot", false);
-//                    mood.update("conf", false);
-//                    mood.update("unique", true);
-//                    mood.update("enjoy", false);
-                    dbref.update("Q4", "unique");
+//                    dbref.update("Q4", "unique");
+                    dbref.update("Q4", "U");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("U"));
+//                    dbref.update("U", true);
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -139,13 +116,10 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_enjoy.isChecked() == true){
-//                    mood.update("hip", false);
-//                    mood.update("nice", false);
-//                    mood.update("hot", false);
-//                    mood.update("conf", false);
-//                    mood.update("unique", false);
-//                    mood.update("enjoy", true);
-                    dbref.update("Q4", "enjoy");
+//                    dbref.update("Q4", "enjoy");
+                    dbref.update("Q4", "U");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("U"));
+//                    dbref.update("U", true);
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);

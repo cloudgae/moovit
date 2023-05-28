@@ -10,7 +10,9 @@ import android.widget.RadioGroup;
 
 import com.example.main_01.*;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,23 +33,27 @@ public class TypeTest_5 extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-//        Map<String, Object> test3 = new HashMap<>();
-//        test3.put("cheer", false);
-//        test3.put("concentrate", false);
-//
-//        db.collection("TypeTest")
-//                .document("Q5")
-//                .set(test3);
-
         DocumentReference dbref = db.collection("TypeTest").document("User");
+
+        Map<String, Object> data1 = new HashMap<>();
+        data1.put("TYPE", "I");
+
+        Map<String, Object> data2 = new HashMap<>();
+        data2.put("TYPE", "C");
 
         rbT5_cheer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(rbT5_cheer.isChecked() == true){
-//                    classmood.update("cheer", true);
-//                    classmood.update("concentrate", false);
-                    dbref.update("Q5", "cheer");
+//                    dbref.update("Q5", "cheer");
+                    dbref.update("Q5", "I");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("I"));
+//                    dbref.update("I", true);
+//                    dbref.update("TYPE", SetOptions.mergeFields("I"));
+//                    db.collection("TypeTest").document("User")
+//                            .set(data1, SetOptions.merge());
+//                    db.collection("TypeTest").document("User")
+//                            .set("I", SetOptions.mergeFields("TYPE"));
                 }
                 Intent i = new Intent(TypeTest_5.this, TypeTest_6.class);
                 startActivity(i);
@@ -58,9 +64,15 @@ public class TypeTest_5 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT5_concentrate.isChecked() == true){
-//                    classmood.update("cheer", false);
-//                    classmood.update("concentrate", true);
-                    dbref.update("Q5", "concentrate");
+//                    dbref.update("Q5", "concentrate");
+                    dbref.update("Q5", "I");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("C"));
+//                    dbref.update("C", true);
+//                    dbref.update("TYPE", SetOptions.mergeFields("C"));
+//                    db.collection("TypeTest").document("User")
+//                            .set(data2, SetOptions.merge());
+//                    db.collection("TypeTest").document("User")
+//                            .set("C", SetOptions.mergeFields("TYPE"));
                 }
                 Intent i = new Intent(TypeTest_5.this, TypeTest_6.class);
                 startActivity(i);

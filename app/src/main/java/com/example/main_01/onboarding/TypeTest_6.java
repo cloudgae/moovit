@@ -11,7 +11,9 @@ import android.widget.RadioGroup;
 
 import com.example.main_01.R;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -42,11 +44,11 @@ public class TypeTest_6 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT6_1.isChecked() == true){
-//                    grade.update("1", true);
-//                    grade.update("2", false);
-//                    grade.update("3", false);
-//                    grade.update("4", false);
-                    dbref.update("Q6", "1");
+//                    dbref.update("Q6", "1");
+                    dbref.update("Q6", "S");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("S"));
+//                    dbref.update("S", true);
+//                    dbref.update("TYPE", "S", SetOptions.merge());
                 }
                 prbar.setIndeterminate(false);
                 prbar.setProgress(100);
@@ -60,11 +62,11 @@ public class TypeTest_6 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT6_2.isChecked() == true){
-//                    grade.update("1", false);
-//                    grade.update("2", true);
-//                    grade.update("3", false);
-//                    grade.update("4", false);
-                    dbref.update("Q6", "2");
+//                    dbref.update("Q6", "2");
+                    dbref.update("Q6", "M");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("M"));
+//                    dbref.update("M", true);
+//                    dbref.update("TYPE", "M", SetOptions.merge());
                 }
                 prbar.setIndeterminate(false);
                 prbar.setProgress(100);
@@ -78,11 +80,11 @@ public class TypeTest_6 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT6_3.isChecked() == true){
-//                    grade.update("1", false);
-//                    grade.update("2", false);
-//                    grade.update("3", true);
-//                    grade.update("4", false);
-                    dbref.update("Q6", "3");
+//                    dbref.update("Q6", "3");
+                    dbref.update("Q6", "M");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("M"));
+//                    dbref.update("M", true);
+//                    dbref.update("TYPE", "M", SetOptions.merge());
                 }
                 prbar.setIndeterminate(false);
                 prbar.setProgress(100);
