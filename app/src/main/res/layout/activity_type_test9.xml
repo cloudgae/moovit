@@ -41,11 +41,12 @@
             android:text="000님은" />
 
         <TextView
+            android:id="@+id/typename"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="열정 넘치는 무버"
+            android:text=" "
             android:textSize="25dp" />
 
         <TextView
@@ -58,22 +59,25 @@
                 2.visibility 속성 => invisible로 설정해놓고
                 자바에서 '유형의 특성' 데이터를 받아와 텍스트 내용 변경하고 visible로 변경-->
         <TextView
+            android:id="@+id/typefeature1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="아직 경험이 부족하여 차근차근 배우길 원해요" />
+            android:text="" />
 
         <TextView
+            android:id="@+id/typefeature2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="수강생들끼리 서로 상호작용하고 응원해주는 분위기봐는 수업에 집중할 수 있는 분위기를 선호해요" />
+            android:text="" />
 
         <TextView
+            android:id="@+id/typefeature3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="다른 사람에게 매력을 표현할 수 있는 분위기의 춤을 추는 걸 선호해요" />
+            android:text="" />
     </LinearLayout>
 
     <LinearLayout

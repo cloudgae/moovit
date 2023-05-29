@@ -46,10 +46,7 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_hip.isChecked() == true){
-//                    dbref.update("Q4", "hip");
                     dbref.update("Q4", "P");
-//                    dbref.update("TYPE", FieldValue.arrayUnion("P"));
-//                    dbref.update("P", true);
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -60,10 +57,7 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_nice.isChecked() == true){
-//                    dbref.update("Q4", "nice");
                     dbref.update("Q4", "P");
-//                    dbref.update("TYPE", FieldValue.arrayUnion("P"));
-//                    dbref.update("P", true);
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -74,10 +68,7 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_hot.isChecked() == true){
-//                    dbref.update("Q4", "hot");
                     dbref.update("Q4", "P");
-//                    dbref.update("TYPE", FieldValue.arrayUnion("P"));
-//                    dbref.update("P", true);
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -88,10 +79,7 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_conf.isChecked() == true){
-//                    dbref.update("Q4", "conf");
                     dbref.update("Q4", "U");
-//                    dbref.update("TYPE", FieldValue.arrayUnion("U"));
-//                    dbref.update("U", true);
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -102,10 +90,7 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_unique.isChecked() == true){
-//                    dbref.update("Q4", "unique");
                     dbref.update("Q4", "U");
-//                    dbref.update("TYPE", FieldValue.arrayUnion("U"));
-//                    dbref.update("U", true);
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
@@ -116,10 +101,7 @@ public class TypeTest_4 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT4_enjoy.isChecked() == true){
-//                    dbref.update("Q4", "enjoy");
                     dbref.update("Q4", "U");
-//                    dbref.update("TYPE", FieldValue.arrayUnion("U"));
-//                    dbref.update("U", true);
                 }
                 Intent i = new Intent(TypeTest_4.this, TypeTest_5.class);
                 startActivity(i);
