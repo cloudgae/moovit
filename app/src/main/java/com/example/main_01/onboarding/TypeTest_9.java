@@ -5,6 +5,7 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -91,5 +92,6 @@ public class TypeTest_9 extends AppCompatActivity {
                         }
                     }
                 });
+
     }
 }

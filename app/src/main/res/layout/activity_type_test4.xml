@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".onboarding.TypeTest_4">
+    tools:context=".onboarding.TypeTest_4"
+    android:background="#000000">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,7 +23,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:max="100"
-                android:progress="48" />
+                android:progress="48"
+                android:progressTint="#E87FEA"
+                android:progressBackgroundTint="#2D2D2D"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -30,7 +33,8 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="40dp"
                 android:text="어떤 분위기의 춤을\n배워보고 싶으신가요?"
-                android:textSize="25dp" />
+                android:textSize="25dp"
+                android:textColor="#FFFFFF"/>
 
 
             <RadioGroup
@@ -43,12 +47,12 @@
                 <RadioButton
                     android:id="@+id/rbT4_hip"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="84dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/selector_radio_button"
                     android:button="@null"
-                    android:drawableLeft="@drawable/circle"
+                    android:drawableLeft="@drawable/hip"
                     android:padding="20dp"
                     android:text="  힙한"
                     android:textColor="@drawable/selector_radio_text"
@@ -57,12 +61,12 @@
                 <RadioButton
                     android:id="@+id/rbT4_nice"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="84dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/selector_radio_button"
                     android:button="@null"
-                    android:drawableLeft="@drawable/circle"
+                    android:drawableLeft="@drawable/nice"
                     android:padding="20dp"
                     android:text="  멋있는"
                     android:textColor="@drawable/selector_radio_text"
@@ -71,12 +75,12 @@
                 <RadioButton
                     android:id="@+id/rbT4_hot"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="84dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/selector_radio_button"
                     android:button="@null"
-                    android:drawableLeft="@drawable/circle"
+                    android:drawableLeft="@drawable/hot"
                     android:padding="20dp"
                     android:text="  섹시한"
                     android:textColor="@drawable/selector_radio_text"
@@ -85,12 +89,12 @@
                 <RadioButton
                     android:id="@+id/rbT4_conf"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="84dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/selector_radio_button"
                     android:button="@null"
-                    android:drawableLeft="@drawable/circle"
+                    android:drawableLeft="@drawable/conf"
                     android:padding="20dp"
                     android:text="  자신감 넘치는"
                     android:textColor="@drawable/selector_radio_text"
@@ -99,12 +103,12 @@
                 <RadioButton
                     android:id="@+id/rbT4_unique"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="84dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/selector_radio_button"
                     android:button="@null"
-                    android:drawableLeft="@drawable/circle"
+                    android:drawableLeft="@drawable/unique"
                     android:padding="20dp"
                     android:text="  독특한"
                     android:textColor="@drawable/selector_radio_text"
@@ -113,12 +117,12 @@
                 <RadioButton
                     android:id="@+id/rbT3_enjoy"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="84dp"
                     android:layout_marginHorizontal="20dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/selector_radio_button"
                     android:button="@null"
-                    android:drawableLeft="@drawable/circle"
+                    android:drawableLeft="@drawable/enjoy"
                     android:padding="20dp"
                     android:text="  몰입감 있는"
                     android:textColor="@drawable/selector_radio_text"

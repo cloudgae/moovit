@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".onboarding.TypeTest_3"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#000000">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +19,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:max="100"
-            android:progress="32"/>
+            android:progress="32"
+            android:progressTint="#E87FEA"
+            android:progressBackgroundTint="#2D2D2D"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -26,7 +29,8 @@
             android:text="수업을 얼마나 듣고\n싶으신가요?"
             android:textSize="25dp"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="40dp"/>
+            android:layout_marginBottom="40dp"
+            android:textColor="#FFFFFF"/>
 
         <RadioGroup
             android:id="@+id/rbg_T3"
@@ -37,7 +41,7 @@
             <RadioButton
                 android:id="@+id/rbT3_1day"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="84dp"
                 android:text="  원데이 클래스"
                 android:textSize="20dp"
                 android:textColor="@drawable/selector_radio_text"
@@ -45,13 +49,12 @@
                 android:layout_marginHorizontal="20dp"
                 android:padding="20dp"
                 android:button="@null"
-                android:drawableLeft="@drawable/circle"
                 android:background="@drawable/selector_radio_button"/>
 
             <RadioButton
                 android:id="@+id/rbT3_nday"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="84dp"
                 android:text="  다회차 클래스"
                 android:textSize="20dp"
                 android:textColor="@drawable/selector_radio_text"
@@ -59,7 +62,6 @@
                 android:layout_marginHorizontal="20dp"
                 android:padding="20dp"
                 android:button="@null"
-                android:drawableLeft="@drawable/circle"
                 android:background="@drawable/selector_radio_button"/>
 
         </RadioGroup>

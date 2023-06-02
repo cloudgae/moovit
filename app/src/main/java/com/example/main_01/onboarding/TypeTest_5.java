@@ -66,7 +66,7 @@ public class TypeTest_5 extends AppCompatActivity {
             public void onClick(View view) {
                 if(rbT5_concentrate.isChecked() == true){
 //                    dbref.update("Q5", "concentrate");
-                    dbref.update("Q5", "I");
+                    dbref.update("Q5", "C");
 //                    dbref.update("TYPE", FieldValue.arrayUnion("C"));
 //                    dbref.update("C", true);
 //                    dbref.update("TYPE", SetOptions.mergeFields("C"));

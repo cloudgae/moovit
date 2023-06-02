@@ -53,7 +53,7 @@ public class TypeTest_6 extends AppCompatActivity {
                 prbar.setIndeterminate(false);
                 prbar.setProgress(100);
 
-                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
+                Intent i = new Intent(TypeTest_6.this, TypeTest_8.class);
                 startActivity(i);
             }
         });
@@ -71,7 +71,7 @@ public class TypeTest_6 extends AppCompatActivity {
                 prbar.setIndeterminate(false);
                 prbar.setProgress(100);
 
-                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
+                Intent i = new Intent(TypeTest_6.this, TypeTest_8.class);
                 startActivity(i);
             }
         });
@@ -89,7 +89,7 @@ public class TypeTest_6 extends AppCompatActivity {
                 prbar.setIndeterminate(false);
                 prbar.setProgress(100);
 
-                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
+                Intent i = new Intent(TypeTest_6.this, TypeTest_8.class);
                 startActivity(i);
             }
         });
