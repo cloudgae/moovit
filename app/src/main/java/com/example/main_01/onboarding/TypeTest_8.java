@@ -11,6 +11,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.main_01.R;
@@ -30,11 +33,16 @@ import com.google.firebase.firestore.Source;
 
 public class TypeTest_8 extends AppCompatActivity {
 
+    ImageView load;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_type_test8);
 
+        load = (ImageView)findViewById(R.id.load);
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.loading);
+        load.setAnimation(anim);
 
 
 

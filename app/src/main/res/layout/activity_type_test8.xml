@@ -9,32 +9,33 @@
     android:background="#000000">
 
     <ImageView
-        android:id="@+id/sampleimg"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/circle"
+        android:id="@+id/load"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_above="@+id/txtview1"
         android:layout_centerInParent="true"
-        android:layout_above="@+id/txtview1"/>
+        android:src="@drawable/loadimg" />
 
     <TextView
         android:id="@+id/txtview1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="잠시만 기다려주세요..."
         android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
-        android:textSize="16dp"
-        android:textColor="#FEFEFE"/>
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/notosanskr_regular"
+        android:text="잠시만 기다려주세요..."
+        android:textColor="#FEFEFE"
+        android:textSize="16dp" />
 
     <TextView
         android:id="@+id/txtview2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="내게 딱 맞는 춤 유형을\n찾고 있어요!"
-        android:textSize="22dp"
-        android:gravity="center"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
         android:layout_below="@+id/txtview1"
-        android:textColor="#FEFEFE"/>
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="내게 딱 맞는 춤 유형을\n찾고 있어요!"
+        android:textColor="#FEFEFE"
+        android:textSize="22dp"
+        android:fontFamily="@font/notosanskr_medium"/>
 </RelativeLayout>

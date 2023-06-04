@@ -31,10 +31,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="20dp"
                 android:text="어떤 분위기의 춤을\n배워보고 싶으신가요?"
-                android:textSize="25dp"
-                android:textColor="#FFFFFF"/>
+                android:textSize="22dp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/notosanskr_medium"/>
 
 
             <RadioGroup
@@ -53,10 +54,11 @@
                     android:background="@drawable/selector_radio_button"
                     android:button="@null"
                     android:drawableLeft="@drawable/hip"
-                    android:padding="20dp"
+                    android:paddingLeft="20dp"
                     android:text="  힙한"
                     android:textColor="@drawable/selector_radio_text"
-                    android:textSize="20dp" />
+                    android:textSize="18dp"
+                    android:fontFamily="@font/notosanskr_regular" />
 
                 <RadioButton
                     android:id="@+id/rbT4_nice"
@@ -67,10 +69,11 @@
                     android:background="@drawable/selector_radio_button"
                     android:button="@null"
                     android:drawableLeft="@drawable/nice"
-                    android:padding="20dp"
+                    android:paddingLeft="20dp"
                     android:text="  멋있는"
                     android:textColor="@drawable/selector_radio_text"
-                    android:textSize="20dp" />
+                    android:textSize="18dp"
+                    android:fontFamily="@font/notosanskr_regular"/>
 
                 <RadioButton
                     android:id="@+id/rbT4_hot"
@@ -81,10 +84,11 @@
                     android:background="@drawable/selector_radio_button"
                     android:button="@null"
                     android:drawableLeft="@drawable/hot"
-                    android:padding="20dp"
+                    android:paddingLeft="20dp"
                     android:text="  섹시한"
                     android:textColor="@drawable/selector_radio_text"
-                    android:textSize="20dp" />
+                    android:textSize="18dp"
+                    android:fontFamily="@font/notosanskr_regular"/>
 
                 <RadioButton
                     android:id="@+id/rbT4_conf"
@@ -95,10 +99,11 @@
                     android:background="@drawable/selector_radio_button"
                     android:button="@null"
                     android:drawableLeft="@drawable/conf"
-                    android:padding="20dp"
+                    android:paddingLeft="20dp"
                     android:text="  자신감 넘치는"
                     android:textColor="@drawable/selector_radio_text"
-                    android:textSize="20dp" />
+                    android:textSize="18dp"
+                    android:fontFamily="@font/notosanskr_regular"/>
 
                 <RadioButton
                     android:id="@+id/rbT4_unique"
@@ -109,10 +114,11 @@
                     android:background="@drawable/selector_radio_button"
                     android:button="@null"
                     android:drawableLeft="@drawable/unique"
-                    android:padding="20dp"
+                    android:paddingLeft="20dp"
                     android:text="  독특한"
                     android:textColor="@drawable/selector_radio_text"
-                    android:textSize="20dp" />
+                    android:textSize="18dp"
+                    android:fontFamily="@font/notosanskr_regular"/>
 
                 <RadioButton
                     android:id="@+id/rbT3_enjoy"
@@ -123,10 +129,11 @@
                     android:background="@drawable/selector_radio_button"
                     android:button="@null"
                     android:drawableLeft="@drawable/enjoy"
-                    android:padding="20dp"
+                    android:paddingLeft="20dp"
                     android:text="  몰입감 있는"
                     android:textColor="@drawable/selector_radio_text"
-                    android:textSize="20dp" />
+                    android:textSize="18dp"
+                    android:fontFamily="@font/notosanskr_regular"/>
 
             </RadioGroup>
         </LinearLayout>

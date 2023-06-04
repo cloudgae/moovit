@@ -1,5 +1,7 @@
 package com.example.main_01.onboarding;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -15,7 +17,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CheckedTextView;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -32,6 +36,8 @@ public class TypeTest_1 extends AppCompatActivity {
 
     CheckBox chkT1_kpop, chkT1_street, chkT1_choreo;
     Button btnT1_next;
+    LinearLayout chkT1_sample;
+    CheckedTextView chkTV;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,7 @@ public class TypeTest_1 extends AppCompatActivity {
         chkT1_street = (CheckBox) findViewById(R.id.chkT1_street);
         chkT1_choreo = (CheckBox) findViewById(R.id.chk1_choreo);
         btnT1_next = (Button) findViewById(R.id.btnT1_next);
+
 
 //Cloud Firestore 인스턴스를 초기화합니다.
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -71,7 +78,6 @@ public class TypeTest_1 extends AppCompatActivity {
                 //checked가 true면 firestore에 저장
                 if (chkT1_street.isChecked() == true) {
                     dbref.update("Q1",FieldValue.arrayUnion("street"));
-
                 }
                 else{
                     dbref.update("Q1",FieldValue.arrayRemove("street"));

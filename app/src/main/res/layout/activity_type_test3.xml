@@ -27,10 +27,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="수업을 얼마나 듣고\n싶으신가요?"
-            android:textSize="25dp"
+            android:textSize="22dp"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="40dp"
-            android:textColor="#FFFFFF"/>
+            android:layout_marginBottom="20dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/notosanskr_medium"/>
 
         <RadioGroup
             android:id="@+id/rbg_T3"
@@ -43,26 +44,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="84dp"
                 android:text="  원데이 클래스"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textColor="@drawable/selector_radio_text"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="20dp"
-                android:padding="20dp"
+                android:paddingLeft="20dp"
                 android:button="@null"
-                android:background="@drawable/selector_radio_button"/>
+                android:background="@drawable/selector_radio_button"
+                android:fontFamily="@font/notosanskr_regular"/>
 
             <RadioButton
                 android:id="@+id/rbT3_nday"
                 android:layout_width="match_parent"
                 android:layout_height="84dp"
                 android:text="  다회차 클래스"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textColor="@drawable/selector_radio_text"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="20dp"
-                android:padding="20dp"
+                android:paddingLeft="20dp"
                 android:button="@null"
-                android:background="@drawable/selector_radio_button"/>
+                android:background="@drawable/selector_radio_button"
+                android:fontFamily="@font/notosanskr_regular"/>
 
         </RadioGroup>
     </LinearLayout>
