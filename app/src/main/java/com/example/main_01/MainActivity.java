@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.main_01.onboarding.TypeTest_1;
+import com.example.main_01.splash.Splash_0;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,8 +20,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //온보딩으로 바로 이동
-        Intent i = new Intent(MainActivity.this, TypeTest_1.class);
+        Intent i = new Intent(MainActivity.this, Splash_0.class);
         startActivity(i);
+
+        finish();
 
 
     }

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    tools:context=".splash.Splash_1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:text="홈화면으로"
+            android:textColor="#5F5F5F"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="테스트 한 번으로,\n나에게 맞는 클래스를"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:text="춤을 배우고 싶어도 망설여지는 분들을 위해\n무빗이 간단한 춤 유형 테스트를 준비했어요."
+            android:textColor="#FFFFFF"
+            android:textSize="14dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            >
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/splashswipeimg2"
+
+                android:layout_gravity="center_vertical"/>
+
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/notosanskr_regular"
+            android:text="시작에 대한 부담감이 있다면?"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            android:layout_marginTop="30dp"/>
+
+        <Button
+            android:id="@+id/starttest"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="20dp"
+            android:backgroundTint="#E87FEA"
+            android:fontFamily="@font/notosanskr_regular"
+            android:padding="0dp"
+            android:text="유형 테스트 시작하기"
+            android:textColor="#121212"
+            android:textSize="16dp"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+</LinearLayout>

@@ -5,29 +5,25 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.main_01.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.Source;
+
 
 
 public class TypeTest_9 extends AppCompatActivity {
 
     TextView typename, typefeature1, typefeature2, typefeature3;
-
+    LinearLayout typelayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +34,7 @@ public class TypeTest_9 extends AppCompatActivity {
         typefeature1 = (TextView) findViewById(R.id.typefeature1);
         typefeature2 = (TextView) findViewById(R.id.typefeature2);
         typefeature3 = (TextView) findViewById(R.id.typefeature3);
-
+        typelayer = (LinearLayout) findViewById(R.id.typelayer);
 
         //파이어베이스
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -80,6 +76,34 @@ public class TypeTest_9 extends AppCompatActivity {
                                                         typefeature1.setText((String) document.getData().get("feature1"));
                                                         typefeature2.setText((String) document.getData().get("feature2"));
                                                         typefeature3.setText((String) document.getData().get("feature3"));
+
+                                                        switch (TCODE){
+                                                            case "PCS":
+                                                                typelayer.setBackgroundResource(R.drawable.pcs);
+                                                                break;
+                                                            case "PCM":
+                                                                typelayer.setBackgroundResource(R.drawable.pcm);
+                                                                break;
+                                                            case "UCS":
+                                                                typelayer.setBackgroundResource(R.drawable.ucs);
+                                                                break;
+                                                            case "UCM":
+                                                                typelayer.setBackgroundResource(R.drawable.ucm);
+                                                                break;
+                                                            case "PIS":
+                                                                typelayer.setBackgroundResource(R.drawable.pis);
+                                                                break;
+                                                            case "PIM":
+                                                                typelayer.setBackgroundResource(R.drawable.pim);
+                                                                break;
+                                                            case "UIS":
+                                                                typelayer.setBackgroundResource(R.drawable.uis);
+                                                                break;
+                                                            case "UIM":
+                                                                typelayer.setBackgroundResource(R.drawable.uim);
+                                                                break;
+                                                        }
+
                                                     }
                                                 } else {
                                                     Log.d(TAG, "Error getting documents: ", task.getException());
