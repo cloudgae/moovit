@@ -8,118 +8,177 @@
     android:orientation="vertical"
     tools:context=".onboarding.TypeTest_9">
 
-    <!--    자바에서 컨트롤 해야 하는 항목들에는 아이디 추가
-            (현재는 임의의 아이디명, 필요에 따라 변경)-->
-    <LinearLayout
-        android:id="@+id/typelayer"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="356dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="#000000"
-        android:layout_marginHorizontal="20dp"
-        android:layout_gravity="center">
+        android:layout_height="match_parent">
 
-        <!--    유형 이름 데이터베이스에서 받아와 변경(자바파일에서 컨트롤)-->
 
-        <TextView
-            android:id="@+id/typename"
-            android:layout_width="168dp"
-            android:layout_height="44dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="330dp"
-            android:fontFamily="@font/notosanskr_bold"
-            android:text=" "
-            android:textColor="#FFFFFF"
-            android:textSize="14dp"
-            android:background="@drawable/typenameview" />
-    </LinearLayout>
-
-    <!--        <TextView-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginTop="20dp"-->
-    <!--            android:text="이런 특성이 있어요" />-->
-
-    <!--    1.추후 background (배경)설정하기
-            2.visibility 속성 => invisible로 설정해놓고
-            자바에서 '유형의 특성' 데이터를 받아와 텍스트 내용 변경하고 visible로 변경-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/typefeature1"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="84dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/selector_radio_button"
-            android:drawableLeft="@drawable/star2"
-            android:fontFamily="@font/notosanskr_regular"
-            android:gravity="center|left"
-            android:padding="12dp"
-            android:text=""
-            android:textColor="@drawable/selector_radio_text"
-            android:textSize="15dp"
-            android:layout_marginHorizontal="10dp"
-            android:singleLine="false" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/typefeature2"
-            android:layout_width="match_parent"
-            android:layout_height="84dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/selector_radio_button"
-            android:drawableLeft="@drawable/star2"
-            android:fontFamily="@font/notosanskr_regular"
-            android:gravity="center|left"
-            android:padding="12dp"
-            android:text=""
-            android:textColor="@drawable/selector_radio_text"
-            android:textSize="15dp"
-            android:layout_marginHorizontal="10dp"
-            android:singleLine="false"/>
+            <LinearLayout
+                android:id="@+id/typelayer"
+                android:layout_width="match_parent"
+                android:layout_height="356dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/typefeature3"
-            android:layout_width="match_parent"
-            android:layout_height="84dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/selector_radio_button"
-            android:drawableLeft="@drawable/star2"
-            android:fontFamily="@font/notosanskr_regular"
-            android:gravity="center|left"
-            android:padding="12dp"
-            android:text=""
-            android:textColor="@drawable/selector_radio_text"
-            android:textSize="15dp"
-            android:layout_marginHorizontal="10dp"
-            android:singleLine="false"/>
+                <!--    유형 이름 데이터베이스에서 받아와 변경(자바파일에서 컨트롤)-->
 
-    </LinearLayout>
-    <!--    <LinearLayout-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:orientation="horizontal"-->
-    <!--        android:layout_gravity="center">-->
+                <TextView
+                    android:id="@+id/typename"
+                    android:layout_width="168dp"
+                    android:layout_height="44dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="300dp"
+                    android:background="@drawable/typenameview"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:gravity="center"
+                    android:text=" "
+                    android:textColor="#FFFFFF"
+                    android:textSize="14dp" />
+            </LinearLayout>
 
-    <!--        <Button-->
-    <!--            android:layout_width="190dp"-->
-    <!--            android:layout_height="65dp"-->
-    <!--            android:text="카드 뽑기"-->
-    <!--            android:layout_gravity="left|bottom"-->
-    <!--            android:layout_marginRight="5dp"/>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp">
 
-    <!--        <Button-->
-    <!--            android:layout_width="190dp"-->
-    <!--            android:layout_height="65dp"-->
-    <!--            android:text="추천 강의 보기"-->
-    <!--            android:layout_gravity="right|bottom"-->
-    <!--            android:layout_marginLeft="5dp"/>-->
-    <!--    </LinearLayout>-->
+                <TextView
+                    android:id="@+id/typefeature1"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/selector_radio_button"
+                    android:drawableLeft="@drawable/star2"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:gravity="center|left"
+                    android:padding="12dp"
+                    android:singleLine="false"
+                    android:text=""
+                    android:textColor="@drawable/selector_radio_text"
+                    android:textSize="15dp" />
 
+                <TextView
+                    android:id="@+id/typefeature2"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/selector_radio_button"
+                    android:drawableLeft="@drawable/star2"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:gravity="center|left"
+                    android:padding="12dp"
+                    android:singleLine="false"
+                    android:text=""
+                    android:textColor="@drawable/selector_radio_text"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/typefeature3"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/selector_radio_button"
+                    android:drawableLeft="@drawable/star2"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:gravity="center|left"
+                    android:padding="12dp"
+                    android:singleLine="false"
+                    android:text=""
+                    android:textColor="@drawable/selector_radio_text"
+                    android:textSize="15dp" />
+
+
+            </LinearLayout>
+
+<!--            클래스-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="스크롤힌트"
+                    android:textColor="@drawable/selector_radio_text"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+<!--                        추후 gif 또는 동영상 삽입 & 뷰페이저로 바꾸는것도 고려-->
+                        <TextView
+                            android:layout_width="370dp"
+                            android:layout_height="600dp"
+                            android:gravity="center"
+                            android:text="1페이지"
+                            android:textColor="@drawable/selector_radio_text"
+                            android:textSize="20dp"
+                            android:layout_margin="20dp"
+                            android:background="@drawable/selector_radio_button"/>
+
+                        <TextView
+                            android:layout_width="300dp"
+                            android:layout_height="600dp"
+                            android:gravity="center"
+                            android:text="2페이지"
+                            android:textColor="@drawable/selector_radio_text"
+                            android:textSize="20dp"
+                            android:layout_margin="20dp"
+                            android:background="@drawable/selector_radio_button"/>
+
+                        <TextView
+                            android:layout_width="300dp"
+                            android:layout_height="600dp"
+                            android:text="3페이지"
+                            android:textColor="@drawable/selector_radio_text"
+                            android:textSize="20dp"
+                            android:gravity="center"
+                            android:layout_margin="20dp"
+                            android:background="@drawable/selector_radio_button"/>
+
+                    </LinearLayout>
+
+
+
+                </HorizontalScrollView>
+
+                <Button
+                    android:id="@+id/btnT1_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:backgroundTint="#E87FEA"
+                    android:text="수강하러 가기"
+                    android:textColor="#121212"
+                    android:textSize="16dp"
+                    android:padding="0dp"
+                    android:fontFamily="@font/notosanskr_regular"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
 </LinearLayout>

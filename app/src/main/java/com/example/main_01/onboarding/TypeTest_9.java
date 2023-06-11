@@ -117,5 +117,8 @@ public class TypeTest_9 extends AppCompatActivity {
                     }
                 });
 
+
+        //다음코드 여기서부터..
+
     }
 }
