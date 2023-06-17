@@ -128,15 +128,20 @@
                         android:orientation="horizontal">
 
 <!--                        추후 gif 또는 동영상 삽입 & 뷰페이저로 바꾸는것도 고려-->
-                        <TextView
+                        <com.google.android.exoplayer2.ui.PlayerView
+                            android:id="@+id/player_view"
                             android:layout_width="370dp"
-                            android:layout_height="600dp"
-                            android:gravity="center"
-                            android:text="1페이지"
-                            android:textColor="@drawable/selector_radio_text"
-                            android:textSize="20dp"
-                            android:layout_margin="20dp"
-                            android:background="@drawable/selector_radio_button"/>
+                            android:layout_height="600dp" />
+
+<!--                        <TextView-->
+<!--                            android:layout_width="370dp"-->
+<!--                            android:layout_height="600dp"-->
+<!--                            android:gravity="center"-->
+<!--                            android:text="1페이지"-->
+<!--                            android:textColor="@drawable/selector_radio_text"-->
+<!--                            android:textSize="20dp"-->
+<!--                            android:layout_margin="20dp"-->
+<!--                            android:background="@drawable/selector_radio_button"/>-->
 
                         <TextView
                             android:layout_width="370dp"
