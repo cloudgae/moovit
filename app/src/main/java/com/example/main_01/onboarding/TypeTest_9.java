@@ -6,8 +6,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,6 +27,7 @@ public class TypeTest_9 extends AppCompatActivity {
 
     TextView typename, typefeature1, typefeature2, typefeature3;
     LinearLayout typelayer;
+    Button btnNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class TypeTest_9 extends AppCompatActivity {
         typefeature2 = (TextView) findViewById(R.id.typefeature2);
         typefeature3 = (TextView) findViewById(R.id.typefeature3);
         typelayer = (LinearLayout) findViewById(R.id.typelayer);
+        btnNext = (Button) findViewById(R.id.btnT1_next);
 
         //파이어베이스
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -119,6 +124,17 @@ public class TypeTest_9 extends AppCompatActivity {
 
 
         //다음코드 여기서부터..
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TypeTest_9.this, TypeTest_11.class);
+
+                startActivity(i);	//intent 에 명시된 액티비티로 이동
+
+                finish();	//현재 액티비티 종료
+            }
+        });
 
     }
 }

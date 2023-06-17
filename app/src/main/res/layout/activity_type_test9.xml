@@ -139,7 +139,7 @@
                             android:background="@drawable/selector_radio_button"/>
 
                         <TextView
-                            android:layout_width="300dp"
+                            android:layout_width="370dp"
                             android:layout_height="600dp"
                             android:gravity="center"
                             android:text="2페이지"
@@ -149,7 +149,7 @@
                             android:background="@drawable/selector_radio_button"/>
 
                         <TextView
-                            android:layout_width="300dp"
+                            android:layout_width="370dp"
                             android:layout_height="600dp"
                             android:text="3페이지"
                             android:textColor="@drawable/selector_radio_text"
