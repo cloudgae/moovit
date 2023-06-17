@@ -2,7 +2,6 @@ package com.example.main_01.onboarding;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +20,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 public class TypeTest_11 extends AppCompatActivity {
+
     private SimpleExoPlayer player;
     private com.google.android.exoplayer2.ui.PlayerView playerView;
 

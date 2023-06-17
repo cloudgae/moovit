@@ -48,10 +48,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:layout_marginTop="30dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/typefeature1"
@@ -104,19 +104,20 @@
 
             </LinearLayout>
 
-<!--            클래스-->
+            <!--            클래스-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
                     android:text="스크롤힌트"
                     android:textColor="@drawable/selector_radio_text"
-                    android:textSize="20dp"
-                    android:gravity="center"
-                    android:layout_marginTop="10dp"/>
+                    android:textSize="20dp" />
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -125,46 +126,50 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_marginVertical="50dp">
 
-<!--                        추후 gif 또는 동영상 삽입 & 뷰페이저로 바꾸는것도 고려-->
-                        <com.google.android.exoplayer2.ui.PlayerView
-                            android:id="@+id/player_view"
-                            android:layout_width="370dp"
-                            android:layout_height="600dp" />
+                        <!--                        추후 gif 또는 동영상 삽입 & 뷰페이저로 바꾸는것도 고려-->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/playerCardView1"
+                            android:layout_width="300dp"
+                            android:layout_height="530dp"
+                            app:cardCornerRadius="30dp"
+                            android:layout_marginHorizontal="55dp">
 
-<!--                        <TextView-->
-<!--                            android:layout_width="370dp"-->
-<!--                            android:layout_height="600dp"-->
-<!--                            android:gravity="center"-->
-<!--                            android:text="1페이지"-->
-<!--                            android:textColor="@drawable/selector_radio_text"-->
-<!--                            android:textSize="20dp"-->
-<!--                            android:layout_margin="20dp"-->
-<!--                            android:background="@drawable/selector_radio_button"/>-->
+                            <com.google.android.exoplayer2.ui.PlayerView
+                                android:id="@+id/player_view1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </com.google.android.material.card.MaterialCardView>
 
-                        <TextView
-                            android:layout_width="370dp"
-                            android:layout_height="600dp"
-                            android:gravity="center"
-                            android:text="2페이지"
-                            android:textColor="@drawable/selector_radio_text"
-                            android:textSize="20dp"
-                            android:layout_margin="20dp"
-                            android:background="@drawable/selector_radio_button"/>
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/playerCardView2"
+                            android:layout_width="300dp"
+                            android:layout_height="530dp"
+                            android:layout_marginHorizontal="20dp"
+                            app:cardCornerRadius="30dp">
 
-                        <TextView
-                            android:layout_width="370dp"
-                            android:layout_height="600dp"
-                            android:text="3페이지"
-                            android:textColor="@drawable/selector_radio_text"
-                            android:textSize="20dp"
-                            android:gravity="center"
-                            android:layout_margin="20dp"
-                            android:background="@drawable/selector_radio_button"/>
+                            <com.google.android.exoplayer2.ui.PlayerView
+                                android:id="@+id/player_view2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/playerCardView3"
+                            android:layout_width="300dp"
+                            android:layout_height="530dp"
+                            app:cardCornerRadius="30dp"
+                            android:layout_marginHorizontal="55dp">
+
+                            <com.google.android.exoplayer2.ui.PlayerView
+                                android:id="@+id/player_view3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </com.google.android.material.card.MaterialCardView>
 
                     </LinearLayout>
-
 
 
                 </HorizontalScrollView>
@@ -175,11 +180,11 @@
                     android:layout_height="56dp"
                     android:layout_marginHorizontal="20dp"
                     android:backgroundTint="#E87FEA"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:padding="0dp"
                     android:text="수강하러 가기"
                     android:textColor="#121212"
-                    android:textSize="16dp"
-                    android:padding="0dp"
-                    android:fontFamily="@font/notosanskr_regular"/>
+                    android:textSize="16dp" />
 
             </LinearLayout>
         </LinearLayout>
