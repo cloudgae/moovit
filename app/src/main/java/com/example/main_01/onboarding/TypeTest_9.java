@@ -192,6 +192,7 @@ public class TypeTest_9 extends AppCompatActivity {
         player.setMediaSource(mediaSource);
         player.prepare();
         player.setPlayWhenReady(true); // 재생 시작
+        player.setVolume(0f);
     }
 
     @Override
