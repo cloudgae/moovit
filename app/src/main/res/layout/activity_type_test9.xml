@@ -110,14 +110,21 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="스크롤힌트"-->
+<!--                    android:textColor="@drawable/selector_radio_text"-->
+<!--                    android:textSize="20dp" -->
+<!--                    android:drawableLeft="@drawable/arrow"/>-->
+                <ImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:text="스크롤힌트"
-                    android:textColor="@drawable/selector_radio_text"
-                    android:textSize="20dp" />
+                    android:src="@drawable/arrow"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"/>
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
