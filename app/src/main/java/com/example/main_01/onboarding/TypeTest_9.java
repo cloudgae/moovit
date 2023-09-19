@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.main_01.MainActivity;
 import com.example.main_01.R;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.SimpleExoPlayer;
@@ -170,7 +171,7 @@ public class TypeTest_9 extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(TypeTest_9.this, TypeTest_11.class);
+                Intent i = new Intent(TypeTest_9.this, MainActivity.class);
                 startActivity(i);
                 finish();
             }

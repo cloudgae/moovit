@@ -107,5 +107,7 @@ public class TypeTest_1 extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
     }
 }
