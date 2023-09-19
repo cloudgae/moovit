@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".onboarding.TypeTest_0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/black"
+            android:src="@drawable/back_key" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="원하는 클래스\n가격대를 입력해주세요"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:text="* 한 달 기준"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp" />
+
+        <!--0915
+        TODO 버튼부분은 테이블레이아웃? 2*2 레이아웃으로 구성하기, 버튼 텍스트 수정, 앞뒤페이지 연결-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="6"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/fee0"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:fontFamily="@font/notosanskr_regular"
+                android:paddingLeft="13dp"
+                android:text="0원\n~10,000원"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="18dp" />
+
+            <CheckBox
+                android:id="@+id/chkT1_street"
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/chkbox_str"
+                android:button="@null"
+                android:padding="20dp" />
+
+            <CheckBox
+                android:id="@+id/chk1_choreo"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/selector_radio_button"
+                android:button="@null"
+                android:fontFamily="@font/notosanskr_regular"
+                android:paddingLeft="13dp"
+                android:text="  코레오그래피"
+                android:textColor="@drawable/selector_radio_text"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnT1_next"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="20dp"
+                android:backgroundTint="#E87FEA"
+                android:fontFamily="@font/notosanskr_regular"
+                android:padding="0dp"
+                android:text="계속하기"
+                android:textColor="#121212"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
