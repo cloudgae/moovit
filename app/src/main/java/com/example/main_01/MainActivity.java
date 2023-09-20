@@ -3,9 +3,11 @@ package com.example.main_01;
 import static android.content.ContentValues.TAG;
 
 import android.app.TabActivity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.main_01.onboarding.TypeTest_9;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
@@ -33,7 +36,7 @@ import com.google.firebase.storage.StorageReference;
 @SuppressWarnings("deprecation")
 public class MainActivity extends TabActivity {
 
-    Button wc1, wc2, wc3, wc4, wc5, wc6;
+    Button wc1, wc2, wc3, wc4, wc5, wc6, mn1, mn2, mn3, mn4;
     TextView typenm;
 
     LinearLayout typelayer;
@@ -49,6 +52,8 @@ public class MainActivity extends TabActivity {
 
         TextView tn = (TextView) findViewById(R.id.typenameclass);
 
+        Button mn3 = (Button) findViewById(R.id.menu3);
+
 //        주간 인기 클래스 버튼 TODO : 클래스 연결 시 텍스트, drawable 변경
         Button wc1 = (Button) findViewById(R.id.weeklyclass_1);
         Button wc2 = (Button) findViewById(R.id.weeklyclass_2);
@@ -60,6 +65,15 @@ public class MainActivity extends TabActivity {
         playerView1 = findViewById(R.id.player_view1);
         playerView2 = findViewById(R.id.player_view2);
         playerView3 = findViewById(R.id.player_view3);
+
+        mn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, shorts1.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         ////        TODO 1)파이어베이스 연결 - 수업 정보  2)유형 정보-영상 연결
 
