@@ -12,6 +12,7 @@ import com.example.main_01.R;
 import com.example.main_01.onboarding.TypeTest_0;
 import com.example.main_01.onboarding.TypeTest_1;
 import com.example.main_01.onboarding.TypeTest_2;
+import com.example.main_01.shorts1;
 
 public class Splash_1 extends AppCompatActivity {
 
@@ -39,6 +40,7 @@ public class Splash_1 extends AppCompatActivity {
                 Intent i = new Intent(Splash_1.this, MainActivity.class);
                 startActivity(i);
             }
+
         });
     }
 }

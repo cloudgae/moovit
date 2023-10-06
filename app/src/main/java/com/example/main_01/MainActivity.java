@@ -53,6 +53,7 @@ public class MainActivity extends TabActivity {
         TextView tn = (TextView) findViewById(R.id.typenameclass);
 
         Button mn3 = (Button) findViewById(R.id.menu3);
+        Button mn4 = (Button) findViewById(R.id.menu4);
 
 //        주간 인기 클래스 버튼 TODO : 클래스 연결 시 텍스트, drawable 변경
         Button wc1 = (Button) findViewById(R.id.weeklyclass_1);
@@ -70,6 +71,15 @@ public class MainActivity extends TabActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, shorts1.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        mn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, MyPage.class);
                 startActivity(i);
                 finish();
             }

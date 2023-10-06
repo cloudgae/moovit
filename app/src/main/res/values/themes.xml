@@ -14,5 +14,19 @@
         <!-- Customize your theme here. -->
         <item name="android:windowFullscreen">true</item>
     </style>
+    <style name="MyTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@android:color/transparent</item>
+    </style>
+    <!-- res/values/styles.xml 파일에 스타일을 정의합니다. -->
+    <style name="CustomTabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/CustomTabTextAppearance</item>
+    </style>
+
+    <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:fontFamily">@font/notosanskr_bold</item>
+        <item name="android:textSize">15sp</item> <!-- 원하는 텍스트 크기로 변경합니다. -->
+        <item name="android:textColor">#FFFFFF</item> <!-- 원하는 텍스트 색상으로 변경합니다. -->
+    </style>
+
 
 </resources>

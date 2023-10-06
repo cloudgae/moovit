@@ -414,7 +414,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="1"
+                android:text="홈"
+                android:textSize="12dp"
                 android:textColor="#FFFFFF" />
 
             <Button
@@ -422,7 +423,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="2"
+                android:text="근처 클래스"
+                android:textSize="12dp"
                 android:textColor="#FFFFFF" />
 
             <Button
@@ -431,6 +433,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="쇼츠"
+                android:textSize="12dp"
                 android:textColor="#FFFFFF" />
 
             <Button
@@ -438,7 +441,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="4"
+                android:text="마이페이지"
+                android:textSize="12dp"
                 android:textColor="#FFFFFF" />
         </TableRow>
     </TableLayout>

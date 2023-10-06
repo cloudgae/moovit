@@ -15,16 +15,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Main_01"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ShortsDancerProfile"
+            android:exported="false" />
+        <activity
+            android:name=".MyTypeInfo"
+            android:exported="false" />
+        <activity
+            android:name=".MyPage"
+            android:exported="false" />
         <activity
             android:name=".shorts1"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
         </activity>
-
         <activity
             android:name=".onboarding.TypeTest_11"
             android:exported="false">
@@ -44,6 +50,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
