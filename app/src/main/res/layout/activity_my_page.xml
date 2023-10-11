@@ -17,27 +17,27 @@
             android:id="@+id/goback"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginVertical="5dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/white_arrow"
-            android:gravity="left"
-            android:layout_marginLeft="5dp"
-            />
-        <Button
-            android:layout_width="55dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="#D9D9D9"
-            android:text="알림"
-            android:textSize="10dp"
-            android:layout_gravity="right"
-            android:layout_marginLeft="190dp"/>
-        <Button
-            android:layout_width="55dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="#D9D9D9"
-            android:text="설정"
-            android:textSize="10dp"
+            android:gravity="center"
             android:layout_marginLeft="10dp"
-            android:layout_gravity="right"
+            />
+        <android.widget.Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/alarm_button"
+            android:textSize="10dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="230dp"/>
+        <android.widget.Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/setting_button"
+            android:textSize="10dp"
+            android:layout_marginVertical="0dp"
+            android:layout_marginLeft="7dp"
+            android:layout_gravity="center"
             android:layout_marginRight="10dp"/>
     </LinearLayout>
 
