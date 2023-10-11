@@ -1,4 +1,4 @@
-package com.example.main_01;
+package com.example.main_01.shorts;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,6 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.example.main_01.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class ShortsDancerProfile extends AppCompatActivity {

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:orientation="vertical"
-    tools:context=".MyTypeInfo">
+    tools:context=".mypage.MyTypeInfo">
 
 
     <FrameLayout
@@ -14,23 +14,24 @@
         android:layout_height="wrap_content">
 
         <android.widget.Button
+            android:id="@+id/goback"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginVertical="7dp"
+            android:layout_marginVertical="15dp"
             android:background="@drawable/white_arrow"
             android:gravity="left"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="내 유형 보기"
-            android:textSize="15dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
+            android:fontFamily="@font/notosanskr_bold"
             android:gravity="center"
+            android:text="내 유형 보기"
             android:textColor="#FFFFFF"
-            android:fontFamily="@font/notosanskr_bold"/>
+            android:textSize="17dp" />
     </FrameLayout>
 
     <ScrollView

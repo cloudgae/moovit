@@ -1,4 +1,4 @@
-package com.example.main_01;
+package com.example.main_01.shorts;
 
 import android.os.Bundle;
 
@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.main_01.R;
 
 
 public class ShortsDancerPortfolioFragment2 extends Fragment {

@@ -1,5 +1,4 @@
-package com.example.main_01;
-import static androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
+package com.example.main_01.shorts;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,6 +14,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.main_01.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class shorts1 extends AppCompatActivity {

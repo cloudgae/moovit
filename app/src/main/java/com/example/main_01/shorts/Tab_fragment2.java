@@ -1,5 +1,6 @@
-package com.example.main_01;
-
+package com.example.main_01.shorts;
+import android.content.Intent;
+import android.widget.Button;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,19 +10,28 @@ import android.widget.VideoView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.main_01.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class Tab_fragment1 extends Fragment {
+public class Tab_fragment2 extends Fragment {
 
+    private Button dp1;
     private VideoView videoView;
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_tab1, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_tab2, container, false);
         videoView = rootView.findViewById(R.id.videoView);
 
         // 파이어베이스 스토리지 참조 생성
@@ -29,7 +39,7 @@ public class Tab_fragment1 extends Fragment {
         StorageReference storageRef = storage.getReference();
 
         // 파이어베이스 스토리지에서 영상 다운로드 URL 가져오기
-        StorageReference videoRef = storageRef.child("videos/PCM1.mp4"); // 영상 파일의 경로를 지정해주세요
+        StorageReference videoRef = storageRef.child("videos/PCM2.mp4"); // 영상 파일의 경로를 지정해주세요
 
         videoRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
             @Override
@@ -43,6 +53,17 @@ public class Tab_fragment1 extends Fragment {
                 } else {
                     // 영상 URL 가져오기 실패
                 }
+            }
+        });
+
+        dp1 = rootView.findViewById(R.id.dancer_profile); // dp1 버튼을 초기화합니다.
+
+        dp1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // ShortsDancerProfile 액티비티로 이동합니다.
+                Intent i = new Intent(getActivity(), ShortsDancerProfile.class);
+                startActivity(i);
             }
         });
 

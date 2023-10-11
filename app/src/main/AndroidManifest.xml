@@ -33,16 +33,22 @@
             android:name=".apply.Apply_0"
             android:exported="false" />
         <activity
-            android:name=".ShortsDancerProfile"
+            android:name=".mypage.MyPageLikelist"
             android:exported="false" />
         <activity
-            android:name=".MyTypeInfo"
+            android:name=".mypage.MyPageClass"
             android:exported="false" />
         <activity
-            android:name=".MyPage"
+            android:name=".shorts.ShortsDancerProfile"
             android:exported="false" />
         <activity
-            android:name=".shorts1"
+            android:name=".mypage.MyTypeInfo"
+            android:exported="false" />
+        <activity
+            android:name=".mypage.MyPage"
+            android:exported="false" />
+        <activity
+            android:name=".shorts.shorts1"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
