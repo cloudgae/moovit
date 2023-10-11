@@ -27,30 +27,11 @@ public class Apply_0 extends AppCompatActivity {
 
         pager = (ViewPager) findViewById(R.id.pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
-//        Button btn1 = (Button) findViewById(R.id.btn1);
-//        Button btn2 = (Button) findViewById(R.id.btn2);
-//        Button btn3 = (Button) findViewById(R.id.btn3);
-//        pager.setAdapter(new pagerAdapter(getSupportFragmentManager()));
-//        pager.setCurrentItem(0);
 
         pager.setOffscreenPageLimit(3);
         tabLayout.setupWithViewPager(pager);
         pager.setAdapter(new PageAdapter(getSupportFragmentManager(),this));
 
-//        View.OnClickListener movePageListener = new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                int tag = (int) view.getTag();
-//                pager.setCurrentItem(tag);
-//            }
-//        };
-//
-//        btn1.setOnClickListener(movePageListener);
-//        btn1.setTag(1);
-//        btn2.setOnClickListener(movePageListener);
-//        btn2.setTag(2);
-//        btn3.setOnClickListener(movePageListener);
-//        btn3.setTag(3);
     }
 
     static class PageAdapter extends FragmentStatePagerAdapter{
@@ -72,7 +53,7 @@ public class Apply_0 extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 0;
+            return 3;
         }
     }
 

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".apply.Apply_2"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:background="@drawable/back_key"
+            android:src="@drawable/back_key"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_bold"
+            android:gravity="center"
+            android:text="신청하기"
+            android:textSize="15dp" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="결제수단 선택"
+        android:fontFamily="@font/notosanskr_bold"
+        android:textSize="15dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+        <RadioButton
+            android:layout_width="155dp"
+            android:layout_height="47dp"
+            android:text="신용/체크카드"
+            android:background="@drawable/apply_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="#c5c5c5"
+            android:layout_marginRight="10dp"/>
+        <RadioButton
+            android:layout_width="155dp"
+            android:layout_height="47dp"
+            android:text="휴대폰 결제"
+            android:background="@drawable/apply_radio"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="#c5c5c5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <RadioButton
+                android:layout_width="155dp"
+                android:layout_height="47dp"
+                android:text="가상계좌"
+                android:background="@drawable/apply_radio"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="#c5c5c5"
+                android:layout_marginRight="10dp"/>
+            <RadioButton
+                android:layout_width="155dp"
+                android:layout_height="47dp"
+                android:text="간편결제"
+                android:background="@drawable/apply_radio"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="#c5c5c5" />
+        </LinearLayout>
+    </RadioGroup>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="33,000원 결제하기"
+        android:fontFamily="@font/notosanskr_regular"
+        android:textSize="16dp"
+        android:background="@drawable/apply2_button"/>
+
+
+</LinearLayout>

@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.main_01.apply.Apply_0;
 import com.example.main_01.onboarding.TypeTest_9;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.MediaSource;
@@ -228,6 +229,16 @@ public class MainActivity extends TabActivity {
                     });
         }
 
+        //클래스 상세정보 연결 TODO : 각 클래스 정보에 맞는 정보 연결
+        wc1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, Apply_0.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
     }
 
     private void initializePlayer(String videoUrl, com.google.android.exoplayer2.ui.PlayerView playerView) {
@@ -255,4 +266,5 @@ public class MainActivity extends TabActivity {
             player.release(); // 플레이어 해제
         }
     }
+
 }

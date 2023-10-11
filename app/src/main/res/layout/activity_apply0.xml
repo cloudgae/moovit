@@ -4,202 +4,184 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".apply.Apply_0"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".apply.Apply_0">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_sign_back"
+                android:layout_gravity="center"
                 android:background="@color/black"
-                android:layout_gravity="center"/>
+                app:srcCompat="@drawable/ic_sign_back" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_bold"
                 android:gravity="center"
                 android:text="에스파 타이틀곡 클래스"
-                android:fontFamily="@font/notosanskr_bold"
-                android:textSize="15dp"/>
-            </LinearLayout>
-            
+                android:textSize="15dp" />
+        </LinearLayout>
+
+
+        <!--    <ScrollView-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/purple_200" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="에스파 타이틀곡 클래스"
+                android:textSize="22dp" />
+
+            <RatingBar
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:numStars="5"
+                android:progressBackgroundTint="@color/white"
+                android:progressTint="@color/white"
+                android:rating="4"
+                android:stepSize="0.5" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="@color/purple_200"/>
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="에스파 타이틀곡 클래스"
-                    android:fontFamily="@font/notosanskr_medium"
-                    android:textSize="22dp"
-                    android:layout_marginHorizontal="20dp" />
-                <RatingBar
-                    style="@style/Widget.AppCompat.RatingBar.Small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:numStars="5"
-                    android:stepSize="0.5"
-                    android:rating="4"
-                    android:progressTint="@color/white"
-                    android:progressBackgroundTint="@color/white"
-                    android:layout_marginHorizontal="20dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="20dp">
-                    <TextView
-                        android:layout_width="155dp"
-                        android:layout_height="78dp"
-                        android:background="@drawable/selector_radio_button"
-                        android:drawableTop="@drawable/ellipse173"
-                        android:text="KPOP"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:layout_marginRight="5dp"/>
-                    <TextView
-                        android:layout_width="155dp"
-                        android:layout_height="78dp"
-                        android:background="@drawable/selector_radio_button"
-                        android:drawableTop="@drawable/ellipse173"
-                        android:text="KPOP"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:layout_marginLeft="5dp"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="10dp">
-                    <TextView
-                        android:layout_width="155dp"
-                        android:layout_height="78dp"
-                        android:background="@drawable/selector_radio_button"
-                        android:drawableTop="@drawable/ellipse173"
-                        android:text="KPOP"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:layout_marginRight="5dp"/>
-                    <TextView
-                        android:layout_width="155dp"
-                        android:layout_height="78dp"
-                        android:background="@drawable/selector_radio_button"
-                        android:drawableTop="@drawable/ellipse173"
-                        android:text="KPOP"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:layout_marginLeft="5dp"/>
-                </LinearLayout>
+                    android:layout_width="155dp"
+                    android:layout_height="78dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/selector_radio_button"
+                    android:drawableTop="@drawable/ellipse173"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="KPOP" />
 
-                <LinearLayout
-                    android:id="@+id/ll"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <!--<Button
-                        android:id="@+id/btn1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="상세정보"
-                        android:fontFamily="@font/notosanskr_bold"
-                        android:textSize="15dp"
-                        android:backgroundTint="@color/black"/>
-                    <Button
-                        android:id="@+id/btn2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="후기"
-                        android:fontFamily="@font/notosanskr_bold"
-                        android:textSize="15dp"
-                        android:backgroundTint="@color/black"/>
-                    <Button
-                        android:id="@+id/btn3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Q&amp;A"
-                        android:fontFamily="@font/notosanskr_bold"
-                        android:textSize="15dp"
-                        android:backgroundTint="@color/black"/>-->
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tab_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="?actionBarSize"
-                        app:tabIndicator="@color/white"
-                        app:tabTextColor="@color/white"
-                        app:tabSelectedTextColor="@color/white"/>
-                    <androidx.viewpager.widget.ViewPager
-                        android:id="@+id/pager"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
-                </LinearLayout>
-<!--                <androidx.viewpager.widget.ViewPager-->
-<!--                    android:id="@+id/pager"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent">-->
+                <TextView
+                    android:layout_width="155dp"
+                    android:layout_height="78dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/selector_radio_button"
+                    android:drawableTop="@drawable/ellipse173"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="KPOP" />
+            </LinearLayout>
 
-<!--                </androidx.viewpager.widget.ViewPager>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="155dp"
+                    android:layout_height="78dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/selector_radio_button"
+                    android:drawableTop="@drawable/ellipse173"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="KPOP" />
+
+                <TextView
+                    android:layout_width="155dp"
+                    android:layout_height="78dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/selector_radio_button"
+                    android:drawableTop="@drawable/ellipse173"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="KPOP" />
+
 
             </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:background="#313131"
-        android:layout_gravity="bottom"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#313131"
-            android:text="33,000원"
-            android:fontFamily="@font/notosanskr_medium"
-            android:textSize="22dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_gravity="center"/>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:tabIndicator="@color/white"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="@color/white" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <!--    </ScrollView>-->
+
+
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="108dp"
-            android:layout_height="wrap_content"
-            android:text="신청하기"
-            android:fontFamily="@font/notosanskr_regular"
-            android:textSize="12dp"
-            android:backgroundTint="#858585"
-            android:layout_gravity="center"
-            android:layout_marginRight="20dp"/>
+            android:layout_weight="1" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_gravity="bottom"
+            android:background="#313131"
+            android:orientation="horizontal"
+            android:layout_marginBottom="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:background="#313131"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="33,000원"
+                android:textSize="22dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:backgroundTint="#858585"
+                android:fontFamily="@font/notosanskr_regular"
+                android:text="신청하기"
+                android:textSize="12dp" />
+        </LinearLayout>
 
     </LinearLayout>
-
 </LinearLayout>
