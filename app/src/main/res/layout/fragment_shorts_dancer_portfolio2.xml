@@ -14,6 +14,7 @@
         <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:columnCount="2"
             android:rowCount="2">
 
@@ -28,9 +29,8 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/playerCardView1"
-                    android:layout_width="150dp"
-                    android:layout_height="230dp"
-                    android:layout_marginLeft="23dp"
+                    android:layout_width="154dp"
+                    android:layout_height="220dp"
                     app:cardCornerRadius="10dp">
 
                     <com.google.android.exoplayer2.ui.PlayerView
@@ -41,9 +41,9 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/playerCardView2"
-                    android:layout_width="150dp"
-                    android:layout_height="230dp"
-                    android:layout_marginLeft="12dp"
+                    android:layout_width="154dp"
+                    android:layout_height="220dp"
+                    android:layout_marginLeft="10dp"
                     app:cardCornerRadius="10dp">
 
                     <com.google.android.exoplayer2.ui.PlayerView
@@ -58,15 +58,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="0dp"
+                android:layout_gravity="center"
                 android:layout_row="1"
                 android:layout_column="0"
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/playerCardView3"
-                    android:layout_width="150dp"
-                    android:layout_height="230dp"
-                    android:layout_marginLeft="23dp"
+                    android:layout_width="154dp"
+                    android:layout_height="220dp"
                     app:cardCornerRadius="10dp">
 
                     <com.google.android.exoplayer2.ui.PlayerView
@@ -77,9 +77,9 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/playerCardView4"
-                    android:layout_width="150dp"
-                    android:layout_height="230dp"
-                    android:layout_marginLeft="12dp"
+                    android:layout_width="154dp"
+                    android:layout_height="220dp"
+                    android:layout_marginLeft="10dp"
                     app:cardCornerRadius="10dp">
 
                     <com.google.android.exoplayer2.ui.PlayerView

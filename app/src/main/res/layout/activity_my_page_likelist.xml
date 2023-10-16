@@ -27,11 +27,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:fontFamily="@font/notosanskr_bold"
+            android:fontFamily="@font/notosanskr_regular"
             android:gravity="center"
             android:text="관심 목록"
             android:textColor="#FFFFFF"
-            android:textSize="17dp" />
+            android:textSize="16dp" />
     </FrameLayout>
 
 
@@ -42,6 +42,7 @@
         app:tabIndicatorColor="#FFFFFF"
         app:tabSelectedTextColor="#FFFFFF"
         app:tabBackground="@drawable/tab_background"
+        app:tabTextAppearance="@style/NotoSansRegularTabStyle"
         app:tabTextColor="#707070" />
 
     <androidx.viewpager.widget.ViewPager

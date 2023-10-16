@@ -8,6 +8,7 @@
     android:background="@color/black"
     tools:context=".mypage.MyPage">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,164 +18,213 @@
             android:id="@+id/goback"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginVertical="10dp"
             android:background="@drawable/white_arrow"
             android:gravity="center"
             android:layout_marginLeft="10dp"
             />
         <android.widget.Button
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginVertical="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="@drawable/alarm_button"
             android:textSize="10dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="230dp"/>
+            android:layout_marginLeft="220dp"/>
+
         <android.widget.Button
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="@drawable/setting_button"
-            android:textSize="10dp"
             android:layout_marginVertical="0dp"
-            android:layout_marginLeft="7dp"
+            android:layout_marginLeft="0dp"
             android:layout_gravity="center"
             android:layout_marginRight="10dp"/>
     </LinearLayout>
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="0dp"
-        android:layout_marginVertical="5dp">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-        <Button
-            android:id="@+id/user_profile"
-            android:layout_width="260dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
-            android:drawableLeft="@drawable/ellipse"
-            android:fontFamily="@font/notosanskr_regular"
-            android:gravity="left|center"
-            android:text="감각을 주도하는 무버\n무빗유저01"
-            android:textColor="@color/white"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
-            android:text="프로필 수정"
-            android:fontFamily="@font/notosanskr_regular"
-            android:layout_gravity="bottom"
-            android:textColor="#858585"
-            android:textSize="10dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_radio_button"
-        android:gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp">
-
-        <Button
-            android:id="@+id/classlist"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:backgroundTint="#3D3D3D"
-            android:drawableTop="@drawable/class_history"
-            android:text="수강 내역"
-            android:textSize="10dp" />
-
-        <Button
-            android:id="@+id/likelist"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:text="관심 목록"
-            android:textSize="10dp"
-            android:drawableTop="@drawable/class_history"
-            android:backgroundTint="#3D3D3D"/>
-        <Button
-            android:id="@+id/mytype_info"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:text="내 유형 정보"
-            android:textSize="10dp"
-            android:drawableTop="@drawable/class_history"
-            android:backgroundTint="#3D3D3D"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="30dp"
-        android:orientation="vertical">
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="내 정보"
-            android:textSize="12dp"
-            android:textColor="#858585"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="나의 문의"
-            android:textSize="14dp"
-            android:textColor="#FFFFFF"
-            android:fontFamily="@font/notosanskr_bold"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="나의 후기"
-            android:textSize="14dp"
-            android:textColor="#FFFFFF"
-            android:fontFamily="@font/notosanskr_bold"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="환경설정"
-            android:textSize="14dp"
-            android:textColor="#FFFFFF"
-            android:fontFamily="@font/notosanskr_bold"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/line"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"/>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="30dp"
-        android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:layout_marginVertical="5dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="고객 센터"
-            android:textSize="12dp"
-            android:textColor="#858585"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="문의사항"
-            android:textSize="14dp"
-            android:textColor="#FFFFFF"
-            android:fontFamily="@font/notosanskr_bold"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="공지사항"
-            android:textSize="14dp"
-            android:textColor="#FFFFFF"
-            android:fontFamily="@font/notosanskr_bold"/>
-    </LinearLayout>
+                <Button
+                    android:id="@+id/user_profile"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:drawableLeft="@drawable/ellipse"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:gravity="left|center"
+                    android:text="무빗 유저 01"
+                    android:textColor="@color/white"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/black"
+                    android:text="프로필 수정"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:layout_gravity="center"
+                    android:textColor="#858585"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="365dp"
+                android:background="@drawable/background_example">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="320dp"
+                        android:layout_height="214dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/background_example"/>
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="180dp"
+                        android:text="감각을 주도하는 무버"
+                        android:textSize="10dp"
+                        android:fontFamily="@font/notosanskr_bold"/>
+
+
+                    <LinearLayout
+                        android:layout_width="320dp"
+                        android:layout_height="94dp"
+                        android:background="@drawable/mypage_iconbar"
+                        android:gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="250dp">
+
+                        <Button
+                            android:id="@+id/classlist"
+                            android:layout_width="100dp"
+                            android:layout_height="90dp"
+                            android:backgroundTint="#FFFFFF"
+                            android:background="@drawable/mypage_button1"
+
+                            android:textSize="10dp" />
+
+                        <Button
+                            android:id="@+id/likelist"
+                            android:layout_width="100dp"
+                            android:layout_height="90dp"
+                            android:background="@drawable/mypage_button2" />
+                        <Button
+                            android:id="@+id/mytype_info"
+                            android:layout_width="100dp"
+                            android:layout_height="90dp"
+                            android:background="@drawable/mypage_button3"
+                            android:backgroundTint="#3D3D3D"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="내 정보"
+                    android:textSize="12dp"
+                    android:textColor="#858585"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="나의 문의"
+                    android:textSize="14dp"
+                    android:includeFontPadding="false"
+                    android:layout_marginBottom="15dp"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/notosanskr_bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="나의 후기"
+                    android:textSize="14dp"
+                    android:layout_marginBottom="15dp"
+                    android:includeFontPadding="false"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/notosanskr_bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="환경설정"
+                    android:textSize="14dp"
+                    android:layout_marginBottom="15dp"
+                    android:includeFontPadding="false"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/notosanskr_bold"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/line"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="25dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="고객 센터"
+                    android:textSize="12dp"
+                    android:textColor="#858585"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="문의사항"
+                    android:textSize="14dp"
+                    android:layout_marginBottom="15dp"
+                    android:textColor="#FFFFFF"
+                    android:includeFontPadding="false"
+                    android:fontFamily="@font/notosanskr_bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="공지사항"
+                    android:textSize="14dp"
+                    android:includeFontPadding="false"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/notosanskr_bold"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </LinearLayout>

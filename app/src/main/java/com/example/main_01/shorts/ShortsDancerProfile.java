@@ -9,17 +9,35 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.main_01.R;
+import com.example.main_01.mypage.MyPage;
+import com.example.main_01.mypage.MyPageClass;
 import com.google.android.material.tabs.TabLayout;
 
 public class ShortsDancerProfile extends AppCompatActivity {
+
+    Button arw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shorts_dancer_profile);
+
+        Button arw = (Button) findViewById(R.id.goback);
+
+        arw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ShortsDancerProfile.this, shorts1.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
 
         ViewPager pager = findViewById(R.id.pager);

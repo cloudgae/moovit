@@ -23,7 +23,7 @@ public class Tab_fragment1 extends Fragment {
         videoView = rootView.findViewById(R.id.videoView);
 
         // Amazon S3에서 영상 URL 설정
-        String videoURL = "https://moovitbucket.s3.ap-northeast-2.amazonaws.com/UIS1.mp4";
+        String videoURL = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS1.mp4";
 
         // VideoView에 영상 설정
         videoView.setVideoURI(Uri.parse(videoURL));

@@ -1,10 +1,12 @@
 package com.example.main_01.shorts;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.VideoView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +17,7 @@ import com.example.main_01.R;
 public class Tab_fragment2 extends Fragment {
 
     private VideoView videoView;
+    Button dp1;
 
     @Nullable
     @Override
@@ -23,13 +26,25 @@ public class Tab_fragment2 extends Fragment {
         videoView = rootView.findViewById(R.id.videoView);
 
         // Amazon S3에서 영상 URL 설정
-        String videoURL = "https://moovitbucket.s3.ap-northeast-2.amazonaws.com/UIS2.mp4";
+        String videoURL = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS2.mp4";
 
         // VideoView에 영상 설정
         videoView.setVideoURI(Uri.parse(videoURL));
         videoView.start(); // 영상 재생 시작
 
+        dp1 = rootView.findViewById(R.id.dancer_profile); // dp1 버튼을 초기화합니다.
+
+        dp1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // ShortsDancerProfile 액티비티로 이동합니다.
+                Intent i = new Intent(getActivity(), ShortsDancerProfile.class);
+                startActivity(i);
+            }
+        });
+
         return rootView;
+
     }
 }
 

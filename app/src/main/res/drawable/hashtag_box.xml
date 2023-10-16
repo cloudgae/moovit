@@ -1,31 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_checked="true"
-        android:drawable="@drawable/hashtag">
+    <item>
         <shape android:shape="rectangle">
-            <solid android:color="#80FFFFFF"/> <!-- 알파 값 80 추가 -->
-
+            <solid android:color="#33FFFFFF"/>
             <corners
                 android:bottomLeftRadius="100dp"
                 android:bottomRightRadius="100dp"
                 android:topLeftRadius="100dp"
                 android:topRightRadius="100dp"/>
-            <size
-                android:height="84dp"/>
         </shape>
-    </item>
-
-    <item android:state_checked="false"
-        android:drawable="@drawable/hashtag">
-        <shape android:shape="rectangle">
-            <solid android:color="#803D3D3D"/> <!-- 알파 값 80 추가 -->
-            <corners
-                android:bottomLeftRadius="100dp"
-                android:bottomRightRadius="100dp"
-                android:topLeftRadius="100dp"
-                android:topRightRadius="100dp"/>
-            <size
-                android:height="84dp"/>
-        </shape>
+        <item>
+            <TextView
+                android:textColor="#FFFFFF"/> <!-- 텍스트 색상을 흰색으로 설정 -->
+        </item>
     </item>
 </selector>

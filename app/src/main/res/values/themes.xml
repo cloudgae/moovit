@@ -15,6 +15,8 @@
         <item name="android:windowFullscreen">true</item>
       <!--  <item name="android:background">@color/black</item>-->
         <item name="android:textColor">@color/white</item>
+        <item name="android:textViewStyle">@style/notosansTextView</item>
+        <item name="android:buttonStyle">@style/notosansButton</item>
     </style>
     <style name="MyTabLayout" parent="Widget.Design.TabLayout">
         <item name="tabBackground">@android:color/transparent</item>
@@ -23,7 +25,20 @@
     <style name="CustomTabLayoutStyle" parent="Widget.Design.TabLayout">
         <item name="tabTextAppearance">@style/CustomTabTextAppearance</item>
     </style>
-<!--    <style name="textviewtheme">-->
+    <style name="notosansTextView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/notosanskr_medium</item>
+    </style>
+
+    <style name="notosansButton" parent="android:Widget.Button">
+        <item name="android:fontFamily">@font/notosanskr_bold</item>
+    </style>
+    <style name="NotoSansRegularTabStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:fontFamily">@font/notosanskr_regular</item>
+        <item name="android:textSize">14sp</item> <!-- 폰트 크기를 원하는 크기로 설정합니다. -->
+        <item name="android:textColor">#FFFFFF</item> <!-- 텍스트 색상을 흰색으로 설정합니다. -->
+    </style>
+
+    <!--    <style name="textviewtheme">-->
 <!--        <item name="android:background">#313131</item>-->
 <!--        <item name="android:radius">30dp</item>-->
 <!--        <item name="android:fontFamily">@font/notosanskr_regular</item>-->
