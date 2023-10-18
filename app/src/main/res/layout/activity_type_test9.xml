@@ -10,8 +10,11 @@
 
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollX="0dp"
+        android:scrollY="0dp">
 
 
         <LinearLayout
@@ -135,8 +138,11 @@
                     android:layout_marginLeft="20dp"/>
 
                 <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:scrollX="0dp"
+                    android:scrollY="0dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -152,24 +158,30 @@
                             android:layout_height="550dp"
                             app:cardCornerRadius="30dp"
                             android:layout_marginHorizontal="55dp">
-
                             <VideoView
                                 android:id="@+id/player_view1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"/>
                         </com.google.android.material.card.MaterialCardView>
-
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/playerCardView2"
                             android:layout_width="310dp"
                             android:layout_height="550dp"
-                            android:layout_marginHorizontal="20dp"
-                            app:cardCornerRadius="30dp">
+                            app:cardCornerRadius="30dp"
+                            android:layout_marginHorizontal="55dp">
 
                             <VideoView
                                 android:id="@+id/player_view2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"/>
                         </com.google.android.material.card.MaterialCardView>
 
                         <com.google.android.material.card.MaterialCardView
@@ -181,8 +193,12 @@
 
                             <VideoView
                                 android:id="@+id/player_view3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"/>
                         </com.google.android.material.card.MaterialCardView>
 
                     </LinearLayout>

@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.VideoView;
@@ -56,6 +58,12 @@ public class MainActivity extends TabActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        ScrollView scrollView = findViewById(R.id.scrollView);
+//        scrollView.scrollTo(0, 0);
+//
+//        HorizontalScrollView horizontalScrollView = findViewById(R.id.horizontalScrollView);
+//        horizontalScrollView.scrollTo(0, 0);
 
         TextView tn = (TextView) findViewById(R.id.typenameclass);
 

@@ -11,7 +11,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -53,6 +55,11 @@ public class TypeTest_9 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_type_test9);
+
+//        ScrollView scrollView = findViewById(R.id.scrollView);
+//        scrollView.scrollTo(0, 0);
+//        HorizontalScrollView horizontalScrollView = findViewById(R.id.horizontalScrollView);
+//        horizontalScrollView.scrollTo(0, 0);
 
         typename = (TextView) findViewById(R.id.typename);
         typefeature1 = (TextView) findViewById(R.id.typefeature1);
