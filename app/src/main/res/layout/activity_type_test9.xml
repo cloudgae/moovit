@@ -10,8 +10,11 @@
 
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollX="0dp"
+        android:scrollY="0dp">
 
 
         <LinearLayout
@@ -135,54 +138,69 @@
                     android:layout_marginLeft="20dp"/>
 
                 <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:scrollX="0dp"
+                    android:scrollY="0dp"
+                    android:layout_marginHorizontal="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_marginTop="0dp"
-                        android:layout_marginBottom="0dp">
+                        android:layout_marginBottom="0dp"
+                        >
 
                         <!--                        추후 gif 또는 동영상 삽입 & 뷰페이저로 바꾸는것도 고려-->
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/playerCardView1"
-                            android:layout_width="310dp"
-                            android:layout_height="550dp"
+                            android:layout_width="270dp"
+                            android:layout_height="480dp"
                             app:cardCornerRadius="30dp"
-                            android:layout_marginHorizontal="55dp">
-
-                            <com.google.android.exoplayer2.ui.PlayerView
+                            android:layout_marginRight="20dp">
+                            <VideoView
                                 android:id="@+id/player_view1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"/>
                         </com.google.android.material.card.MaterialCardView>
-
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/playerCardView2"
-                            android:layout_width="310dp"
-                            android:layout_height="550dp"
-                            android:layout_marginHorizontal="20dp"
-                            app:cardCornerRadius="30dp">
+                            android:layout_width="270dp"
+                            android:layout_height="480dp"
+                            app:cardCornerRadius="30dp"
+                            android:layout_marginRight="20dp">
 
-                            <com.google.android.exoplayer2.ui.PlayerView
+                            <VideoView
                                 android:id="@+id/player_view2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"/>
                         </com.google.android.material.card.MaterialCardView>
 
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/playerCardView3"
-                            android:layout_width="310dp"
-                            android:layout_height="550dp"
+                            android:layout_width="270dp"
+                            android:layout_height="480dp"
                             app:cardCornerRadius="30dp"
-                            android:layout_marginHorizontal="55dp">
+                            android:layout_marginRight="20dp">
 
-                            <com.google.android.exoplayer2.ui.PlayerView
+                            <VideoView
                                 android:id="@+id/player_view3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="fitXY"
+                                android:adjustViewBounds="true"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"/>
                         </com.google.android.material.card.MaterialCardView>
 
                     </LinearLayout>

@@ -21,7 +21,7 @@ import java.util.Map;
 public class TypeTest_6 extends AppCompatActivity {
 
     RadioGroup rbg_T6;
-    RadioButton rbT6_1, rbT6_2, rbT6_3, rbT6_4;
+    RadioButton rbT6_1, rbT6_2, rbT6_3, rbT6_4, rbT6_5;
     ProgressBar prbar;
 
     @Override
@@ -33,6 +33,8 @@ public class TypeTest_6 extends AppCompatActivity {
         rbT6_1 = (RadioButton) findViewById(R.id.rbT6_1);
         rbT6_2 = (RadioButton) findViewById(R.id.rbT6_2);
         rbT6_3 = (RadioButton) findViewById(R.id.rbT6_3);
+        rbT6_4 = (RadioButton) findViewById(R.id.rbT6_4);
+        rbT6_5 = (RadioButton) findViewById(R.id.rbT6_5);
 
         prbar = (ProgressBar) findViewById(R.id.progressbar);
 
@@ -44,16 +46,18 @@ public class TypeTest_6 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT6_1.isChecked() == true){
+                    dbref.update("M", 3);
+                    dbref.update("S", 0);
 //                    dbref.update("Q6", "1");
-                    dbref.update("Q6", "S");
+//                    dbref.update("Q6", "S");
 //                    dbref.update("TYPE", FieldValue.arrayUnion("S"));
 //                    dbref.update("S", true);
 //                    dbref.update("TYPE", "S", SetOptions.merge());
                 }
                 prbar.setIndeterminate(false);
-                prbar.setProgress(100);
+//                prbar.setProgress(100);
 
-                Intent i = new Intent(TypeTest_6.this, TypeTest_8.class);
+                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
                 startActivity(i);
             }
         });
@@ -62,16 +66,18 @@ public class TypeTest_6 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT6_2.isChecked() == true){
+                    dbref.update("M", 2);
+                    dbref.update("S", 0);
 //                    dbref.update("Q6", "2");
-                    dbref.update("Q6", "M");
+//                    dbref.update("Q6", "M");
 //                    dbref.update("TYPE", FieldValue.arrayUnion("M"));
 //                    dbref.update("M", true);
 //                    dbref.update("TYPE", "M", SetOptions.merge());
                 }
                 prbar.setIndeterminate(false);
-                prbar.setProgress(100);
+//                prbar.setProgress(100);
 
-                Intent i = new Intent(TypeTest_6.this, TypeTest_8.class);
+                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
                 startActivity(i);
             }
         });
@@ -80,16 +86,58 @@ public class TypeTest_6 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(rbT6_3.isChecked() == true){
+                    dbref.update("M", 1);
+                    dbref.update("S", 0);
 //                    dbref.update("Q6", "3");
-                    dbref.update("Q6", "M");
+//                    dbref.update("Q6", "M");
 //                    dbref.update("TYPE", FieldValue.arrayUnion("M"));
 //                    dbref.update("M", true);
 //                    dbref.update("TYPE", "M", SetOptions.merge());
                 }
                 prbar.setIndeterminate(false);
-                prbar.setProgress(100);
+//                prbar.setProgress(100);
 
-                Intent i = new Intent(TypeTest_6.this, TypeTest_8.class);
+                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
+                startActivity(i);
+            }
+        });
+
+        rbT6_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(rbT6_4.isChecked() == true){
+                    dbref.update("M", 1);
+                    dbref.update("S", 1);
+//                    dbref.update("Q6", "3");
+//                    dbref.update("Q6", "M");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("M"));
+//                    dbref.update("M", true);
+//                    dbref.update("TYPE", "M", SetOptions.merge());
+                }
+                prbar.setIndeterminate(false);
+//                prbar.setProgress(100);
+
+                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
+                startActivity(i);
+            }
+        });
+
+        rbT6_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(rbT6_5.isChecked() == true){
+                    dbref.update("M", 0);
+                    dbref.update("S", 2);
+//                    dbref.update("Q6", "3");
+//                    dbref.update("Q6", "M");
+//                    dbref.update("TYPE", FieldValue.arrayUnion("M"));
+//                    dbref.update("M", true);
+//                    dbref.update("TYPE", "M", SetOptions.merge());
+                }
+                prbar.setIndeterminate(false);
+//                prbar.setProgress(100);
+
+                Intent i = new Intent(TypeTest_6.this, TypeTest_7.class);
                 startActivity(i);
             }
         });
