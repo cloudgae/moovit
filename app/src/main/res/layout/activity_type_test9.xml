@@ -153,7 +153,7 @@
                             app:cardCornerRadius="30dp"
                             android:layout_marginHorizontal="55dp">
 
-                            <com.google.android.exoplayer2.ui.PlayerView
+                            <VideoView
                                 android:id="@+id/player_view1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
@@ -166,7 +166,7 @@
                             android:layout_marginHorizontal="20dp"
                             app:cardCornerRadius="30dp">
 
-                            <com.google.android.exoplayer2.ui.PlayerView
+                            <VideoView
                                 android:id="@+id/player_view2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
@@ -179,7 +179,7 @@
                             app:cardCornerRadius="30dp"
                             android:layout_marginHorizontal="55dp">
 
-                            <com.google.android.exoplayer2.ui.PlayerView
+                            <VideoView
                                 android:id="@+id/player_view3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
