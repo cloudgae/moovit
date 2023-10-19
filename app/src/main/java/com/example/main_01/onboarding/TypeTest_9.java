@@ -42,13 +42,13 @@ public class TypeTest_9 extends AppCompatActivity {
     String value4, value5, value6;
 
     private SimpleExoPlayer player;
-//    private com.google.android.exoplayer2.ui.PlayerView playerView1;
-//    private com.google.android.exoplayer2.ui.PlayerView playerView2;
-//    private com.google.android.exoplayer2.ui.PlayerView playerView3;
+    private com.google.android.exoplayer2.ui.PlayerView playerView1;
+    private com.google.android.exoplayer2.ui.PlayerView playerView2;
+    private com.google.android.exoplayer2.ui.PlayerView playerView3;
 
-    private VideoView videoView1;
-    private VideoView videoView2;
-    private VideoView videoView3;
+//    private VideoView videoView1;
+//    private VideoView videoView2;
+//    private VideoView videoView3;
     String videoURL1, videoURL2, videoURL3;
 
     @Override
@@ -68,9 +68,12 @@ public class TypeTest_9 extends AppCompatActivity {
         typelayer = (LinearLayout) findViewById(R.id.typelayer);
         btnNext = (Button) findViewById(R.id.btnT1_next);
 
-        videoView1 = findViewById(R.id.player_view1);
-        videoView2 = findViewById(R.id.player_view2);
-        videoView3 = findViewById(R.id.player_view3);
+//        videoView1 = findViewById(R.id.player_view1);
+//        videoView2 = findViewById(R.id.player_view2);
+//        videoView3 = findViewById(R.id.player_view3);
+        playerView1 = findViewById(R.id.player_view1);
+        playerView2 = findViewById(R.id.player_view2);
+        playerView3 = findViewById(R.id.player_view3);
 
         moover = Long.valueOf(0);
         starter = Long.valueOf(0);
@@ -174,12 +177,15 @@ public class TypeTest_9 extends AppCompatActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "PCM":
                                                                 typelayer.setBackgroundResource(R.drawable.pcm);
@@ -188,12 +194,15 @@ public class TypeTest_9 extends AppCompatActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "UCS":
                                                                 typelayer.setBackgroundResource(R.drawable.ucs);
@@ -202,12 +211,15 @@ public class TypeTest_9 extends AppCompatActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "UCM":
                                                                 typelayer.setBackgroundResource(R.drawable.ucm);
@@ -216,12 +228,15 @@ public class TypeTest_9 extends AppCompatActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "PIS":
                                                                 typelayer.setBackgroundResource(R.drawable.pis);
@@ -230,12 +245,15 @@ public class TypeTest_9 extends AppCompatActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "PIM":
                                                                 typelayer.setBackgroundResource(R.drawable.pim);
@@ -244,12 +262,15 @@ public class TypeTest_9 extends AppCompatActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "UIS":
                                                                 typelayer.setBackgroundResource(R.drawable.uis);
@@ -258,12 +279,15 @@ public class TypeTest_9 extends AppCompatActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "UIM":
                                                                 typelayer.setBackgroundResource(R.drawable.uim);
@@ -272,12 +296,15 @@ public class TypeTest_9 extends AppCompatActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                         }
 

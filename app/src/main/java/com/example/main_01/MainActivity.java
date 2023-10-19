@@ -44,14 +44,14 @@ public class MainActivity extends TabActivity {
 
     LinearLayout typelayer;
     private SimpleExoPlayer player;
-//    private com.google.android.exoplayer2.ui.PlayerView playerView1;
-//    private com.google.android.exoplayer2.ui.PlayerView playerView2;
-//    private com.google.android.exoplayer2.ui.PlayerView playerView3;
+    private com.google.android.exoplayer2.ui.PlayerView playerView1;
+    private com.google.android.exoplayer2.ui.PlayerView playerView2;
+    private com.google.android.exoplayer2.ui.PlayerView playerView3;
     Long moover, starter;
     String value4, value5, value6;
-    private VideoView videoView1;
-    private VideoView videoView2;
-    private VideoView videoView3;
+//    private VideoView videoView1;
+//    private VideoView videoView2;
+//    private VideoView videoView3;
     String videoURL1, videoURL2, videoURL3;
 
     @Override
@@ -78,9 +78,9 @@ public class MainActivity extends TabActivity {
         Button wc5 = (Button) findViewById(R.id.weeklyclass_5);
         Button wc6 = (Button) findViewById(R.id.weeklyclass_6);
 
-//        playerView1 = findViewById(R.id.player_view1);
-//        playerView2 = findViewById(R.id.player_view2);
-//        playerView3 = findViewById(R.id.player_view3);
+        playerView1 = findViewById(R.id.player_view1);
+        playerView2 = findViewById(R.id.player_view2);
+        playerView3 = findViewById(R.id.player_view3);
         moover = Long.valueOf(0);
         starter = Long.valueOf(0);
         value4 = ".";
@@ -91,9 +91,9 @@ public class MainActivity extends TabActivity {
         videoURL2 = ".";
         videoURL3 = ".";
 
-        videoView1 = findViewById(R.id.player_view1);
-        videoView2 = findViewById(R.id.player_view2);
-        videoView3 = findViewById(R.id.player_view3);
+//        videoView1 = findViewById(R.id.player_view1);
+//        videoView2 = findViewById(R.id.player_view2);
+//        videoView3 = findViewById(R.id.player_view3);
 
         mn3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,12 +188,15 @@ public class MainActivity extends TabActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "PCM":
                                                                 // Amazon S3에서 영상 URL 설정
@@ -202,12 +205,15 @@ public class MainActivity extends TabActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "UCS":
                                                                 // Amazon S3에서 영상 URL 설정
@@ -216,12 +222,15 @@ public class MainActivity extends TabActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "UCM":
                                                                 // Amazon S3에서 영상 URL 설정
@@ -230,12 +239,15 @@ public class MainActivity extends TabActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "PIS":
                                                                 // Amazon S3에서 영상 URL 설정
@@ -244,12 +256,15 @@ public class MainActivity extends TabActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "PIM":
                                                                 // Amazon S3에서 영상 URL 설정
@@ -258,12 +273,16 @@ public class MainActivity extends TabActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "UIS":
                                                                 // Amazon S3에서 영상 URL 설정
@@ -272,12 +291,15 @@ public class MainActivity extends TabActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                             case "UIM":
                                                                 // Amazon S3에서 영상 URL 설정
@@ -286,12 +308,15 @@ public class MainActivity extends TabActivity {
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM3.mp4";
 
                                                                 // VideoView에 영상 설정
-                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-                                                                videoView1.start(); // 영상 재생 시작
-                                                                videoView2.start();
-                                                                videoView3.start();
+//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
+//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
+//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
+//                                                                videoView1.start(); // 영상 재생 시작
+//                                                                videoView2.start();
+//                                                                videoView3.start();
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                         }
                                                         //유형+을 위한 클래스 부분 텍스트는 수정 필요 없음
