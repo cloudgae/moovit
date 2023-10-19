@@ -36,39 +36,43 @@
 
 
 
-            <TextView
-                android:id="@+id/hashtag1"
-                android:layout_width="90dp"
-                android:layout_height="40dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="5dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="5dp"
-                android:background="@drawable/hashtag_box"
-                android:fontFamily="@font/notosanskr_regular"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:padding="0dp"
-                android:textColor="@drawable/selector_radio_text"
-                android:textSize="20dp" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/hashtag2"
-                android:layout_width="90dp"
-                android:layout_height="40dp"
-                android:layout_marginHorizontal="0dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="@font/notosanskr_regular"
-                android:padding="0dp"
-                android:textColor="@drawable/selector_radio_text"
-                android:textSize="20dp"
-                android:gravity="center"/>
+                <TextView
+                    android:id="@+id/hashtag1"
+                    android:layout_width="65dp"
+                    android:layout_height="33dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="#케이팝"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:background="@drawable/hashtag_box"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/hashtag2"
+                    android:layout_width="65dp"
+                    android:layout_height="33dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="#원데이"
+                    android:background="@drawable/hashtag_box"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="70dp"
             android:layout_marginBottom="50dp"
             android:orientation="horizontal">
             <FrameLayout
@@ -80,34 +84,34 @@
                 <Button
                     android:id="@+id/dancer_profile"
                     android:layout_width="270dp"
-                    android:layout_height="100dp"
+                    android:layout_height="70dp"
                     android:layout_marginLeft="10dp"
                     android:background="@android:color/transparent"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="70dp">
 
                     <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center_vertical"
                         android:background="@drawable/profile_image" />
 
                     <TextView
                         android:id="@+id/classinfo_name"
                         android:layout_width="170dp"
-                        android:layout_height="70dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginHorizontal="10dp"
-                        android:layout_marginTop="10dp"
                         android:fontFamily="@font/notosanskr_bold"
                         android:gravity="center|left"
+                        android:layout_gravity="center_vertical"
                         android:padding="0dp"
                         android:singleLine="false"
                         android:text="에이미"
                         android:textColor="#FFFFFF"
-                        android:textSize="20dp" />
+                        android:textSize="15dp" />
                 </LinearLayout>
 
 
@@ -138,12 +142,13 @@
                 android:textSize="20dp" />-->
 
             <android.widget.Button
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="15dp"
+                android:id="@+id/likebutton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_gravity="center_vertical"
                 android:background="@drawable/like_button"
-                android:contentDescription="하고 싶은 설명"
                 />
 
         </LinearLayout>
