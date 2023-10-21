@@ -141,185 +141,195 @@
                 <!--TODO :이미지,클래스 정보 연결-->
                 <HorizontalScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="20dp">
-
-                    <GridLayout
-                        android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/lessonRecyclerView"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:columnCount="3"
-                        android:rowCount="3">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_row="0"
-                            android:layout_column="0"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginVertical="5dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|left"
-                                android:text="1"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/notosanskr_regular"/>
-
-                            <Button
-                                android:id="@+id/weeklyclass_1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:backgroundTint="@color/black"
-                                android:drawableLeft="@drawable/ellipse"
-                                android:fontFamily="@font/notosanskr_regular"
-                                android:gravity="left|center"
-                                android:text="에스파 타이틀곡 클래스\n4.5"
-                                android:textColor="@color/white"
-                                />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_row="1"
-                            android:layout_column="0"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginVertical="5dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|left"
-                                android:text="2"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/notosanskr_regular"/>
-
-                            <Button
-                                android:id="@+id/weeklyclass_2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:backgroundTint="@color/black"
-                                android:drawableLeft="@drawable/ellipse"
-                                android:fontFamily="@font/notosanskr_regular"
-                                android:gravity="left|center"
-                                android:text="에스파 타이틀곡 클래스\n4.5"
-                                android:textColor="@color/white"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_row="2"
-                            android:layout_column="0"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginVertical="5dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|left"
-                                android:text="3"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/notosanskr_regular"/>
-
-                            <Button
-                                android:id="@+id/weeklyclass_3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:backgroundTint="@color/black"
-                                android:drawableLeft="@drawable/ellipse"
-                                android:fontFamily="@font/notosanskr_regular"
-                                android:gravity="left|center"
-                                android:text="에스파 타이틀곡 클래스\n4.5"
-                                android:textColor="@color/white"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_row="0"
-                            android:layout_column="1"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginVertical="5dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|left"
-                                android:text="4"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/notosanskr_regular"/>
-
-                            <Button
-                                android:id="@+id/weeklyclass_4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:backgroundTint="@color/black"
-                                android:drawableLeft="@drawable/ellipse"
-                                android:fontFamily="@font/notosanskr_regular"
-                                android:gravity="left|center"
-                                android:text="에스파 타이틀곡 클래스\n4.5"
-                                android:textColor="@color/white"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_row="1"
-                            android:layout_column="1"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginVertical="5dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|left"
-                                android:text="5"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/notosanskr_regular"/>
-
-                            <Button
-                                android:id="@+id/weeklyclass_5"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:backgroundTint="@color/black"
-                                android:drawableLeft="@drawable/ellipse"
-                                android:fontFamily="@font/notosanskr_regular"
-                                android:gravity="left|center"
-                                android:text="에스파 타이틀곡 클래스\n4.5"
-                                android:textColor="@color/white"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_row="2"
-                            android:layout_column="1"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginVertical="5dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center|left"
-                                android:text="6"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/notosanskr_regular"/>
-
-                            <Button
-                                android:id="@+id/weeklyclass_6"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:backgroundTint="@color/black"
-                                android:drawableLeft="@drawable/ellipse"
-                                android:fontFamily="@font/notosanskr_regular"
-                                android:gravity="left|center"
-                                android:text="에스파 타이틀곡 클래스\n4.5"
-                                android:textColor="@color/white"/>
-                        </LinearLayout>
-                    </GridLayout>
+                        android:orientation="horizontal"/>
                 </HorizontalScrollView>
+<!--                <HorizontalScrollView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginHorizontal="20dp">-->
+
+<!--                    <GridLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:columnCount="3"-->
+<!--                        android:rowCount="3">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_row="0"-->
+<!--                            android:layout_column="0"-->
+<!--                            android:layout_marginRight="20dp"-->
+<!--                            android:layout_marginVertical="5dp">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center|left"-->
+<!--                                android:text="1"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:fontFamily="@font/notosanskr_regular"/>-->
+
+<!--                            <Button-->
+<!--                                android:id="@+id/weeklyclass_1"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:backgroundTint="@color/black"-->
+<!--                                android:drawableLeft="@drawable/ellipse"-->
+<!--                                android:fontFamily="@font/notosanskr_regular"-->
+<!--                                android:gravity="left|center"-->
+<!--                                android:text="에스파 타이틀곡 클래스\n4.5"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                />-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_row="1"-->
+<!--                            android:layout_column="0"-->
+<!--                            android:layout_marginRight="20dp"-->
+<!--                            android:layout_marginVertical="5dp">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center|left"-->
+<!--                                android:text="2"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:fontFamily="@font/notosanskr_regular"/>-->
+
+<!--                            <Button-->
+<!--                                android:id="@+id/weeklyclass_2"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:backgroundTint="@color/black"-->
+<!--                                android:drawableLeft="@drawable/ellipse"-->
+<!--                                android:fontFamily="@font/notosanskr_regular"-->
+<!--                                android:gravity="left|center"-->
+<!--                                android:text="에스파 타이틀곡 클래스\n4.5"-->
+<!--                                android:textColor="@color/white"/>-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_row="2"-->
+<!--                            android:layout_column="0"-->
+<!--                            android:layout_marginRight="20dp"-->
+<!--                            android:layout_marginVertical="5dp">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center|left"-->
+<!--                                android:text="3"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:fontFamily="@font/notosanskr_regular"/>-->
+
+<!--                            <Button-->
+<!--                                android:id="@+id/weeklyclass_3"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:backgroundTint="@color/black"-->
+<!--                                android:drawableLeft="@drawable/ellipse"-->
+<!--                                android:fontFamily="@font/notosanskr_regular"-->
+<!--                                android:gravity="left|center"-->
+<!--                                android:text="에스파 타이틀곡 클래스\n4.5"-->
+<!--                                android:textColor="@color/white"/>-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_row="0"-->
+<!--                            android:layout_column="1"-->
+<!--                            android:layout_marginRight="20dp"-->
+<!--                            android:layout_marginVertical="5dp">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center|left"-->
+<!--                                android:text="4"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:fontFamily="@font/notosanskr_regular"/>-->
+
+<!--                            <Button-->
+<!--                                android:id="@+id/weeklyclass_4"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:backgroundTint="@color/black"-->
+<!--                                android:drawableLeft="@drawable/ellipse"-->
+<!--                                android:fontFamily="@font/notosanskr_regular"-->
+<!--                                android:gravity="left|center"-->
+<!--                                android:text="에스파 타이틀곡 클래스\n4.5"-->
+<!--                                android:textColor="@color/white"/>-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_row="1"-->
+<!--                            android:layout_column="1"-->
+<!--                            android:layout_marginRight="20dp"-->
+<!--                            android:layout_marginVertical="5dp">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center|left"-->
+<!--                                android:text="5"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:fontFamily="@font/notosanskr_regular"/>-->
+
+<!--                            <Button-->
+<!--                                android:id="@+id/weeklyclass_5"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:backgroundTint="@color/black"-->
+<!--                                android:drawableLeft="@drawable/ellipse"-->
+<!--                                android:fontFamily="@font/notosanskr_regular"-->
+<!--                                android:gravity="left|center"-->
+<!--                                android:text="에스파 타이틀곡 클래스\n4.5"-->
+<!--                                android:textColor="@color/white"/>-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_row="2"-->
+<!--                            android:layout_column="1"-->
+<!--                            android:layout_marginRight="20dp"-->
+<!--                            android:layout_marginVertical="5dp">-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center|left"-->
+<!--                                android:text="6"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:fontFamily="@font/notosanskr_regular"/>-->
+
+<!--                            <Button-->
+<!--                                android:id="@+id/weeklyclass_6"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:backgroundTint="@color/black"-->
+<!--                                android:drawableLeft="@drawable/ellipse"-->
+<!--                                android:fontFamily="@font/notosanskr_regular"-->
+<!--                                android:gravity="left|center"-->
+<!--                                android:text="에스파 타이틀곡 클래스\n4.5"-->
+<!--                                android:textColor="@color/white"/>-->
+<!--                        </LinearLayout>-->
+<!--                    </GridLayout>-->
+<!--                </HorizontalScrollView>-->
             </LinearLayout>
             <!--TODO :유형 검사 결과와 연동해서 띄워주기-유형테스트9참고-->
             <LinearLayout

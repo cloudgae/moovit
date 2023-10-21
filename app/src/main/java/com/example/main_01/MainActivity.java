@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.main_01.apply.Apply_0;
 import com.example.main_01.mypage.MyPage;
@@ -34,6 +36,9 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @SuppressWarnings("deprecation")
@@ -71,12 +76,12 @@ public class MainActivity extends TabActivity {
         Button mn4 = (Button) findViewById(R.id.menu4);
 
 //        주간 인기 클래스 버튼 TODO : 클래스 연결 시 텍스트, drawable 변경
-        Button wc1 = (Button) findViewById(R.id.weeklyclass_1);
-        Button wc2 = (Button) findViewById(R.id.weeklyclass_2);
-        Button wc3 = (Button) findViewById(R.id.weeklyclass_3);
-        Button wc4 = (Button) findViewById(R.id.weeklyclass_4);
-        Button wc5 = (Button) findViewById(R.id.weeklyclass_5);
-        Button wc6 = (Button) findViewById(R.id.weeklyclass_6);
+//        Button wc1 = (Button) findViewById(R.id.weeklyclass_1);
+//        Button wc2 = (Button) findViewById(R.id.weeklyclass_2);
+//        Button wc3 = (Button) findViewById(R.id.weeklyclass_3);
+//        Button wc4 = (Button) findViewById(R.id.weeklyclass_4);
+//        Button wc5 = (Button) findViewById(R.id.weeklyclass_5);
+//        Button wc6 = (Button) findViewById(R.id.weeklyclass_6);
 
         playerView1 = findViewById(R.id.player_view1);
         playerView2 = findViewById(R.id.player_view2);
@@ -91,6 +96,32 @@ public class MainActivity extends TabActivity {
         videoURL2 = ".";
         videoURL3 = ".";
 
+        //지금 가장 관심도가 높은 클래스 리사이클러뷰
+        //TODO : 파이어베이스 수업 정보 연결 필요
+        RecyclerView lessonRecyclerView = findViewById(R.id.lessonRecyclerView);
+        List<Lesson> lessons = new ArrayList<>();
+        lessons.add(new Lesson("1", "케이팝 걸그룹 타이틀곡 메들리 클래스", "마포구 연남동",
+                "4.9", "(5223)", R.drawable.c1));
+        lessons.add(new Lesson("2", "코레오 기초 클래스", "마포구 연남동",
+                "4.9", "(5223)", R.drawable.c1));
+        lessons.add(new Lesson("3", "모립 코레오 챌린지 클래스", "마포구 연남동",
+                "4.9", "(5223)", R.drawable.c1));
+        lessons.add(new Lesson("4", "에스파 타이틀곡 클래스", "마포구 연남동",
+                "4.9", "(5223)", R.drawable.c1));
+        lessons.add(new Lesson("5", "댄서 바다의 챌린지 클래스", "마포구 연남동",
+                "4.9", "(5223)", R.drawable.c1));
+        lessons.add(new Lesson("6", "스우파 챌린지 클래스", "마포구 연남동",
+                "4.9", "(5223)", R.drawable.c1));
+
+        LessonAdapter lessonAdapter = new LessonAdapter(lessons, null);
+        List<Lesson> rearrangedList = lessonAdapter.rearrangeLessonList(lessons);
+
+        lessonAdapter = new LessonAdapter(rearrangedList, null);
+
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        lessonRecyclerView.setLayoutManager(layoutManager);
+
+        lessonRecyclerView.setAdapter(lessonAdapter);
 //        videoView1 = findViewById(R.id.player_view1);
 //        videoView2 = findViewById(R.id.player_view2);
 //        videoView3 = findViewById(R.id.player_view3);
@@ -369,63 +400,63 @@ public class MainActivity extends TabActivity {
                     }
                 });
 
-        //파이어베이스에서 수업 정보 조회
-        // 파이어베이스에서 WEEKLY 값이 1부터 6까지인 데이터를 불러오는 쿼리
-        for (int i = 1; i <= 6; i++) {
-            final int weeklyValue = i; // 주간 값
-
-            db.collection("Class")
-                    .whereEqualTo("WEEKLY", weeklyValue)
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                            if (task.isSuccessful()) {
-                                for (QueryDocumentSnapshot document : task.getResult()) {
-                                    String finTYPE = document.getId();
-                                    Log.d(TAG, finTYPE);
-
-                                    // 텍스트 바꾸는 작업
-                                    String title = (String) document.getData().get("TITLE");
-
-                                    // 해당 주간 값에 맞는 버튼을 찾아서 텍스트 설정
-                                    switch (weeklyValue) {
-                                        case 1:
-                                            wc1.setText("    " + title + "");
-                                            break;
-                                        case 2:
-                                            wc2.setText("    " + title + "");
-                                            break;
-                                        case 3:
-                                            wc3.setText("    " + title + "");
-                                            break;
-                                        case 4:
-                                            wc4.setText("    " + title + "");
-                                            break;
-                                        case 5:
-                                            wc5.setText("    " + title + "");
-                                            break;
-                                        case 6:
-                                            wc6.setText("    " + title + "");
-                                            break;
-                                    }
-
-                                    // 이후 작업을 수행하거나 버튼을 클릭하는 등의 추가 동작을 여기에 추가할 수 있습니다.
-                                }
-                            }
-                        }
-                    });
-        }
-
-        //클래스 상세정보 연결 TODO : 각 클래스 정보에 맞는 정보 연결
-        wc1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, Apply_0.class);
-                startActivity(i);
-                finish();
-            }
-        });
+//        //파이어베이스에서 수업 정보 조회
+//        // 파이어베이스에서 WEEKLY 값이 1부터 6까지인 데이터를 불러오는 쿼리
+//        for (int i = 1; i <= 6; i++) {
+//            final int weeklyValue = i; // 주간 값
+//
+//            db.collection("Class")
+//                    .whereEqualTo("WEEKLY", weeklyValue)
+//                    .get()
+//                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                        @Override
+//                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                            if (task.isSuccessful()) {
+//                                for (QueryDocumentSnapshot document : task.getResult()) {
+//                                    String finTYPE = document.getId();
+//                                    Log.d(TAG, finTYPE);
+//
+//                                    // 텍스트 바꾸는 작업
+//                                    String title = (String) document.getData().get("TITLE");
+//
+//                                    // 해당 주간 값에 맞는 버튼을 찾아서 텍스트 설정
+//                                    switch (weeklyValue) {
+//                                        case 1:
+//                                            wc1.setText("    " + title + "");
+//                                            break;
+//                                        case 2:
+//                                            wc2.setText("    " + title + "");
+//                                            break;
+//                                        case 3:
+//                                            wc3.setText("    " + title + "");
+//                                            break;
+//                                        case 4:
+//                                            wc4.setText("    " + title + "");
+//                                            break;
+//                                        case 5:
+//                                            wc5.setText("    " + title + "");
+//                                            break;
+//                                        case 6:
+//                                            wc6.setText("    " + title + "");
+//                                            break;
+//                                    }
+//
+//                                    // 이후 작업을 수행하거나 버튼을 클릭하는 등의 추가 동작을 여기에 추가할 수 있습니다.
+//                                }
+//                            }
+//                        }
+//                    });
+//        }
+//
+//        //클래스 상세정보 연결 TODO : 각 클래스 정보에 맞는 정보 연결
+//        wc1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(MainActivity.this, Apply_0.class);
+//                startActivity(i);
+//                finish();
+//            }
+//        });
 
     }
 
