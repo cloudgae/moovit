@@ -1,5 +1,7 @@
 package com.example.main_01;
 
+import com.google.firebase.firestore.DocumentReference;
+
 public class Lesson {
     private String rank;
     private String name;
@@ -7,6 +9,9 @@ public class Lesson {
     private String rate;
     private String num_review;
     private int imageResource;
+    private boolean isChecked; // 즐겨찾기 상태 추가
+    private DocumentReference lessonDocument; // Firebase Firestore 문서에 대한 참조 추가
+
 
     public Lesson(String rank, String name, String address, String rate, String num_review, int imageResource){
         this.rank = rank;
@@ -15,6 +20,7 @@ public class Lesson {
         this.rate = rate;
         this.num_review = num_review;
         this.imageResource = imageResource;
+        this.isChecked = false; // 초기에는 즐겨찾기 상태가 false로 설정
     }
     public String getRank(){
         return rank;
@@ -33,5 +39,21 @@ public class Lesson {
     }
     public int getImageResource(){
         return imageResource;
+    }
+
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
+
+    public DocumentReference getLessonDocument() {
+        return lessonDocument;
+    }
+
+    public void setLessonDocument(DocumentReference lessonDocument) {
+        this.lessonDocument = lessonDocument;
     }
 }

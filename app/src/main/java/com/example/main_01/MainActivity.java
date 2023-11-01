@@ -73,24 +73,11 @@ public class MainActivity extends TabActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-//        ScrollView scrollView = findViewById(R.id.scrollView);
-//        scrollView.scrollTo(0, 0);
-//
-//        HorizontalScrollView horizontalScrollView = findViewById(R.id.horizontalScrollView);
-//        horizontalScrollView.scrollTo(0, 0);
-
         TextView tn = (TextView) findViewById(R.id.typenameclass);
 
         Button mn3 = (Button) findViewById(R.id.menu3);
         Button mn4 = (Button) findViewById(R.id.menu4);
 
-//        주간 인기 클래스 버튼 TODO : 클래스 연결 시 텍스트, drawable 변경
-//        Button wc1 = (Button) findViewById(R.id.weeklyclass_1);
-//        Button wc2 = (Button) findViewById(R.id.weeklyclass_2);
-//        Button wc3 = (Button) findViewById(R.id.weeklyclass_3);
-//        Button wc4 = (Button) findViewById(R.id.weeklyclass_4);
-//        Button wc5 = (Button) findViewById(R.id.weeklyclass_5);
-//        Button wc6 = (Button) findViewById(R.id.weeklyclass_6);
 
         playerView1 = findViewById(R.id.player_view1);
         playerView2 = findViewById(R.id.player_view2);
@@ -106,24 +93,10 @@ public class MainActivity extends TabActivity {
         videoURL3 = ".";
 
         //지금 가장 관심도가 높은 클래스 리사이클러뷰
-        //TODO : 파이어베이스 수업 정보 연결 필요
-//        RecyclerView lessonRecyclerView = findViewById(R.id.lessonRecyclerView);
-//        List<Lesson> lessons = new ArrayList<>();
-//        lessons.add(new Lesson("1", "케이팝 걸그룹 타이틀곡 메들리 클래스", "마포구 연남동",
-//                "4.9", "(5223)", R.drawable.c1));
-//        lessons.add(new Lesson("2", "코레오 기초 클래스", "마포구 연남동",
-//                "4.9", "(5223)", R.drawable.c1));
-//        lessons.add(new Lesson("3", "모립 코레오 챌린지 클래스", "마포구 연남동",
-//                "4.9", "(5223)", R.drawable.c1));
-//        lessons.add(new Lesson("4", "에스파 타이틀곡 클래스", "마포구 연남동",
-//                "4.9", "(5223)", R.drawable.c1));
-//        lessons.add(new Lesson("5", "댄서 바다의 챌린지 클래스", "마포구 연남동",
-//                "4.9", "(5223)", R.drawable.c1));
-//        lessons.add(new Lesson("6", "스우파 챌린지 클래스", "마포구 연남동",
-//                "4.9", "(5223)", R.drawable.c1));
+
 
         // Firestore 쿼리 생성
-        CollectionReference collectionRef = db.collection("Class"); // 'your_collection_name'에는 실제 컬렉션 이름을 넣어야 합니다.
+        CollectionReference collectionRef = db.collection("Class");
         Query query = collectionRef.whereGreaterThanOrEqualTo("weekly_rank", 1).whereLessThanOrEqualTo("weekly_rank", 6);
 //        Query query1 = collectionRef.whereEqualTo("weekly_rank", 1);
 
@@ -155,6 +128,7 @@ public class MainActivity extends TabActivity {
 
                 }
                 LessonAdapter lessonAdapter = new LessonAdapter(lessons, null);
+
                 List<Lesson> rearrangedList = lessonAdapter.rearrangeLessonList(lessons);
 
                 lessonAdapter = new LessonAdapter(rearrangedList, null);
@@ -170,18 +144,6 @@ public class MainActivity extends TabActivity {
             }
         });
 
-//        LessonAdapter lessonAdapter = new LessonAdapter(lessons, null);
-//        List<Lesson> rearrangedList = lessonAdapter.rearrangeLessonList(lessons);
-//
-//        lessonAdapter = new LessonAdapter(rearrangedList, null);
-//
-//        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
-//        lessonRecyclerView.setLayoutManager(layoutManager);
-//
-//        lessonRecyclerView.setAdapter(lessonAdapter);
-//        videoView1 = findViewById(R.id.player_view1);
-//        videoView2 = findViewById(R.id.player_view2);
-//        videoView3 = findViewById(R.id.player_view3);
 
         mn3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -275,13 +237,7 @@ public class MainActivity extends TabActivity {
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS3.mp4";
 
-                                                                // VideoView에 영상 설정
-//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-//                                                                videoView1.start(); // 영상 재생 시작
-//                                                                videoView2.start();
-//                                                                videoView3.start();
+
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -292,13 +248,7 @@ public class MainActivity extends TabActivity {
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM3.mp4";
 
-                                                                // VideoView에 영상 설정
-//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-//                                                                videoView1.start(); // 영상 재생 시작
-//                                                                videoView2.start();
-//                                                                videoView3.start();
+
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -309,13 +259,7 @@ public class MainActivity extends TabActivity {
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS3.mp4";
 
-                                                                // VideoView에 영상 설정
-//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-//                                                                videoView1.start(); // 영상 재생 시작
-//                                                                videoView2.start();
-//                                                                videoView3.start();
+
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -326,13 +270,7 @@ public class MainActivity extends TabActivity {
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM3.mp4";
 
-                                                                // VideoView에 영상 설정
-//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-//                                                                videoView1.start(); // 영상 재생 시작
-//                                                                videoView2.start();
-//                                                                videoView3.start();
+
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -343,13 +281,6 @@ public class MainActivity extends TabActivity {
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS3.mp4";
 
-                                                                // VideoView에 영상 설정
-//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-//                                                                videoView1.start(); // 영상 재생 시작
-//                                                                videoView2.start();
-//                                                                videoView3.start();
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -360,13 +291,6 @@ public class MainActivity extends TabActivity {
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM3.mp4";
 
-                                                                // VideoView에 영상 설정
-//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-//                                                                videoView1.start(); // 영상 재생 시작
-//                                                                videoView2.start();
-//                                                                videoView3.start();
 
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
@@ -378,13 +302,7 @@ public class MainActivity extends TabActivity {
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS3.mp4";
 
-                                                                // VideoView에 영상 설정
-//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-//                                                                videoView1.start(); // 영상 재생 시작
-//                                                                videoView2.start();
-//                                                                videoView3.start();
+
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -395,54 +313,11 @@ public class MainActivity extends TabActivity {
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM3.mp4";
 
-                                                                // VideoView에 영상 설정
-//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-//                                                                videoView1.start(); // 영상 재생 시작
-//                                                                videoView2.start();
-//                                                                videoView3.start();
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
                                                                 break;
                                                         }
-                                                        //유형+을 위한 클래스 부분 텍스트는 수정 필요 없음
-//                                                        String typetxt = (String) document.getData().get("name");
-//                                                        tn.setText(typetxt + "를 위한 클래스");
-
-//                                                        // Firestore에서 영상 이름 가져오기
-//                                                        String videoName1 = (String) document.getData().get("video1");
-//                                                        String videoName2 = (String) document.getData().get("video2");
-//                                                        String videoName3 = (String) document.getData().get("video3");
-//
-//                                                        // 영상 다운로드 URL 가져오기
-//                                                        FirebaseStorage storage = FirebaseStorage.getInstance();
-//                                                        StorageReference storageRef = storage.getReference();
-//                                                        StorageReference videoRef1 = storageRef.child("videos/" + videoName1);
-//                                                        StorageReference videoRef2 = storageRef.child("videos/" + videoName2);
-//                                                        StorageReference videoRef3 = storageRef.child("videos/" + videoName3);
-//
-//                                                        videoRef1.getDownloadUrl().addOnSuccessListener(uri -> {
-//                                                            String videoUrl1 = uri.toString();
-//                                                            initializePlayer(videoUrl1, playerView1);
-//                                                        }).addOnFailureListener(e -> {
-//                                                            e.printStackTrace();
-//                                                        });
-//
-//                                                        videoRef2.getDownloadUrl().addOnSuccessListener(uri -> {
-//                                                            String videoUrl2 = uri.toString();
-//                                                            initializePlayer(videoUrl2, playerView2);
-//                                                        }).addOnFailureListener(e -> {
-//                                                            e.printStackTrace();
-//                                                        });
-//
-//                                                        videoRef3.getDownloadUrl().addOnSuccessListener(uri -> {
-//                                                            String videoUrl3 = uri.toString();
-//                                                            initializePlayer(videoUrl3, playerView3);
-//                                                        }).addOnFailureListener(e -> {
-//                                                            e.printStackTrace();
-//                                                        });
 
                                                     }
                                                 } else {
@@ -456,64 +331,6 @@ public class MainActivity extends TabActivity {
                         }
                     }
                 });
-
-//        //파이어베이스에서 수업 정보 조회
-//        // 파이어베이스에서 WEEKLY 값이 1부터 6까지인 데이터를 불러오는 쿼리
-//        for (int i = 1; i <= 6; i++) {
-//            final int weeklyValue = i; // 주간 값
-//
-//            db.collection("Class")
-//                    .whereEqualTo("WEEKLY", weeklyValue)
-//                    .get()
-//                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                            if (task.isSuccessful()) {
-//                                for (QueryDocumentSnapshot document : task.getResult()) {
-//                                    String finTYPE = document.getId();
-//                                    Log.d(TAG, finTYPE);
-//
-//                                    // 텍스트 바꾸는 작업
-//                                    String title = (String) document.getData().get("TITLE");
-//
-//                                    // 해당 주간 값에 맞는 버튼을 찾아서 텍스트 설정
-//                                    switch (weeklyValue) {
-//                                        case 1:
-//                                            wc1.setText("    " + title + "");
-//                                            break;
-//                                        case 2:
-//                                            wc2.setText("    " + title + "");
-//                                            break;
-//                                        case 3:
-//                                            wc3.setText("    " + title + "");
-//                                            break;
-//                                        case 4:
-//                                            wc4.setText("    " + title + "");
-//                                            break;
-//                                        case 5:
-//                                            wc5.setText("    " + title + "");
-//                                            break;
-//                                        case 6:
-//                                            wc6.setText("    " + title + "");
-//                                            break;
-//                                    }
-//
-//                                    // 이후 작업을 수행하거나 버튼을 클릭하는 등의 추가 동작을 여기에 추가할 수 있습니다.
-//                                }
-//                            }
-//                        }
-//                    });
-//        }
-//
-//        //클래스 상세정보 연결 TODO : 각 클래스 정보에 맞는 정보 연결
-//        wc1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(MainActivity.this, Apply_0.class);
-//                startActivity(i);
-//                finish();
-//            }
-//        });
 
     }
 
