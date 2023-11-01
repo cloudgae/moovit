@@ -30,15 +30,22 @@ import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.core.FirestoreClient;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 @SuppressWarnings("deprecation")
@@ -65,6 +72,8 @@ public class MainActivity extends TabActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 //        ScrollView scrollView = findViewById(R.id.scrollView);
 //        scrollView.scrollTo(0, 0);
@@ -103,30 +112,78 @@ public class MainActivity extends TabActivity {
 
         //지금 가장 관심도가 높은 클래스 리사이클러뷰
         //TODO : 파이어베이스 수업 정보 연결 필요
-        RecyclerView lessonRecyclerView = findViewById(R.id.lessonRecyclerView);
-        List<Lesson> lessons = new ArrayList<>();
-        lessons.add(new Lesson("1", "케이팝 걸그룹 타이틀곡 메들리 클래스", "마포구 연남동",
-                "4.9", "(5223)", R.drawable.c1));
-        lessons.add(new Lesson("2", "코레오 기초 클래스", "마포구 연남동",
-                "4.9", "(5223)", R.drawable.c1));
-        lessons.add(new Lesson("3", "모립 코레오 챌린지 클래스", "마포구 연남동",
-                "4.9", "(5223)", R.drawable.c1));
-        lessons.add(new Lesson("4", "에스파 타이틀곡 클래스", "마포구 연남동",
-                "4.9", "(5223)", R.drawable.c1));
-        lessons.add(new Lesson("5", "댄서 바다의 챌린지 클래스", "마포구 연남동",
-                "4.9", "(5223)", R.drawable.c1));
-        lessons.add(new Lesson("6", "스우파 챌린지 클래스", "마포구 연남동",
-                "4.9", "(5223)", R.drawable.c1));
+//        RecyclerView lessonRecyclerView = findViewById(R.id.lessonRecyclerView);
+//        List<Lesson> lessons = new ArrayList<>();
+//        lessons.add(new Lesson("1", "케이팝 걸그룹 타이틀곡 메들리 클래스", "마포구 연남동",
+//                "4.9", "(5223)", R.drawable.c1));
+//        lessons.add(new Lesson("2", "코레오 기초 클래스", "마포구 연남동",
+//                "4.9", "(5223)", R.drawable.c1));
+//        lessons.add(new Lesson("3", "모립 코레오 챌린지 클래스", "마포구 연남동",
+//                "4.9", "(5223)", R.drawable.c1));
+//        lessons.add(new Lesson("4", "에스파 타이틀곡 클래스", "마포구 연남동",
+//                "4.9", "(5223)", R.drawable.c1));
+//        lessons.add(new Lesson("5", "댄서 바다의 챌린지 클래스", "마포구 연남동",
+//                "4.9", "(5223)", R.drawable.c1));
+//        lessons.add(new Lesson("6", "스우파 챌린지 클래스", "마포구 연남동",
+//                "4.9", "(5223)", R.drawable.c1));
 
-        LessonAdapter lessonAdapter = new LessonAdapter(lessons, null);
-        List<Lesson> rearrangedList = lessonAdapter.rearrangeLessonList(lessons);
+        // Firestore 쿼리 생성
+        CollectionReference collectionRef = db.collection("Class"); // 'your_collection_name'에는 실제 컬렉션 이름을 넣어야 합니다.
+        Query query = collectionRef.whereGreaterThanOrEqualTo("weekly_rank", 1).whereLessThanOrEqualTo("weekly_rank", 6);
+//        Query query1 = collectionRef.whereEqualTo("weekly_rank", 1);
 
-        lessonAdapter = new LessonAdapter(rearrangedList, null);
+        // 쿼리 실행
+        query.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                RecyclerView lessonRecyclerView = findViewById(R.id.lessonRecyclerView);
+                List<Lesson> lessons = new ArrayList<>();
+                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
 
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
-        lessonRecyclerView.setLayoutManager(layoutManager);
+                    // 문서 데이터에 접근
+//                    Map<String, Object> data = documentSnapshot.getData();
+//                    Log.d("FirestoreData", "Document ID: " + documentSnapshot.getId());
+//                    Log.d("FirestoreData", "Data: " + data.toString());
+                    // 문서 데이터에 접근
+                    String documentId = documentSnapshot.getId();
+                    String weeklyRank = String.valueOf(documentSnapshot.getLong("weekly_rank")); // 'weekly_rank' 필드 값 가져오기
+                    String address = documentSnapshot.getString("location"); // 다른 필드 값 가져오기
+                    String name = documentSnapshot.getString("name");
+                    String num_review = documentSnapshot.getString("review");
+                    String rate = documentSnapshot.getString("rate");
+//                    Integer thumb = R.drawable.c1;
+                    Log.d("FirestoreData", "Document ID: " + documentId);
+                    Log.d("FirestoreData", "Address: " + address);
 
-        lessonRecyclerView.setAdapter(lessonAdapter);
+                    lessons.add(new Lesson(weeklyRank, name, address, rate, num_review, R.drawable.c1));
+
+
+                }
+                LessonAdapter lessonAdapter = new LessonAdapter(lessons, null);
+                List<Lesson> rearrangedList = lessonAdapter.rearrangeLessonList(lessons);
+
+                lessonAdapter = new LessonAdapter(rearrangedList, null);
+
+                GridLayoutManager layoutManager = new GridLayoutManager(MainActivity.this, 2);
+                lessonRecyclerView.setLayoutManager(layoutManager);
+                lessonRecyclerView.setAdapter(lessonAdapter);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e("FirestoreData", "데이터 검색 중 오류 발생: " + e.getMessage());
+            }
+        });
+
+//        LessonAdapter lessonAdapter = new LessonAdapter(lessons, null);
+//        List<Lesson> rearrangedList = lessonAdapter.rearrangeLessonList(lessons);
+//
+//        lessonAdapter = new LessonAdapter(rearrangedList, null);
+//
+//        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+//        lessonRecyclerView.setLayoutManager(layoutManager);
+//
+//        lessonRecyclerView.setAdapter(lessonAdapter);
 //        videoView1 = findViewById(R.id.player_view1);
 //        videoView2 = findViewById(R.id.player_view2);
 //        videoView3 = findViewById(R.id.player_view3);
@@ -178,7 +235,7 @@ public class MainActivity extends TabActivity {
 
         ////        TODO 1)파이어베이스 연결 - 수업 정보  2)유형 정보-영상 연결
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
 //        탭 연결
         TabHost tabHost = getTabHost();
