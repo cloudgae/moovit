@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 다른 뷰나 레이아웃을 추가할 수 있습니다. -->
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Map_0" />
+
+    <SlidingDrawer
+        android:id="@+id/slidingDrawer1"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_gravity="bottom"
+        android:content="@+id/content"
+        android:handle="@+id/handle">
+
+        //핸들부분
+        <LinearLayout
+            android:id="@+id/handle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/handle_background"
+            android:gravity="top"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/home_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/home_indicator"
+                    android:contentDescription="homeindicator"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="인기순"
+                        android:layout_marginLeft="290dp"
+                        android:includeFontPadding="false"
+                        android:textSize="12dp"
+                        />
+
+                    <ImageButton
+                        android:id="@+id/show_more_btn"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@drawable/show_more_btn"
+                        android:layout_gravity="center"
+                        android:contentDescription="showmore"
+                        android:layout_marginLeft="5dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="15dp">
+
+                    <ImageButton
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"/>
+
+                    <LinearLayout
+                        android:layout_width="225dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center|left">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="원데이 마포구 연남동"
+                            android:textSize="10dp"
+                            android:textColor="#707070"
+                            android:includeFontPadding="false"
+                            android:layout_marginLeft="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="케이팝 걸그룹 타이틀곡 메들리"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:includeFontPadding="false"
+                            android:layout_marginLeft="10dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="4.9"
+                                android:textSize="10dp"
+                                android:textColor="#E87FEA"
+                                android:includeFontPadding="false" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="(5223)"
+                                android:textSize="10dp"
+                                android:textColor="#707070"
+                                android:includeFontPadding="false"
+                                android:layout_marginLeft="0dp" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="52,000원"
+                            android:textSize="10dp"
+                            android:textColor="#E87FEA"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:layout_marginLeft="10dp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/whiteline"
+                android:layout_gravity="center" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="15dp">
+
+                    <ImageButton
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"/>
+
+                    <LinearLayout
+                        android:layout_width="225dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center|left">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="원데이 마포구 연남동"
+                            android:textSize="10dp"
+                            android:textColor="#707070"
+                            android:includeFontPadding="false"
+                            android:layout_marginLeft="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="케이팝 걸그룹 타이틀곡 메들리"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:includeFontPadding="false"
+                            android:layout_marginLeft="10dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="4.9"
+                                android:textSize="10dp"
+                                android:textColor="#E87FEA"
+                                android:includeFontPadding="false" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="(5223)"
+                                android:textSize="10dp"
+                                android:textColor="#707070"
+                                android:includeFontPadding="false"
+                                android:layout_marginLeft="0dp" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="52,000원"
+                            android:textSize="10dp"
+                            android:textColor="#E87FEA"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:layout_marginLeft="10dp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/whiteline"
+                android:layout_gravity="center" />
+
+
+        </LinearLayout>
+
+        //콘텐츠부분
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:gravity="top">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="15dp">
+
+                    <ImageButton
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"/>
+
+                    <LinearLayout
+                        android:layout_width="225dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center|left">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="원데이 마포구 연남동"
+                            android:textSize="10dp"
+                            android:textColor="#707070"
+                            android:includeFontPadding="false"
+                            android:layout_marginLeft="10dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="케이팝 걸그룹 타이틀곡 메들리"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:includeFontPadding="false"
+                            android:layout_marginLeft="10dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="4.9"
+                                android:textSize="10dp"
+                                android:textColor="#E87FEA"
+                                android:includeFontPadding="false" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="(5223)"
+                                android:textSize="10dp"
+                                android:textColor="#707070"
+                                android:includeFontPadding="false"
+                                android:layout_marginLeft="0dp" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="52,000원"
+                            android:textSize="10dp"
+                            android:textColor="#E87FEA"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:layout_marginLeft="10dp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/whiteline"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+
+    </SlidingDrawer>
+
+
+    //상단바(마포구)부분
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/black">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:text="마포구"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp"/>
+
+        <ImageButton
+            android:id="@+id/more_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/map_arrow"
+            android:background="@color/black"
+            android:layout_gravity="center"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:text="주변 클래스"
+            android:fontFamily="@font/notosanskr_regular"
+            android:includeFontPadding="false"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+</FrameLayout>

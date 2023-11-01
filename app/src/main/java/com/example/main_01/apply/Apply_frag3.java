@@ -13,10 +13,11 @@ import androidx.fragment.app.Fragment;
 import com.example.main_01.R;
 
 public class Apply_frag3 extends Fragment {
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_apply3, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_apply3, container, false);
+        // Your code for Fragment 1
+        return view;
     }
 
     @Override

@@ -31,6 +31,21 @@ public class Tab_fragment1 extends Fragment {
 
         return rootView;
     }
+
+    public void pauseVideoAndMusic() {
+        if (videoView.isPlaying()) {
+            videoView.pause();
+        }
+        // 음악 정지 로직 추가
+    }
+
+    public void resumeVideoAndMusic() {
+        if (!videoView.isPlaying()) {
+            videoView.start();
+        }
+        // 음악 재생 로직 추가
+    }
+
 }
 
 

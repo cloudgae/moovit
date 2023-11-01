@@ -9,7 +9,10 @@ import android.widget.Button;
 
 import com.example.main_01.MainActivity;
 import com.example.main_01.R;
+import com.example.main_01.apply.Apply_0;
 import com.example.main_01.onboarding.TypeTest_1;
+
+import org.checkerframework.checker.units.qual.A;
 
 public class Splash_1 extends AppCompatActivity {
 

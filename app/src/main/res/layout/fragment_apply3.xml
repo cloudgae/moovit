@@ -1,25 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/black">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginHorizontal="20dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_regular"
-                android:text="큐앤에이 영역"
-                android:textSize="12dp" />
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2023.09.21"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textSize="10dp"
+                            android:layout_gravity="right"
+                            android:textColor="#575757"
+                            android:includeFontPadding="false"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="무버01"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textSize="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_gravity="right"
+                            android:textColor="#575757"
+                            android:includeFontPadding="false"/>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="답변 대기"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="10dp"
+                        android:gravity="right"
+                        android:layout_marginLeft="180dp"
+                        android:textColor="#575757"
+                        android:includeFontPadding="false"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:text="에스파 타이틀 곡 중 spicy만 4명이서 함께 배우고 싶은데 가능..."
+                    android:textSize="12dp"
+                    android:fontFamily="@font/notosanskr_regular" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/whiteline"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2023.09.21"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textSize="10dp"
+                            android:layout_gravity="right"
+                            android:textColor="#575757"
+                            android:includeFontPadding="false"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="무버01"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textSize="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_gravity="right"
+                            android:textColor="#575757"
+                            android:includeFontPadding="false"/>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="답변 완료"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="10dp"
+                        android:gravity="right"
+                        android:layout_marginLeft="180dp"
+                        android:textColor="#E87FEA"
+                        android:includeFontPadding="false"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:text="에스파 타이틀 곡 중 spicy만 4명이서 함께 배우고 싶은데 가능..."
+                    android:textSize="12dp"
+                    android:fontFamily="@font/notosanskr_regular" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/whiteline"/>
 
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

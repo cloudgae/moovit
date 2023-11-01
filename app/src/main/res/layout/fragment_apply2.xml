@@ -1,75 +1,490 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    android:fillViewport="true"
     android:orientation="vertical">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginHorizontal="20dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_bold"
-                android:text="이런 점이 좋았어요"
-                android:textSize="15dp" />
+                android:orientation="vertical"
+                android:layout_marginHorizontal="20dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_regular"
-                android:text="키워드후기 영역"
-                android:textSize="12dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:text="이런 점이 좋았어요"
+                    android:textSize="16dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_bold"
-                android:text="전체 후기 사진"
-                android:textSize="15dp" />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_regular"
-                android:text="사진 영역"
-                android:textSize="12dp" />
+                    <ProgressBar
+                        android:id="@+id/progressBar1"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        style="@style/CustomProgressBarStyle1"
+                        android:max="50" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_bold"
-                android:text="리뷰"
-                android:textSize="15dp" />
+                    <TextView
+                        android:id="@+id/description1"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="초보자에게도 적합해요"
+                        android:textSize="13dp"
+                        android:drawableLeft="@drawable/review_1"
+                        android:drawablePadding="10dp"
+                        android:paddingLeft="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_regular"
-                android:text="리뷰 영역"
-                android:textSize="12dp" />
+                    <TextView
+                        android:id="@+id/data1"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="13dp"
+                        android:text="40"
+                        android:gravity="center"
+                        android:textColor="#E87FEA"/>
+                </FrameLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_bold"
-                android:text="이런 클래스는 어떠세요?"
-                android:textSize="15dp" />
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+                    <ProgressBar
+                        android:id="@+id/progressBar2"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        style="@style/CustomProgressBarStyle2"
+                        android:max="50" />
+
+                    <TextView
+                        android:id="@+id/description2"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="커리큘럼대로 수업이 이루어져요"
+                        android:textSize="13dp"
+                        android:drawableLeft="@drawable/review_2"
+                        android:drawablePadding="10dp"
+                        android:paddingLeft="10dp"/>
+                    <TextView
+                        android:id="@+id/data2"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="13dp"
+                        android:text="40"
+                        android:gravity="center"
+                        android:textColor="#E87FEA"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="25dp">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar3"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        style="@style/CustomProgressBarStyle3"
+                        android:max="50" />
+
+                    <TextView
+                        android:id="@+id/description3"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="선생님이 열정적이에요"
+                        android:textSize="13dp"
+                        android:drawableLeft="@drawable/review_3"
+                        android:drawablePadding="10dp"
+                        android:paddingLeft="10dp"/>
+
+                    <TextView
+                        android:id="@+id/data3"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="13dp"
+                        android:text="40"
+                        android:gravity="center"
+                        android:textColor="#E87FEA"/>
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/notosanskr_regular"
-                android:text="추천클래스 영역"
-                android:textSize="12dp" />
+                android:background="#1D1D1D"
+                android:orientation="vertical">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:text="후기 사진"
+                        android:textSize="15dp" />
+
+                    //이미지
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        
+                        <ImageView
+                            android:id="@+id/image1"
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
+                            android:background="@drawable/c1"
+                            android:layout_marginRight="8dp"/>
+
+                        <ImageView
+                            android:id="@+id/image2"
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
+                            android:background="@drawable/c1"
+                            android:layout_marginRight="8dp"/>
+
+                        <ImageView
+                            android:id="@+id/image3"
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
+                            android:background="@drawable/c1"
+                            android:layout_marginRight="8dp"/>
+
+                        <ImageView
+                            android:id="@+id/image4"
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
+                            android:background="@drawable/c1"
+                            android:layout_marginRight="8dp"/>
+                    </LinearLayout>
+
+                    
+                    
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="20dp"
+                    app:srcCompat="@drawable/whiteline2"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:text="수강생 후기"
+                        android:layout_marginLeft="20dp"
+                        android:includeFontPadding="false"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:text="50개"
+                        android:includeFontPadding="false"
+                        android:textColor="#E87FEA"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="7dp"
+                        android:textSize="10dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:text="인기순"
+                    android:includeFontPadding="false"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="12dp" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                //후기1
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#1D1D1D"
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="15dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/profile_image"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="김수연"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:textSize="12dp"
+                                android:includeFontPadding="false"
+                                android:layout_marginBottom="3dp"/>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="흐름을 만드는 스타터"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:textSize="10dp"
+                                android:textColor="#E87FEA"
+                                android:includeFontPadding="false"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2023.09.21"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textSize="10dp"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="65dp"
+                            android:textColor="#575757"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="320dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/ex1" />
+
+                    <TextView
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:text="쌤 덕분에 너무 즐겁에 춤 배웠습니당! 제가 안무동작을 진짜 잘 못 외우는 편인데 쌤이 정말 잘 끊어서 외우기 쉽게 천천히 잘 가르쳐주세요!!!!! 몸치도 춤 외워서 뚝딱일 수 있게 해 주십니당 그래서 저번에 다른 수업 들을 때는 버거워서 금방 포기했었는데 이번에는 완주했어요! ㅎㅎ
+
+다음에 다른 수업 여시면 무조건 수강하려고요 쌤 고마워요🧡"
+                        android:textSize="12dp"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:layout_marginTop="10dp"/>
+
+
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="25dp"
+                        app:srcCompat="@drawable/review_like_button"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
+                //후기2
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#1D1D1D"
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="15dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/profile_image"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="포뇨"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:textSize="12dp"
+                                android:includeFontPadding="false"
+                                android:layout_marginBottom="3dp"/>
+                            <TextView
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:text="감각을 주도하는 스타터"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:textSize="10dp"
+                                android:textColor="#E87FEA"
+                                android:includeFontPadding="false"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2023.09.21"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textSize="10dp"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="65dp"
+                            android:textColor="#575757"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:text="선생님께서 정말 참을성이 좋으시고.. 몸치박치에게도 잘한다고 해주십니다 ㅎㅎ 전체적으로 분위기가 즐겁고 가벼워서 몸은 뒤지게 무겁지만 신나서 하게 됩니다 처음 할 때 다 할 수 있을까 의 ..."
+                        android:textSize="12dp"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:layout_marginTop="10dp"/>
+
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="25dp"
+                        app:srcCompat="@drawable/review_like_button"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"/>
+                </LinearLayout>
+
+                //후기3
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#1D1D1D"
+                    android:gravity="center">
+                    
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="15dp">
+                        
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/profile_image"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="뭉쟈"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:textSize="12dp"
+                            android:includeFontPadding="false"
+                            android:layout_marginBottom="3dp"/>
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:text="흐름에 따르는 스타터"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:textSize="10dp"
+                            android:textColor="#E87FEA"
+                            android:includeFontPadding="false"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2023.09.21"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textSize="10dp"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="65dp"
+                            android:textColor="#575757"
+                            android:includeFontPadding="false"/>
+                        
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="320dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/ex1" />
+                    
+                    <TextView
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:text="진짜 진짜 최대한 쉽고 혼자 할 수 있게 알려주셨어요... 춤은 인생 처음 배웠는데도 어느정도 숙지가 되도록 열심히 설명해주시는 게 느껴졌습니다. 이게 얼마나 대단하던지.. 진짜 멋있었습니다! ..."
+                        android:textSize="12dp"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:layout_marginTop="10dp"/>
+
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="25dp"
+                        app:srcCompat="@drawable/review_like_button"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="10dp"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -30,23 +30,23 @@ public class Apply_0 extends AppCompatActivity {
 
         pager.setOffscreenPageLimit(3);
         tabLayout.setupWithViewPager(pager);
-        pager.setAdapter(new PageAdapter(getSupportFragmentManager(),this));
+        pager.setAdapter(new PageAdapter(getSupportFragmentManager(), this));
 
     }
 
-    static class PageAdapter extends FragmentStatePagerAdapter{
-        PageAdapter(FragmentManager fm, Context context){
+    static class PageAdapter extends FragmentStatePagerAdapter {
+        PageAdapter(FragmentManager fm, Context context) {
             super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         }
 
         @NonNull
         @Override
         public Fragment getItem(int position) {
-            if (position == 0){
+            if (position == 0) {
                 return new Apply_frag1();
-            }else if (position ==1){
+            } else if (position == 1) {
                 return new Apply_frag2();
-            }else{
+            } else {
                 return new Apply_frag3();
             }
         }
@@ -55,18 +55,20 @@ public class Apply_0 extends AppCompatActivity {
         public int getCount() {
             return 3;
         }
+
+
+        public CharSequence getPageTitle(int position) {
+            if (position == 0) {
+                return "상세정보";
+            } else if (position == 1) {
+                return "후기";
+            } else {
+                return "Q&A";
+            }
+        }
     }
 
-    public CharSequence getPageTitle(int position){
-        if(position ==0){
-            return "Tab1";
-        }
-        else if(position ==1){
-            return "Tab2";
-        }
-        else
-            return "Tab3";
-    }
+}
 //
 //    private class pagerAdapter extends FragmentStatePagerAdapter{
 //        public pagerAdapter(FragmentManager fm){
@@ -88,4 +90,3 @@ public class Apply_0 extends AppCompatActivity {
 //            return 3;
 //        }
 //    }
-}

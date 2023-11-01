@@ -80,6 +80,7 @@
                     android:orientation="horizontal">
                     <!--TODO :이미지 연결 ,기기에서 마진값 체크-->
                     <Button
+                        android:id="@+id/kpopbtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/black"
@@ -90,6 +91,7 @@
                         android:textSize="13dp" />
 
                     <Button
+                        android:id="@+id/streetbtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/black"

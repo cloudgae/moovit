@@ -53,6 +53,8 @@ public class MainActivity extends TabActivity {
 
     Button wc1, wc2, wc3, wc4, wc5, wc6, mn1, mn2, mn3, mn4;
     TextView typenm;
+    Button kpopbtn, streetbtn;
+    Button menu2;
 
     LinearLayout typelayer;
     private SimpleExoPlayer player;
@@ -77,6 +79,9 @@ public class MainActivity extends TabActivity {
 
         Button mn3 = (Button) findViewById(R.id.menu3);
         Button mn4 = (Button) findViewById(R.id.menu4);
+        Button kpopbtn = (Button) findViewById(R.id.kpopbtn);
+        Button streetbtn = (Button) findViewById(R.id.streetbtn);
+        Button menu2 = (Button) findViewById(R.id.menu2);
 
 
         playerView1 = findViewById(R.id.player_view1);
@@ -158,6 +163,33 @@ public class MainActivity extends TabActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, MyPage.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        kpopbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, Apply_0.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        streetbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, Map_0.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        menu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, Map_0.class);
                 startActivity(i);
                 finish();
             }
