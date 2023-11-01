@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
-        <layer-list>
-            <item android:top="3dp">
-                <shape>
-                    <corners android:radius="42dp"/>
-                    <solid android:color="#3d3d3d"/>
-                </shape>
-            </item>
-        </layer-list>
+        <shape>
+            <solid android:color="#313131"/> <!-- 회색 배경색 설정 -->
+            <corners android:radius="42dp"/>
+        </shape>
     </item>
 </selector>
