@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+            <solid android:color="#000000" /> <!-- 배경 색상 -->
+            <corners android:topLeftRadius="20dp"
+                android:topRightRadius="20dp" /> <!-- 왼쪽 위와 오른쪽 위 모서리에만 반지름을 적용 -->
+        </shape>
+    </item>
+</layer-list>
