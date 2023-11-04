@@ -2,6 +2,7 @@ package com.example.main_01;
 
 import static android.content.ContentValues.TAG;
 
+import android.annotation.SuppressLint;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -35,6 +37,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -68,6 +71,7 @@ public class MainActivity extends TabActivity {
 //    private VideoView videoView3;
     String videoURL1, videoURL2, videoURL3;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,7 +100,6 @@ public class MainActivity extends TabActivity {
         videoURL1 = ".";
         videoURL2 = ".";
         videoURL3 = ".";
-
         //지금 가장 관심도가 높은 클래스 리사이클러뷰
 
 
@@ -112,11 +115,6 @@ public class MainActivity extends TabActivity {
                 RecyclerView lessonRecyclerView = findViewById(R.id.lessonRecyclerView);
                 List<Lesson> lessons = new ArrayList<>();
                 for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-
-                    // 문서 데이터에 접근
-//                    Map<String, Object> data = documentSnapshot.getData();
-//                    Log.d("FirestoreData", "Document ID: " + documentSnapshot.getId());
-//                    Log.d("FirestoreData", "Data: " + data.toString());
                     // 문서 데이터에 접근
                     String documentId = documentSnapshot.getId();
                     String weeklyRank = String.valueOf(documentSnapshot.getLong("weekly_rank")); // 'weekly_rank' 필드 값 가져오기
@@ -124,11 +122,13 @@ public class MainActivity extends TabActivity {
                     String name = documentSnapshot.getString("name");
                     String num_review = documentSnapshot.getString("review");
                     String rate = documentSnapshot.getString("rate");
+                    boolean isliked = documentSnapshot.getBoolean("like");
+
 //                    Integer thumb = R.drawable.c1;
                     Log.d("FirestoreData", "Document ID: " + documentId);
                     Log.d("FirestoreData", "Address: " + address);
 
-                    lessons.add(new Lesson(weeklyRank, name, address, rate, num_review, R.drawable.c1));
+                    lessons.add(new Lesson(weeklyRank, name, address, rate, num_review, R.drawable.c1, documentId, isliked));
 
 
                 }
@@ -141,6 +141,8 @@ public class MainActivity extends TabActivity {
                 GridLayoutManager layoutManager = new GridLayoutManager(MainActivity.this, 2);
                 lessonRecyclerView.setLayoutManager(layoutManager);
                 lessonRecyclerView.setAdapter(lessonAdapter);
+
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -148,6 +150,8 @@ public class MainActivity extends TabActivity {
                 Log.e("FirestoreData", "데이터 검색 중 오류 발생: " + e.getMessage());
             }
         });
+
+        //1104
 
 
         mn3.setOnClickListener(new View.OnClickListener() {

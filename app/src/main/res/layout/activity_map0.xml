@@ -24,7 +24,7 @@
         android:content="@+id/content"
         android:handle="@+id/handle">
 
-        //핸들부분
+
         <LinearLayout
             android:id="@+id/handle"
             android:layout_width="match_parent"
@@ -255,7 +255,6 @@
 
         </LinearLayout>
 
-        //콘텐츠부분
         <LinearLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
@@ -357,7 +356,6 @@
     </SlidingDrawer>
 
 
-    //상단바(마포구)부분
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"

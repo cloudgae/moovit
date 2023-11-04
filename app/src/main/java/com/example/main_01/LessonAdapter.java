@@ -1,8 +1,6 @@
 package com.example.main_01;
 
-import static android.content.ContentValues.TAG;
-
-import android.util.Log;
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,18 +15,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonViewHolder> {
 
     private List<Lesson> lessonList;
     private AdapterView.OnItemClickListener listener;
-    private List<Boolean> favoriteList; // 각 아이템의 즐겨찾기 상태를 저장하는 리스트
+    private OnCheckboxClickListener onCheckboxClickListener;
+
     private String itemId; // LessonAdapter 클래스 내에서 사용할 itemId 변수
 
     public interface OnItemClickListener{
@@ -37,13 +37,13 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
     public void setOnItemClickListener(OnItemClickListener listener){
         this.listener = (AdapterView.OnItemClickListener) listener;
     }
-    public LessonAdapter(List<Lesson> lessonList, OnItemClickListener listener){
+    public LessonAdapter(List<Lesson> lessonList, OnCheckboxClickListener onCheckboxClickListener){
         this.lessonList = lessonList;
-        this.listener = (AdapterView.OnItemClickListener) listener;
+//        this.listener = (AdapterView.OnItemClickListener) listener;
+        this.onCheckboxClickListener = onCheckboxClickListener; // 이 부분 수정
     }
-    public void setFavoriteList(List<Boolean> favoriteList) {
-        this.favoriteList = favoriteList;
-    }
+
+
     @NonNull
     @Override
     public LessonAdapter.LessonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -54,7 +54,7 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LessonAdapter.LessonViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull LessonAdapter.LessonViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Lesson lesson = lessonList.get(position);
 
         holder.rankTextView.setText(lesson.getRank());
@@ -64,6 +64,18 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         holder.rateTextView.setText(lesson.getRate());
         holder.num_reviewTextView.setText(lesson.getNum_review());
 
+        holder.favoriteCheckBox.setChecked(lesson.isChecked());
+        holder.favoriteCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                lesson.setChecked(isChecked);
+                // Update the Firestore document with the new checkbox state
+                updateFirestoreDocument(lesson);
+                if (onCheckboxClickListener != null) {
+                    onCheckboxClickListener.onCheckboxClick(position, isChecked);
+                }
+            }
+        });
     }
 
     @Override
@@ -79,7 +91,7 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         public TextView rateTextView;
         public TextView num_reviewTextView;
         private OnItemClickListener listener;
-        private CheckBox favoriteCheckBox;
+        public CheckBox favoriteCheckBox;
 
         public LessonViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
@@ -91,18 +103,18 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
             num_reviewTextView = itemView.findViewById(R.id.num_reviewTextView);
             favoriteCheckBox = itemView.findViewById(R.id.checkbox_like);
 
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    int position = getAdapterPosition();
-                    if(position != RecyclerView.NO_POSITION && LessonViewHolder.this.listener != null){
-                        LessonViewHolder.this.listener.onItemClick(lessonList.get(position));
-
-                    }
-                }
-            });
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    int position = getAdapterPosition();
+//                    if(position != RecyclerView.NO_POSITION && LessonViewHolder.this.listener != null){
+//                        LessonViewHolder.this.listener.onItemClick(lessonList.get(position));
+//
+//                    }
+//                }
+//            });
         }
+
     }
 
     public List<Lesson> rearrangeLessonList(List<Lesson> originalList){
@@ -121,4 +133,35 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         }
         return rearrangedList;
     }
+    private void updateFirestoreDocument(Lesson lesson) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference documentRef = db.collection("Class").document(lesson.getDocumentId());
+
+        // Create a map to update the checkbox field
+        Map<String, Object> updates = new HashMap<>();
+        updates.put("like", lesson.isChecked());
+
+        // Update the Firestore document
+        documentRef.update(updates)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // Document updated successfully
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Handle the error
+                    }
+                });
+    }
+    public interface OnCheckboxClickListener {
+        void onCheckboxClick(int position, boolean isChecked);
+    }
+
+    public void setOnCheckboxClickListener(OnCheckboxClickListener listener) {
+        this.onCheckboxClickListener = listener;
+    }
+
 }
