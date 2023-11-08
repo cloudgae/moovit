@@ -2,6 +2,8 @@ package com.example.main_01.shorts;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.VideoView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
