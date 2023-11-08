@@ -197,7 +197,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="케이팝 걸그룹 타이틀곡 메들리"
+                            android:text="Smoke 챌린지 수업"
                             android:textColor="#FFFFFF"
                             android:textSize="14dp"
                             android:fontFamily="@font/notosanskr_medium"
@@ -295,7 +295,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="케이팝 걸그룹 타이틀곡 메들리"
+                            android:text="힙합 기본기 수업"
                             android:textColor="#FFFFFF"
                             android:textSize="14dp"
                             android:fontFamily="@font/notosanskr_medium"

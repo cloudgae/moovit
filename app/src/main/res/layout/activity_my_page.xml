@@ -82,7 +82,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="365dp"
-                android:background="@drawable/background_example">
+                android:background="@drawable/background_example1">
 
                 <FrameLayout
                     android:layout_width="match_parent"
@@ -93,15 +93,18 @@
                         android:layout_height="214dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/background_example"/>
+                        android:background="@drawable/background_example"
+                        android:scaleType="fitCenter"/>
 
                     <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="140dp"
+                        android:layout_height="35dp"
                         android:layout_gravity="center_horizontal"
+                        android:gravity="center"
                         android:layout_marginTop="180dp"
                         android:text="감각을 주도하는 무버"
                         android:textSize="10dp"
+                        android:background="@drawable/mypage_testname"
                         android:fontFamily="@font/notosanskr_bold"/>
 
 
@@ -114,26 +117,27 @@
                         android:layout_marginRight="20dp"
                         android:layout_marginTop="250dp">
 
-                        <Button
+                        <ImageButton
                             android:id="@+id/classlist"
                             android:layout_width="100dp"
                             android:layout_height="90dp"
-                            android:backgroundTint="#FFFFFF"
-                            android:background="@drawable/mypage_button1"
-
+                            app:srcCompat="@drawable/mypage_button1"
+                            android:background="@android:color/transparent"
                             android:textSize="10dp" />
 
-                        <Button
+                        <ImageButton
                             android:id="@+id/likelist"
                             android:layout_width="100dp"
                             android:layout_height="90dp"
-                            android:background="@drawable/mypage_button2" />
-                        <Button
+                            app:srcCompat="@drawable/mypage_button2"
+                            android:background="@android:color/transparent"/>
+                        <ImageButton
                             android:id="@+id/mytype_info"
                             android:layout_width="100dp"
                             android:layout_height="90dp"
-                            android:background="@drawable/mypage_button3"
-                            android:backgroundTint="#3D3D3D"/>
+                            app:srcCompat="@drawable/mypage_button3"
+                            android:background="@android:color/transparent"/>
+
                     </LinearLayout>
                 </FrameLayout>
 

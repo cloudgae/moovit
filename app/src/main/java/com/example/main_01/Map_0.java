@@ -88,12 +88,12 @@ public class Map_0 extends FragmentActivity implements OnMapReadyCallback {
 
         // Add a marker in Seoul and move the camera
         LatLng SEOUL = new LatLng(37.556, 126.97);
-        mMap.addMarker(new MarkerOptions().position(SEOUL).title("Marker in Seoul").icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_png)));
+        mMap.addMarker(new MarkerOptions().position(SEOUL).title("케이팝 걸그룹 타이틀곡 메들리").icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_png)));
 
         // Add 3 markers with specific coordinates
-        addMarker(37.553, 126.9, "Marker 1");
-        addMarker(37.560, 127, "Marker 2");
-        addMarker(37.557, 126.92, "Marker 3");
+        addMarker(37.553, 126.9, "Smoke 챌린지 수업");
+        addMarker(37.560, 127, "힙합 기본기 수업");
+        addMarker(37.557, 126.92, "에스파 타이틀곡 챌린지 수업");
 
         // Set the zoom level to 10 (you can adjust this value as needed)
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(SEOUL, 12));
