@@ -79,15 +79,16 @@
 
         <Button
             android:id="@+id/starttest"
-            android:layout_width="match_parent"
+            android:layout_width="320dp"
             android:layout_height="56dp"
             android:layout_marginHorizontal="20dp"
-            android:backgroundTint="#E87FEA"
+            android:background="@drawable/gradient_button"
             android:fontFamily="@font/notosanskr_regular"
             android:padding="0dp"
             android:text="유형 테스트 시작하기"
             android:textColor="#121212"
             android:textSize="16dp"
             android:layout_marginBottom="10dp"/>
+
     </LinearLayout>
 </LinearLayout>

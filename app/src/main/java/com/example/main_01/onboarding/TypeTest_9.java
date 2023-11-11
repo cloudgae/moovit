@@ -19,6 +19,7 @@ import android.widget.VideoView;
 
 import com.example.main_01.MainActivity;
 import com.example.main_01.R;
+import com.example.main_01.mypage.MyPage;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.MediaSource;
@@ -40,6 +41,7 @@ public class TypeTest_9 extends AppCompatActivity {
     Button btnNext;
     Long moover, starter;
     String value4, value5, value6;
+    String TCODE; // 클래스의 멤버 변수로 선언
 
     private SimpleExoPlayer player;
     private com.google.android.exoplayer2.ui.PlayerView playerView1;
@@ -112,7 +114,7 @@ public class TypeTest_9 extends AppCompatActivity {
                                     }
                                 }
 //                                String value6 = (String) document.get("Q6");
-                                String TCODE = value4 + value5 + value6; // 도출된 유형 코드
+                                TCODE = value4 + value5 + value6; // 도출된 유형 코드
                                 Log.d(TAG, TCODE);
 
                                 // 세자리수 코드와 같은 값을 가진 유형 타입을 조회
@@ -329,6 +331,155 @@ public class TypeTest_9 extends AppCompatActivity {
                 finish();
             }
         });
+
+        db.collection("TypeTest")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                value4 = (String) document.get("Q4");
+                                value5 = (String) document.get("Q5");
+
+                                moover = (Long) document.get("M");
+                                starter = (Long) document.get("S");
+                                if (moover == null && starter != null) {
+                                    value6 = "S";
+                                } else if (starter == null && moover != null) {
+                                    value6 = "M";
+                                } else if (moover != null && starter != null) {
+                                    Integer m = Integer.parseInt(String.valueOf(moover));
+                                    Integer s = Integer.parseInt(String.valueOf(starter));
+                                    if (m > s) {
+                                        value6 = "M";
+                                    } else if (m == s) {
+                                        value6 = "S";
+                                    } else {
+                                        value6 = "S";
+                                    }
+                                }
+
+
+//                                String value6 = (String) document.get("Q6");
+                                String TCODE = value4 + value5 + value6; // 도출된 유형 코드
+                                Log.d(TAG, TCODE);
+
+
+                                // 세자리수 코드와 같은 값을 가진 유형 타입을 조회
+                                db.collection("Type")
+                                        .whereEqualTo("code", TCODE)
+                                        .get()
+                                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                if (task.isSuccessful()) {
+                                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                                        String finTYPE = document.getId();
+                                                        Log.d(TAG, finTYPE);
+
+                                                        // TCODE에 따라 영상 링크 다르게 설정하여 재생
+                                                        switch (TCODE) {
+                                                            case "PCS":
+                                                                // Amazon S3에서 영상 URL 설정
+                                                                videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS1.mp4";
+                                                                videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS2.mp4";
+                                                                videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS3.mp4";
+
+
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
+                                                                break;
+                                                            case "PCM":
+                                                                // Amazon S3에서 영상 URL 설정
+                                                                videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM1.mp4";
+                                                                videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM2.mp4";
+                                                                videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM3.mp4";
+
+
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
+                                                                break;
+                                                            case "UCS":
+                                                                // Amazon S3에서 영상 URL 설정
+                                                                videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS1.mp4";
+                                                                videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS2.mp4";
+                                                                videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS3.mp4";
+
+
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
+                                                                break;
+                                                            case "UCM":
+                                                                // Amazon S3에서 영상 URL 설정
+                                                                videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM1.mp4";
+                                                                videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM2.mp4";
+                                                                videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM3.mp4";
+
+
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
+                                                                break;
+                                                            case "PIS":
+                                                                // Amazon S3에서 영상 URL 설정
+                                                                videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS1.mp4";
+                                                                videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS2.mp4";
+                                                                videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS3.mp4";
+
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
+                                                                break;
+                                                            case "PIM":
+                                                                // Amazon S3에서 영상 URL 설정
+                                                                videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM1.mp4";
+                                                                videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM2.mp4";
+                                                                videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM3.mp4";
+
+
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
+                                                                break;
+                                                            case "UIS":
+                                                                // Amazon S3에서 영상 URL 설정
+                                                                videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS1.mp4";
+                                                                videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS2.mp4";
+                                                                videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS3.mp4";
+
+
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
+                                                                break;
+                                                            case "UIM":
+                                                                // Amazon S3에서 영상 URL 설정
+                                                                videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM1.mp4";
+                                                                videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM2.mp4";
+                                                                videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM3.mp4";
+
+                                                                initializePlayer(videoURL1, playerView1);
+                                                                initializePlayer(videoURL2, playerView2);
+                                                                initializePlayer(videoURL3, playerView3);
+                                                                break;
+                                                        }
+
+                                                    }
+                                                } else {
+                                                    Log.d(TAG, "Error getting documents: ", task.getException());
+                                                }
+                                            }
+                                        });
+                            }
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
     }
 
     private void initializePlayer(String videoUrl, com.google.android.exoplayer2.ui.PlayerView playerView) {

@@ -66,6 +66,7 @@
                     android:fontFamily="@font/notosanskr_bold"
                     android:gravity="left|center"
                     android:text="무빗 유저 01"
+                    android:drawablePadding="10dp"
                     android:textColor="@color/white"/>
 
                 <Button
@@ -80,6 +81,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/typelayer2"
                 android:layout_width="match_parent"
                 android:layout_height="365dp"
                 android:background="@drawable/background_example1">
@@ -89,22 +91,23 @@
                     android:layout_height="match_parent">
 
                     <ImageView
+                        android:id="@+id/typelayer"
                         android:layout_width="320dp"
                         android:layout_height="214dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/background_example"
-                        android:scaleType="fitCenter"/>
+                        android:scaleType="centerCrop" />
 
                     <TextView
+                        android:id="@+id/typename"
                         android:layout_width="140dp"
                         android:layout_height="35dp"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center"
                         android:layout_marginTop="180dp"
-                        android:text="감각을 주도하는 무버"
-                        android:textSize="10dp"
+                        android:text=""
                         android:background="@drawable/mypage_testname"
+                        android:textSize="10dp"
                         android:fontFamily="@font/notosanskr_bold"/>
 
 

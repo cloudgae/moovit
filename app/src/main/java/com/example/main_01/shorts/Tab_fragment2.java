@@ -1,6 +1,7 @@
 package com.example.main_01.shorts;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -30,7 +31,26 @@ public class Tab_fragment2 extends Fragment {
 
         // VideoView에 영상 설정
         videoView.setVideoURI(Uri.parse(videoURL));
-        videoView.start(); // 영상 재생 시작
+
+        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                int videoWidth = mp.getVideoWidth();
+                int videoHeight = mp.getVideoHeight();
+
+                // 화면의 높이 가져오기
+                int screenHeight = getResources().getDisplayMetrics().heightPixels;
+
+                // 영상 크기를 화면의 높이에 맞게 조정
+                ViewGroup.LayoutParams layoutParams = videoView.getLayoutParams();
+                layoutParams.width = (int) ((float) screenHeight / videoHeight * videoWidth);
+                layoutParams.height = screenHeight;
+                videoView.setLayoutParams(layoutParams);
+
+                // 영상 재생 시작
+                videoView.start();
+            }
+        });
 
         dp1 = rootView.findViewById(R.id.dancer_profile); // dp1 버튼을 초기화합니다.
 
