@@ -2,26 +2,25 @@ package com.example.main_01;
 
 import static android.content.ContentValues.TAG;
 
+import android.animation.ArgbEvaluator;
 import android.annotation.SuppressLint;
-import android.app.TabActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
+import com.example.main_01.Home.Adapter;
+import com.example.main_01.Home.Model;
 import com.example.main_01.apply.Apply_0;
 import com.example.main_01.mypage.MyPage;
 import com.example.main_01.shorts.shorts1;
@@ -35,24 +34,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.core.FirestoreClient;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 
 @SuppressWarnings("deprecation")
-public class MainActivity extends TabActivity {
+public class MainActivity extends AppCompatActivity {
 
     Button wc1, wc2, wc3, wc4, wc5, wc6, mn1, mn2, mn3, mn4;
     TextView typenm;
@@ -70,6 +63,15 @@ public class MainActivity extends TabActivity {
 //    private VideoView videoView2;
 //    private VideoView videoView3;
     String videoURL1, videoURL2, videoURL3;
+
+
+    ViewPager viewPager;
+    Adapter adapter;
+    List<Model> models;
+    Integer[] colors = null;
+    ArgbEvaluator argbEvaluator = new ArgbEvaluator();
+
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -102,6 +104,51 @@ public class MainActivity extends TabActivity {
         videoURL3 = ".";
         //지금 가장 관심도가 높은 클래스 리사이클러뷰
 
+        models = new ArrayList<>();
+        models.add(new Model(R.drawable.banner1, "목적지", "어디로 여행을 갈지 골라보자"));
+        models.add(new Model(R.drawable.background_example, "숙소", "근처 숙소들을 찾아보고 숙소 가격을 알아보자"));
+        models.add(new Model(R.drawable.thumbnail, "장보기", "무엇을 사고 대충 비용이 얼마나 드는지 알아보자"));
+       /* models.add(new Model(R.drawable.capuccino, "이동수단", "어떤 이동수단을 사용하고 비용이 얼마나 드는지 알아보자"));
+*/
+
+        adapter = new Adapter(models, this);
+
+        viewPager = findViewById(R.id.viewPager);
+        viewPager.setAdapter(adapter);
+        viewPager.setPadding(100, 300, 100, 0);
+
+        Integer[] colors_temp = {
+                getResources().getColor(R.color.color1),
+                getResources().getColor(R.color.color2),
+                getResources().getColor(R.color.color3),
+                getResources().getColor(R.color.color4)
+        };
+        colors = colors_temp;
+
+
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                if(position < (adapter.getCount() -1) && position < (colors.length -1)){
+                    viewPager.setBackgroundColor((Integer) argbEvaluator.evaluate(positionOffset,
+                            colors[position], colors[position + 1]));
+                }
+                else{
+                    viewPager.setBackgroundColor(colors[colors.length - 1]);
+                }
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         // Firestore 쿼리 생성
         CollectionReference collectionRef = db.collection("Class");
@@ -204,7 +251,7 @@ public class MainActivity extends TabActivity {
 
 
 //        탭 연결
-        TabHost tabHost = getTabHost();
+        /*TabHost tabHost = getTabHost();
 
         TabHost.TabSpec tabSpecClass = tabHost.newTabSpec("Class").setIndicator("클래스");
         tabSpecClass.setContent(R.id.tabclass);
@@ -214,7 +261,7 @@ public class MainActivity extends TabActivity {
         tabSpecDancer.setContent(R.id.tabdancer);
         tabHost.addTab(tabSpecDancer);
 
-        tabHost.setCurrentTab(0);
+        tabHost.setCurrentTab(0);*/
 
         //유형별 영상
 
