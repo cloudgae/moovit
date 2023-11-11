@@ -14,7 +14,7 @@ import com.example.main_01.R;
 public class MyPage extends AppCompatActivity {
 
     Button arw;
-    Button btn1, btn2, btn3;
+    ImageButton btn1, btn2, btn3;
 
 
     @Override
@@ -23,9 +23,9 @@ public class MyPage extends AppCompatActivity {
         setContentView(R.layout.activity_my_page);
 
         Button arw = (Button) findViewById(R.id.goback);
-        Button btn1 = (Button) findViewById(R.id.classlist);
-        Button btn2 = (Button) findViewById(R.id.likelist);
-        Button btn3 = (Button) findViewById(R.id.mytype_info);
+        ImageButton btn1 = (ImageButton) findViewById(R.id.classlist);
+        ImageButton btn2 = (ImageButton) findViewById(R.id.likelist);
+        ImageButton btn3 = (ImageButton) findViewById(R.id.mytype_info);
 
         arw.setOnClickListener(new View.OnClickListener() {
             @Override

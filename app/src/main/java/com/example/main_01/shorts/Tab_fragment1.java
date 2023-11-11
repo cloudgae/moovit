@@ -23,30 +23,11 @@ public class Tab_fragment1 extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_tab1, container, false);
         videoView = rootView.findViewById(R.id.videoView);
 
-        // 화면 크기를 가져옴
-        int screenWidth = getResources().getDisplayMetrics().widthPixels;
-
-// 비디오 화면 비율 설정 (예: 16:9)
-        int videoWidth = 16;
-        int videoHeight = 9;
-
-// 높이 계산
-        int videoViewHeight = screenWidth * videoHeight / videoWidth;
-
-// VideoView의 레이아웃 설정
-        videoView.setLayoutParams(new ViewGroup.LayoutParams(screenWidth, videoViewHeight));
-
-// Amazon S3에서 영상 URL 설정
+        // Amazon S3에서 영상 URL 설정
         String videoURL = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS1.mp4";
 
-// VideoView에 영상 설정
+        // VideoView에 영상 설정
         videoView.setVideoURI(Uri.parse(videoURL));
-
-//        // Amazon S3에서 영상 URL 설정
-//        String videoURL = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS1.mp4";
-//
-//        // VideoView에 영상 설정
-//        videoView.setVideoURI(Uri.parse(videoURL));
         videoView.start(); // 영상 재생 시작
 
         return rootView;
