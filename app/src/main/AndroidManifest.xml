@@ -16,6 +16,13 @@
         android:theme="@style/Theme.Main_01"
         tools:targetApi="31">
         <activity
+            android:name=".Apply_C7"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Home.Home_item_3"
             android:exported="false" />
         <activity

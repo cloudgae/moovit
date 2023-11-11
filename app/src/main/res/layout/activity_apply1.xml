@@ -32,6 +32,7 @@
         android:orientation="horizontal"
         android:layout_marginHorizontal="20dp">
         <ImageView
+            android:id="@+id/image"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="#3d3d3d"
@@ -42,20 +43,23 @@
             android:orientation="vertical"
             android:layout_marginHorizontal="5dp">
             <TextView
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="에스파 타이틀곡 클래스"
                 android:textSize="12dp"
                 android:fontFamily="@font/notosanskr_bold"
                 android:includeFontPadding="false"/>
+
             <TextView
+                android:id="@+id/txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:includeFontPadding="false"
-                android:textSize="10dp"
                 android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="K-POP  난이도 하"
                 android:textColor="#8D8D8D"
-                android:text="K-POP  난이도 하"/>
+                android:textSize="10dp" />
         </LinearLayout>
     </LinearLayout>
 

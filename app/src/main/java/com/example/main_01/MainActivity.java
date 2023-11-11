@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -71,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
-
+    ImageView class1;
+    TextView class1name, class1txt;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -89,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
         Button streetbtn = (Button) findViewById(R.id.streetbtn);
         Button menu2 = (Button) findViewById(R.id.menu2);
 
+        class1 = (ImageView) findViewById(R.id.class1);
+        class1name = (TextView) findViewById(R.id.class1name);
+        class1txt = (TextView) findViewById(R.id.class1txt);
 
         playerView1 = findViewById(R.id.player_view1);
         playerView2 = findViewById(R.id.player_view2);
@@ -125,6 +130,14 @@ public class MainActivity extends AppCompatActivity {
         };
         colors = colors_temp;
 
+        class1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, Apply_C7.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:orientation="vertical"
-    tools:context=".apply.Apply_0">
+    tools:context=".Apply_C7">
 
     <!-- 상단 고정 부분 -->
     <LinearLayout
