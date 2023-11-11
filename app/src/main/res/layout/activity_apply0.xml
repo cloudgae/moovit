@@ -197,11 +197,11 @@
 
         <Button
             android:layout_width="108dp"
-            android:layout_height="wrap_content"
+            android:layout_height="34dp"
             android:layout_gravity="center"
             android:layout_marginRight="20dp"
-            android:backgroundTint="#858585"
-            android:fontFamily="@font/notosanskr_regular"
+            android:background="@drawable/gradient_button"
+            android:fontFamily="@font/notosanskr_medium"
             android:text="신청하기"
             android:textSize="12dp" />
     </LinearLayout>
