@@ -9,14 +9,18 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.main_01.MainActivity;
 import com.example.main_01.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class Apply_0 extends AppCompatActivity {
+
+    Button applybtn;
 
     ViewPager pager;
 
@@ -25,6 +29,8 @@ public class Apply_0 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apply0);
 
+        Button applybtn = (Button) findViewById(R.id.apply_button);
+
         pager = (ViewPager) findViewById(R.id.pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
 
@@ -32,7 +38,18 @@ public class Apply_0 extends AppCompatActivity {
         tabLayout.setupWithViewPager(pager);
         pager.setAdapter(new PageAdapter(getSupportFragmentManager(), this));
 
+        applybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Apply_0.this, Apply_1.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
     }
+
+
 
     static class PageAdapter extends FragmentStatePagerAdapter {
         PageAdapter(FragmentManager fm, Context context) {
@@ -66,7 +83,11 @@ public class Apply_0 extends AppCompatActivity {
                 return "Q&A";
             }
         }
+
+
     }
+
+
 
 }
 //
