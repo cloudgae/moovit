@@ -49,8 +49,6 @@ public class Apply_0 extends AppCompatActivity {
 
     }
 
-
-
     static class PageAdapter extends FragmentStatePagerAdapter {
         PageAdapter(FragmentManager fm, Context context) {
             super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <VideoView
+        android:id="@+id/videoView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top|bottom"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/classinfo_name"
+            android:layout_width="231dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:gravity="center"
+            android:padding="0dp"
+            android:singleLine="false"
+            android:text="뉴진스 Attention       안무 클래스"
+            android:includeFontPadding="false"
+            android:textColor="#FFFFFF"
+            android:textSize="24dp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/hashtag1"
+                android:layout_width="65dp"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="#케이팝"
+                android:fontFamily="@font/notosanskr_medium"
+                android:background="@drawable/hashtag_box"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/hashtag2"
+                android:layout_width="65dp"
+                android:layout_height="33dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="#원데이"
+                android:background="@drawable/hashtag_box"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="12dp" />
+            <TextView
+                android:id="@+id/hashtag3"
+                android:layout_width="65dp"
+                android:layout_height="33dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="#원데이"
+                android:background="@drawable/hashtag_box"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/followbutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/shorts_followbtn"
+                android:layout_marginRight="30dp"
+                />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!-- 원 형태의 이미지뷰 -->
+                <ImageView
+                    android:id="@+id/profileimage"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:layout_gravity="center_vertical|center"
+                    android:background="@drawable/profile_image" />
+
+                <!-- 링 형태의 스타일을 입히는 레이아웃 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ring_shape"
+                    android:elevation="4dp">
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+
+
+            <ImageButton
+                android:id="@+id/likebutton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="30dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/shorts_likebtn"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

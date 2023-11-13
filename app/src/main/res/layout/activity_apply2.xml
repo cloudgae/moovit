@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/notosanskr_bold"
             android:gravity="center"
-            android:text="신청하기"
+            android:text=""
             android:textSize="15dp" />
     </FrameLayout>
 
@@ -94,10 +94,13 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
     <Button
+        android:id="@+id/finish_button"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:text="33,000원 결제하기"
         android:fontFamily="@font/notosanskr_regular"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
         android:textSize="16dp"
         android:background="@drawable/gradient_button"/>
 

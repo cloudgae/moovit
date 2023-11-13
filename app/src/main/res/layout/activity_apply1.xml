@@ -10,20 +10,14 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="40dp">
         <ImageButton
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@color/black"
             android:src="@drawable/back_key"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/notosanskr_bold"
-            android:gravity="center"
-            android:text="신청하기"
-            android:textSize="15dp" />
+
     </FrameLayout>
     
     <LinearLayout
@@ -64,6 +58,7 @@
     </LinearLayout>
 
     <CalendarView
+        android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/timepicker.Theme"/>

@@ -26,11 +26,11 @@ public class Tab_fragment2 extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_tab2, container, false);
         videoView = rootView.findViewById(R.id.videoView);
 
-        // Amazon S3에서 영상 URL 설정
+       /* // Amazon S3에서 영상 URL 설정
         String videoURL = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS2.mp4";
 
         // VideoView에 영상 설정
-        videoView.setVideoURI(Uri.parse(videoURL));
+        videoView.setVideoURI(Uri.parse(videoURL));*/
 
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override

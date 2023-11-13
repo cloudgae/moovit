@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="수강 신청 완료!"
+        android:textSize="20dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textColor="#000000"
+        android:gravity="left"
+        android:layout_gravity="left" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="수강 신청이 완료되었어요. 자세한 정보는 &#10;마이페이지 내 수강 내역에서 확인해보세요."
+        android:textSize="14dp"
+        android:fontFamily="@font/notosanskr_regular"
+        android:textColor="#000000"
+        android:gravity="left"
+        android:layout_gravity="left"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>
