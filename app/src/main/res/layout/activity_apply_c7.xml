@@ -15,6 +15,7 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/backbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -22,6 +23,7 @@
             app:srcCompat="@drawable/ic_sign_back" />
 
         <TextView
+            android:id="@+id/c7name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -46,14 +48,14 @@
 
             <!-- ImageView -->
             <ImageView
-                android:id="@+id/image"
+                android:id="@+id/c7image"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@drawable/thumbnail" />
 
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/c7name2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -100,12 +102,12 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/genre"
+                    android:id="@+id/c7genre"
                     android:layout_width="155dp"
                     android:layout_height="78dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/selector_radio_button"
-                    android:drawableTop="@drawable/ellipse173"
+                    android:drawableTop="@drawable/icon_genre"
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:padding="10dp"
@@ -113,12 +115,12 @@
                     android:textSize="11dp" />
 
                 <TextView
-                    android:id="@+id/diff"
+                    android:id="@+id/c7diff"
                     android:layout_width="155dp"
                     android:layout_height="78dp"
                     android:layout_marginLeft="5dp"
                     android:background="@drawable/selector_radio_button"
-                    android:drawableTop="@drawable/ellipse173"
+                    android:drawableTop="@drawable/icon_diff"
                     android:drawablePadding="0dp"
                     android:gravity="center"
                     android:includeFontPadding="false"
@@ -136,12 +138,12 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/day"
+                    android:id="@+id/c7day"
                     android:layout_width="155dp"
                     android:layout_height="78dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/selector_radio_button"
-                    android:drawableTop="@drawable/ellipse173"
+                    android:drawableTop="@drawable/icon_day"
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:padding="10dp"
@@ -149,12 +151,12 @@
                     android:textSize="11dp" />
 
                 <TextView
-                    android:id="@+id/loc"
+                    android:id="@+id/c7loc"
                     android:layout_width="155dp"
                     android:layout_height="78dp"
                     android:layout_marginLeft="5dp"
                     android:background="@drawable/selector_radio_button"
-                    android:drawableTop="@drawable/ellipse173"
+                    android:drawableTop="@drawable/icon_day"
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:padding="10dp"
@@ -188,7 +190,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/price"
+            android:id="@+id/c7price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -202,15 +204,13 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <Button
+        <ImageButton
             android:id="@+id/apply_button"
-            android:layout_width="108dp"
-            android:layout_height="34dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginRight="20dp"
-            android:background="@drawable/gradient_button"
-            android:fontFamily="@font/notosanskr_medium"
-            android:text="신청하기"
-            android:textSize="12dp" />
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/newapplybtn" />
     </LinearLayout>
 </LinearLayout>

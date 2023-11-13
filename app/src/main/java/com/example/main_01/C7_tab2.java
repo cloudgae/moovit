@@ -38,45 +38,45 @@ public class C7_tab2 extends Fragment {
         db = FirebaseFirestore.getInstance();
 
         // Firestore에서 데이터 가져오기
-        db.collection("Class").document("C1").get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                // 데이터 가져오기
-                                String review1 = document.getString("review1");
-                                long review1_data = document.getLong("review1_data");
-                                String review2 = document.getString("review2");
-                                long review2_data = document.getLong("review2_data");
-                                String review3 = document.getString("review3");
-                                long review3_data = document.getLong("review3_data");
-
-                                // ProgressBar 업데이트
-                                progressBar1.setProgress((int) review1_data);
-                                progressBar2.setProgress((int) review2_data);
-                                progressBar3.setProgress((int) review3_data);
-
-                                // 설명 텍스트 설정
-                                description1.setText(review1);
-                                description2.setText(review2);
-                                description3.setText(review3);
-
-                                // 데이터 텍스트 설정
-                                TextView data1 = view.findViewById(R.id.data1);
-                                TextView data2 = view.findViewById(R.id.data2);
-                                TextView data3 = view.findViewById(R.id.data3);
-
-                                data1.setText(String.valueOf(review1_data));
-                                data2.setText(String.valueOf(review2_data));
-                                data3.setText(String.valueOf(review3_data));
-                            }
-                        } else {
-                            // 처리 중 에러 발생 시
-                        }
-                    }
-                });
+//        db.collection("Class").document("C1").get()
+//                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                        if (task.isSuccessful()) {
+//                            DocumentSnapshot document = task.getResult();
+//                            if (document.exists()) {
+//                                // 데이터 가져오기
+//                                String review1 = document.getString("review1");
+//                                long review1_data = document.getLong("review1_data");
+//                                String review2 = document.getString("review2");
+//                                long review2_data = document.getLong("review2_data");
+//                                String review3 = document.getString("review3");
+//                                long review3_data = document.getLong("review3_data");
+//
+//                                // ProgressBar 업데이트
+//                                progressBar1.setProgress((int) review1_data);
+//                                progressBar2.setProgress((int) review2_data);
+//                                progressBar3.setProgress((int) review3_data);
+//
+//                                // 설명 텍스트 설정
+//                                description1.setText(review1);
+//                                description2.setText(review2);
+//                                description3.setText(review3);
+//
+//                                // 데이터 텍스트 설정
+//                                TextView data1 = view.findViewById(R.id.data1);
+//                                TextView data2 = view.findViewById(R.id.data2);
+//                                TextView data3 = view.findViewById(R.id.data3);
+//
+//                                data1.setText(String.valueOf(review1_data));
+//                                data2.setText(String.valueOf(review2_data));
+//                                data3.setText(String.valueOf(review3_data));
+//                            }
+//                        } else {
+//                            // 처리 중 에러 발생 시
+//                        }
+//                    }
+//                });
 
         return view;
     }
