@@ -14,7 +14,7 @@ public class C7_tab3 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_apply3, container, false);
+        View view = inflater.inflate(R.layout.fragment_c7_tab3, container, false);
         // Your code for Fragment 1
         return view;
     }
