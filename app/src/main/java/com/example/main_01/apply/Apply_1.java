@@ -10,19 +10,58 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.main_01.MainActivity;
 import com.example.main_01.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
 
 public class Apply_1 extends AppCompatActivity {
+    ImageView image;
+    TextView name, txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apply1);
+
+        image = (ImageView) findViewById(R.id.image);
+        name = (TextView) findViewById(R.id.name);
+        txt = (TextView) findViewById(R.id.txt);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        DocumentReference docRef = db.collection("Class").document("C7");
+
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    name.setText(document.getString("name"));
+                    //장르 . 난이도 상/중/하
+                    txt.setText(document.getString("genre") + "・" +
+                            "난이도 " + document.getString("difficulty"));
+
+//                    // AWS S3에서 이미지를 로드하여 이미지뷰에 설정
+//                    String imageName = "C7image/C7image"; // S3 버킷 내 이미지 파일의 경로 및 파일명
+//                    loadImageFromS3(imageName);
+                    String imageUrl = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/C7image/C7image"; // AWS S3 버킷의 이미지 URL로 변경
+                    Glide.with(Apply_1.this).load(imageUrl).into(image);
+                }
+            }
+        });
+
 
         CalendarView calendarView = findViewById(R.id.calendarView);
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {

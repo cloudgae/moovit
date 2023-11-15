@@ -17,11 +17,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.example.main_01.Home.Adapter;
 import com.example.main_01.Home.Lesson;
 import com.example.main_01.Home.LessonAdapter;
@@ -42,6 +47,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.common.primitives.Shorts;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -512,8 +519,51 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-    }
+        DocumentReference docRef = db.collection("Class").document("C7");
 
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    class1name.setText(document.getString("name"));
+                    //장르 . 난이도 상/중/하
+                    class1txt.setText(document.getString("genre") + "・" +
+                            "난이도 " + document.getString("difficulty"));
+
+//                    // AWS S3에서 이미지를 로드하여 이미지뷰에 설정
+//                    String imageName = "C7image/C7image"; // S3 버킷 내 이미지 파일의 경로 및 파일명
+//                    loadImageFromS3(imageName);
+                    String imageUrl = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/C7image/C7image"; // AWS S3 버킷의 이미지 URL로 변경
+                    Glide.with(MainActivity.this).load(imageUrl).into(class1);
+                }
+            }
+        });
+
+    }
+    private void loadImageFromS3(String imageName) {
+        // 디바이스 독립적인 픽셀 (dp)를 픽셀로 변환
+        int widthInPixels = (int) (120 * getResources().getDisplayMetrics().density);
+        int heightInPixels = (int) (120 * getResources().getDisplayMetrics().density);
+
+        Glide.with(MainActivity.this)
+                .load("https://moovitbucket2.s3.amazonaws.com/" + imageName)
+                .listener(new RequestListener<Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                        e.printStackTrace(); // 로드 실패 시 오류 메시지 출력
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, com.bumptech.glide.load.DataSource dataSource, boolean isFirstResource) {
+                        return false;
+                    }
+                })
+                .centerCrop()
+                .override(widthInPixels, heightInPixels)  // 디바이스 독립적인 픽셀로 크기 지정
+                .into(class1);
+    }
     private void initializePlayer(String videoUrl, com.google.android.exoplayer2.ui.PlayerView playerView) {
         // ExoPlayer 초기화
         player = new SimpleExoPlayer.Builder(this).build();
@@ -564,6 +614,8 @@ public class MainActivity extends AppCompatActivity {
     public interface OnItemClickListener {
         void onItemClick(Lesson lesson);
     }
+
+
 
 }
 

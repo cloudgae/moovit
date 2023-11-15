@@ -30,7 +30,7 @@ import android.provider.MediaStore.Images.Thumbnails;
 
 
 public class C7_tab1 extends Fragment {
-    TextView content, content2, dancername, dancercareer;
+    TextView content, content2, dancername, dancercareer, dancer_intro;
     ImageView thumb, dancerprofile;
 
     private FirebaseFirestore db;
@@ -48,6 +48,7 @@ public class C7_tab1 extends Fragment {
         dancercareer = (TextView) view.findViewById(R.id.dancer_career);
         thumb = (ImageView) view.findViewById(R.id.thumb);
         dancerprofile = (ImageView) view.findViewById(R.id.dancer_profile);
+        dancer_intro = (TextView) view.findViewById(R.id.dancer_intro);
 
         // Firestore에서 "C7" 문서 데이터 가져오기
         DocumentReference docRef = db.collection("Class").document("C7");
@@ -58,22 +59,50 @@ public class C7_tab1 extends Fragment {
                     // Firestore 문서에서 데이터 가져오기
                     String contentValue = documentSnapshot.getString("intro");
                     String contentValue2 = documentSnapshot.getString("intro2");
-                    String dancerNameValue = documentSnapshot.getString("dancername");
+//                    String dancerNameValue = documentSnapshot.getString("dancername");
                     String dancerCareerValue = documentSnapshot.getString("dancercareer");
 
                     // TextView 업데이트
                     content.setText(contentValue);
                     content2.setText(contentValue2);
-                    dancername.setText(dancerNameValue);
+//                    dancername.setText(dancerNameValue);
                     dancercareer.setText(dancerCareerValue);
                 }
             }
         });
+
+        DocumentReference docRef2 = db.collection("Dancer").document("profile1");
+        docRef2.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    // Firestore 문서에서 데이터 가져오기
+                    String dc1 = documentSnapshot.getString("career1");
+                    String dc2 = documentSnapshot.getString("career2");
+                    String dc3 = documentSnapshot.getString("career3");
+                    String dc4 = documentSnapshot.getString("career4");
+                    dancercareer.setText("- " +dc1 + "\n" +
+                            "- " +dc2 + "\n" +
+                            "- " +dc3 + "\n");
+                    dancer_intro.setText(documentSnapshot.getString("introduce"));
+
+//                    String dancerNameValue = documentSnapshot.getString("dancername");
+//                    String dancerCareerValue = documentSnapshot.getString("dancercareer");
+
+
+//                    dancername.setText(dancerNameValue);
+//                    dancercareer.setText(dancerCareerValue);
+                }
+            }
+        });
+
 //        String videoName = "C7video";
 //        loadVideoThumbnailFromS3(videoName);
         // AWS S3에서 이미지를 로드하여 이미지뷰에 설정
-        String imageName = "C7image/C7image"; // S3 버킷 내 이미지 파일의 경로 및 파일명
-        loadImageFromS3(imageName);
+//        String imageName = "C7image/C7image"; // S3 버킷 내 이미지 파일의 경로 및 파일명
+//        loadImageFromS3(imageName);
+        String imageUrl = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/C7image/C7image"; // AWS S3 버킷의 이미지 URL로 변경
+        Glide.with(C7_tab1.this).load(imageUrl).into(thumb);
 
         return view;
     }

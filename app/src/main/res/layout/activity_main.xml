@@ -290,7 +290,8 @@
                                     android:id="@+id/class1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:background="@drawable/home_1_1" />
+                                    android:background="@color/black"
+                                    android:scaleType="centerCrop"/>
 
                             </androidx.cardview.widget.CardView>
 

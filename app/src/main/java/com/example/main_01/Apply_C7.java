@@ -39,6 +39,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Apply_C7 extends AppCompatActivity {
     ImageButton backbtn, applybtn;
     TextView c7name, c7name2, c7genre, c7diff, c7day, c7loc, c7price;
@@ -56,6 +59,10 @@ public class Apply_C7 extends AppCompatActivity {
 
         // Firestore 초기화
         db = FirebaseFirestore.getInstance();
+        DocumentReference newClassRef = db.collection("Class").document("C7");
+//        새로운 문서의 id 가져오기
+        String newClassId = newClassRef.getId();
+        Map<String, Object> data = new HashMap<>();
 
         backbtn = (ImageButton) findViewById(R.id.backbtn);
         applybtn = (ImageButton) findViewById(R.id.apply_button);
@@ -112,6 +119,7 @@ public class Apply_C7 extends AppCompatActivity {
         applybtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent i = new Intent(Apply_C7.this, Apply_1.class);
                 startActivity(i);
                 finish();
@@ -144,9 +152,11 @@ public class Apply_C7 extends AppCompatActivity {
             }
         });
 
-        // AWS S3에서 이미지를 로드하여 이미지뷰에 설정
-        String imageName = "C7image/C7image"; // S3 버킷 내 이미지 파일의 경로 및 파일명
-        loadImageFromS3(imageName);
+//        // AWS S3에서 이미지를 로드하여 이미지뷰에 설정
+//        String imageName = "C7image/C7image"; // S3 버킷 내 이미지 파일의 경로 및 파일명
+//        loadImageFromS3(imageName);
+        String imageUrl = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/C7image/C7image"; // AWS S3 버킷의 이미지 URL로 변경
+        Glide.with(Apply_C7.this).load(imageUrl).into(c7image);
 
     }
     private void loadImageFromS3(String imageName) {
@@ -195,12 +205,12 @@ public class Apply_C7 extends AppCompatActivity {
     private String mapDiffToDisplayName(String diff) {
         // Firestore 장르를 표시 이름으로 매핑
         if ("상".equals(diff)) {
-            return "상급 난이도";
+            return "난이도 상";
         } else if ("중".equals(diff)) {
-            return "중급 난이도";
+            return "난이도 중";
         } else if ("하".equals(diff)){
            // 필요한 경우 다른 장르에 대한 매핑 추가
-            return "코레오";
+            return "난이도 하";
         }
         return diff;// 매핑이 없을 경우 원래의 장르로 기본 설정
     }

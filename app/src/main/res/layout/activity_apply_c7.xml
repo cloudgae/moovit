@@ -47,11 +47,21 @@
             android:orientation="vertical">
 
             <!-- ImageView -->
-            <ImageView
-                android:id="@+id/c7image"
-                android:layout_width="match_parent"
+            <androidx.cardview.widget.CardView
+                android:layout_width="320dp"
                 android:layout_height="200dp"
-                android:background="@drawable/thumbnail" />
+                app:cardCornerRadius="10dp"
+                android:layout_gravity="center"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:id="@+id/c7image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/thumbnail"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
 
 
             <TextView
