@@ -171,28 +171,28 @@ public class MyPage extends AppCompatActivity {
                                                         // 유형 설명
                                                         switch (TCODE) {
                                                             case "PCS":
-                                                                typelayer.setBackgroundResource(R.drawable.pcs);
+                                                                typelayer.setBackgroundResource(R.drawable.pcs2);
                                                                 break;
                                                             case "PCM":
-                                                                typelayer.setBackgroundResource(R.drawable.pcm);
+                                                                typelayer.setBackgroundResource(R.drawable.pcm2);
                                                                 break;
                                                             case "UCS":
-                                                                typelayer.setBackgroundResource(R.drawable.ucs);
+                                                                typelayer.setBackgroundResource(R.drawable.ucs2);
                                                                 break;
                                                             case "UCM":
-                                                                typelayer.setBackgroundResource(R.drawable.ucm);
+                                                                typelayer.setBackgroundResource(R.drawable.ucm2);
                                                                 break;
                                                             case "PIS":
-                                                                typelayer.setBackgroundResource(R.drawable.pis);
+                                                                typelayer.setBackgroundResource(R.drawable.pis2);
                                                                 break;
                                                             case "PIM":
-                                                                typelayer.setBackgroundResource(R.drawable.pim);
+                                                                typelayer.setBackgroundResource(R.drawable.pim2);
                                                                 break;
                                                             case "UIS":
-                                                                typelayer.setBackgroundResource(R.drawable.uis);
+                                                                typelayer.setBackgroundResource(R.drawable.uis2);
                                                                 break;
                                                             case "UIM":
-                                                                typelayer.setBackgroundResource(R.drawable.uim);
+                                                                typelayer.setBackgroundResource(R.drawable.uim2);
                                                                 break;
                                                         }
 

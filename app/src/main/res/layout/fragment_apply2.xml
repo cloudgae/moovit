@@ -213,7 +213,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/notosanskr_bold"
-                        android:text="50개"
+                        android:text="80개"
                         android:includeFontPadding="false"
                         android:textColor="@color/pink"
                         android:layout_gravity="center_vertical"

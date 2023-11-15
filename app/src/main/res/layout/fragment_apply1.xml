@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black"
     android:fillViewport="true"
     android:orientation="vertical">
@@ -24,6 +24,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/notosanskr_bold"
                     android:text="클래스 내용"
+                    android:layout_marginTop="10dp"
                     android:textSize="16dp" />
 
                 <TextView
@@ -86,6 +87,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/notosanskr_bold"
                     android:text="강사 소개"
+                    android:layout_marginVertical="5dp"
                     android:textSize="15dp" />
                     
                 <LinearLayout
@@ -117,6 +119,7 @@
                     android:id="@+id/dancer_career"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
                     android:fontFamily="@font/notosanskr_regular"
                     android:text="- 댄서 대학원 6주 과정 수료\n- 서울여자대학교 무용학과 졸업\n- 댄스 자격증 1급 취득"
                     android:textSize="12dp" />
@@ -139,7 +142,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -147,44 +151,176 @@
                     android:text="이런 클래스는 어떠세요?"
                     android:layout_marginBottom="5dp"
                     android:textSize="16dp"/>
-                
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    
-                    <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:background="#D9D9D9"/>
+                    android:orientation="horizontal">
 
-                    <TextView
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="8dp"
-                        android:textColor="#707070"
-                        android:includeFontPadding="false"
-                        android:layout_marginVertical="5dp"
-                        android:text="원데이/공릉동"/>
+                        android:orientation="vertical"
+                        android:layout_marginRight="5dp">
 
-                    <TextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:textSize="11dp"
-                        android:includeFontPadding="false"
-                        android:layout_marginBottom="3dp"
-                        android:text="보이그룹 안무 클래스"/>
 
-                    <TextView
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginRight="10dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/home_1_3" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="8dp"
+                            android:textColor="#707070"
+                            android:includeFontPadding="false"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="3dp"
+                            android:text="원데이/공릉동"/>
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="11dp"
+                            android:includeFontPadding="false"
+                            android:layout_marginBottom="3dp"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:text="케이팝 걸그룹 타이틀곡 \n메들리 클래스"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="10dp"
+                            android:textColor="@color/white"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:text="52,000원"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="10dp"
-                        android:textColor="#707070"
-                        android:includeFontPadding="false"
-                        android:fontFamily="@font/notosanskr_bold"
-                        android:text="52,000원"/>
+                        android:orientation="vertical"
+                        android:layout_marginRight="5dp">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginRight="10dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/home_1_2" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="8dp"
+                            android:textColor="#707070"
+                            android:includeFontPadding="false"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="3dp"
+                            android:text="원데이/공릉동"/>
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="11dp"
+                            android:includeFontPadding="false"
+                            android:layout_marginBottom="3dp"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:text="청하 코레오 클래스"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="10dp"
+                            android:textColor="@color/white"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:text="52,000원"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="5dp">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            app:cardCornerRadius="10dp"
+                            android:layout_marginRight="10dp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/home_1_1" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="8dp"
+                            android:textColor="#707070"
+                            android:includeFontPadding="false"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="3dp"
+                            android:text="원데이/공릉동"/>
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="11dp"
+                            android:includeFontPadding="false"
+                            android:layout_marginBottom="3dp"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:text="댄서 바다의 챌린지 \n클래스"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="10dp"
+                            android:textColor="@color/white"
+                            android:includeFontPadding="false"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:text="52,000원"/>
+
+                    </LinearLayout>
+
+
 
                 </LinearLayout>
+
+                </HorizontalScrollView>
 
 
             </LinearLayout>

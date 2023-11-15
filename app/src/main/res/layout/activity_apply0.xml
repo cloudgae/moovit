@@ -104,7 +104,8 @@
                     android:numStars="5"
                     android:progressBackgroundTint="@color/white"
                     android:progressTint="@color/pink"
-                    android:rating="0"
+                    android:layout_gravity="center_vertical"
+                    android:rating="4.9"
                     android:stepSize="0.5" />
 
 
@@ -113,8 +114,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:includeFontPadding="false"
-                    android:text="0(0)"
+                    android:text="4.9(80)"
                     android:textColor="@color/pink"
+                    android:layout_gravity="center_vertical"
                     android:textSize="12dp" />
 
             </LinearLayout>
