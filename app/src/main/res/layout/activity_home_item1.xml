@@ -10,10 +10,12 @@
         android:layout_width="300dp"
         android:layout_height="378dp"
         app:cardCornerRadius="20dp"
+        android:layout_gravity="center"
         android:layout_margin="8dp">
 
         <RelativeLayout
             android:layout_width="310dp"
+            android:layout_gravity="center"
             android:layout_height="380dp">
 
             <ImageView
@@ -21,7 +23,8 @@
                 android:layout_height="match_parent"
                 android:id="@+id/image"
                 android:src="@drawable/banner_1"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"/>
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

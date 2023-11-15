@@ -31,13 +31,16 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
     private OnCheckboxClickListener onCheckboxClickListener;
 
     private String itemId; // LessonAdapter 클래스 내에서 사용할 itemId 변수
+    private OnItemClickListener onItemClickListener;
+
 
     public interface OnItemClickListener{
         void onItemClick(Lesson lesson);
     }
-    public void setOnItemClickListener(OnItemClickListener listener){
-        this.listener = (AdapterView.OnItemClickListener) listener;
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.onItemClickListener = listener;
     }
+
     public LessonAdapter(List<Lesson> lessonList, OnCheckboxClickListener onCheckboxClickListener){
         this.lessonList = lessonList;
 //        this.listener = (AdapterView.OnItemClickListener) listener;
@@ -74,6 +77,15 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
                 updateFirestoreDocument(lesson);
                 if (onCheckboxClickListener != null) {
                     onCheckboxClickListener.onCheckboxClick(position, isChecked);
+                }
+            }
+        });
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onItemClick(lessonList.get(position));
                 }
             }
         });

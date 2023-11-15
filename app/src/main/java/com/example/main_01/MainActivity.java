@@ -5,6 +5,7 @@ import static android.content.ContentValues.TAG;
 import android.animation.ArgbEvaluator;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,11 +47,11 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
-
-@SuppressWarnings("deprecation")
 public class MainActivity extends AppCompatActivity {
 
     Button wc1, wc2, wc3, wc4, wc5, wc6, mn1, mn2, mn3, mn4;
@@ -80,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView class1;
     TextView class1name, class1txt;
+    ImageView typeimage, typeimage2;
+    TextView typename, typename2;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -89,7 +92,11 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        TextView tn = (TextView) findViewById(R.id.typenameclass);
+        ImageView typeimage = (ImageView) findViewById(R.id.typeimage);
+        TextView typename = (TextView) findViewById(R.id.typename);
+        ImageView typeimage2 = (ImageView) findViewById(R.id.typeimage2);
+        TextView typename2 = (TextView) findViewById(R.id.typename2);
+        /*TextView tn = (TextView) findViewById(R.id.typenameclass);*/
 
         /*Button mn3 = (Button) findViewById(R.id.menu3);
         Button mn4 = (Button) findViewById(R.id.menu4);*/
@@ -128,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
-        viewPager.setPadding(100, 250, 100, 0);
+        viewPager.setPadding(80, 250, 70, 0);
 
 
         Integer[] colors_temp = {
@@ -137,6 +144,19 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.banner_bg3
         };
         colors = colors_temp;
+
+        kpopbtn = (Button) findViewById(R.id.kpopbtn);
+        Drawable drawable = getResources().getDrawable(R.drawable.kpop_icon);
+
+        // dp 값을 px로 변환
+        int widthInDp = 60;
+        int heightInDp = 60;
+        float scale = getResources().getDisplayMetrics().density;
+        int widthInPx = (int) (widthInDp * scale + 0.5f);
+        int heightInPx = (int) (heightInDp * scale + 0.5f);
+
+        drawable.setBounds(0, 0, widthInPx, heightInPx);
+        kpopbtn.setCompoundDrawables(null, drawable, null, null);
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -198,12 +218,18 @@ public class MainActivity extends AppCompatActivity {
         Query query2 = collectionRef.whereGreaterThanOrEqualTo("hot_rank", 1).whereLessThanOrEqualTo("hot_rank", 6);
         //        Query query1 = collectionRef.whereEqualTo("weekly_rank", 1);
 
+
         // 쿼리 실행
         query.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 RecyclerView lessonRecyclerView = findViewById(R.id.lessonRecyclerView);
                 List<Lesson> lessons = new ArrayList<>();
+                // 이미지 리소스 배열
+                int[] imageResources = {R.drawable.c1, R.drawable.c2, R.drawable.c3, R.drawable.c4, R.drawable.c5, R.drawable.c6};
+
+                // 반복문으로 각 문서에 대한 데이터 처리
+                int index = 0;
                 for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                     // 문서 데이터에 접근
                     String documentId = documentSnapshot.getId();
@@ -214,14 +240,19 @@ public class MainActivity extends AppCompatActivity {
                     String rate = documentSnapshot.getString("rate");
                     boolean isliked = documentSnapshot.getBoolean("like");
 
-//                    Integer thumb = R.drawable.c1;
+                    // 이미지 리소스를 배열에서 가져와서 설정
+                    int imageResource = imageResources[index % imageResources.length];
+
+                    lessons.add(new Lesson(weeklyRank, name, address, rate, num_review, imageResource, documentId, isliked));
+
+
+                    Integer thumb = R.drawable.c1;
                     Log.d("FirestoreData", "Document ID: " + documentId);
                     Log.d("FirestoreData", "Address: " + address);
-
-                    lessons.add(new Lesson(weeklyRank, name, address, rate, num_review, R.drawable.c1, documentId, isliked));
-
-
+                    // 이미지 리소스 배열의 인덱스 증가
+                    index++;
                 }
+
                 LessonAdapter lessonAdapter = new LessonAdapter(lessons, null);
 
                 List<Lesson> rearrangedList = lessonAdapter.rearrangeLessonList(lessons);
@@ -230,7 +261,20 @@ public class MainActivity extends AppCompatActivity {
 
                 GridLayoutManager layoutManager = new GridLayoutManager(MainActivity.this, 2);
                 lessonRecyclerView.setLayoutManager(layoutManager);
+
+                lessonAdapter.setOnItemClickListener(new LessonAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(Lesson lesson) {
+                        // Apply_0 액티비티로 이동하는 Intent 생성
+                        Intent intent = new Intent(MainActivity.this, Apply_0.class);
+                        // Apply_0 액티비티 시작
+                        startActivity(intent);
+                    }
+                });
+
+
                 lessonRecyclerView.setAdapter(lessonAdapter);
+
 
 
             }
@@ -241,29 +285,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
         // hot_rank 쿼리 실행
         query2.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 RecyclerView lessonRecyclerView2 = findViewById(R.id.lessonRecyclerView2);
                 List<Lesson> lessons = new ArrayList<>();
+                // 이미지 리소스 배열
+                int[] imageResources = {R.drawable.c8, R.drawable.c9, R.drawable.c10, R.drawable.c11, R.drawable.c12, R.drawable.c13};
+
+                // 반복문으로 각 문서에 대한 데이터 처리
+                int index = 0;
                 for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                     // 문서 데이터에 접근
                     String documentId = documentSnapshot.getId();
-                    String hotRank = String.valueOf(documentSnapshot.getLong("hot_rank")); // 'hot_rank' 필드 값 가져오기
+                    String weeklyRank = String.valueOf(documentSnapshot.getLong("hot_rank")); // 'hot_rank' 필드 값 가져오기
                     String address = documentSnapshot.getString("location"); // 다른 필드 값 가져오기
                     String name = documentSnapshot.getString("name");
                     String num_review = documentSnapshot.getString("review");
                     String rate = documentSnapshot.getString("rate");
                     boolean isliked = documentSnapshot.getBoolean("like");
 
-//                    Integer thumb = R.drawable.c1;
+                    // 이미지 리소스를 배열에서 가져와서 설정
+                    int imageResource = imageResources[index % imageResources.length];
+
+                    lessons.add(new Lesson(weeklyRank, name, address, rate, num_review, imageResource, documentId, isliked));
+
+
+                    Integer thumb = R.drawable.c1;
                     Log.d("FirestoreData", "Document ID: " + documentId);
                     Log.d("FirestoreData", "Address: " + address);
-
-                    lessons.add(new Lesson(hotRank, name, address, rate, num_review, R.drawable.c1, documentId, isliked));
-
-
+                    // 이미지 리소스 배열의 인덱스 증가
+                    index++;
                 }
                 LessonAdapter lessonAdapter2 = new LessonAdapter(lessons, null);
 
@@ -283,28 +339,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("FirestoreData", "데이터 검색 중 오류 발생: " + e.getMessage());
             }
         });
-
-        //1104
-
-/*
-        mn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, shorts1.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
-        mn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, MyPage.class);
-                startActivity(i);
-                finish();
-            }
-        });*/
-
         kpopbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -322,32 +356,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        /*menu2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, Map_0.class);
-                startActivity(i);
-                finish();
-            }
-        });*/
-
-        ////        TODO 1)파이어베이스 연결 - 수업 정보  2)유형 정보-영상 연결
-
-
-//        탭 연결
-        /*TabHost tabHost = getTabHost();
-
-        TabHost.TabSpec tabSpecClass = tabHost.newTabSpec("Class").setIndicator("클래스");
-        tabSpecClass.setContent(R.id.tabclass);
-        tabHost.addTab(tabSpecClass);
-
-        TabHost.TabSpec tabSpecDancer = tabHost.newTabSpec("Dancer").setIndicator("댄서");
-        tabSpecDancer.setContent(R.id.tabdancer);
-        tabHost.addTab(tabSpecDancer);
-
-        tabHost.setCurrentTab(0);*/
-
         //유형별 영상
 
         // 응답456 조회+연결해서 유형을 세자리수 코드로 로그에 출력
@@ -397,6 +405,8 @@ public class MainActivity extends AppCompatActivity {
                                                         String finTYPE = document.getId();
                                                         Log.d(TAG, finTYPE);
 
+                                                        typename.setText((String) document.getData().get("name"));
+                                                        typename2.setText((String) document.getData().get("name"));
                                                         // TCODE에 따라 영상 링크 다르게 설정하여 재생
                                                         switch (TCODE) {
                                                             case "PCS":
@@ -404,8 +414,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS3.mp4";
-
-
+                                                                typeimage.setBackgroundResource(R.drawable.pcs);
+                                                                typeimage2.setBackgroundResource(R.drawable.pcs);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -415,8 +425,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM3.mp4";
-
-
+                                                                typeimage.setBackgroundResource(R.drawable.pcm);
+                                                                typeimage2.setBackgroundResource(R.drawable.pcm);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -426,8 +436,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS3.mp4";
-
-
+                                                                typeimage.setBackgroundResource(R.drawable.ucs);
+                                                                typeimage2.setBackgroundResource(R.drawable.ucs);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -437,8 +447,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM3.mp4";
-
-
+                                                                typeimage.setBackgroundResource(R.drawable.ucm);
+                                                                typeimage2.setBackgroundResource(R.drawable.ucm);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -448,7 +458,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS3.mp4";
-
+                                                                typeimage.setBackgroundResource(R.drawable.pis);
+                                                                typeimage2.setBackgroundResource(R.drawable.pis);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -458,8 +469,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM3.mp4";
-
-
+                                                                typeimage.setBackgroundResource(R.drawable.pim);
+                                                                typeimage2.setBackgroundResource(R.drawable.pim);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -469,8 +480,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS3.mp4";
-
-
+                                                                typeimage.setBackgroundResource(R.drawable.uis);
+                                                                typeimage2.setBackgroundResource(R.drawable.uis);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -480,7 +491,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM3.mp4";
-
+                                                                typeimage.setBackgroundResource(R.drawable.uim);
+                                                                typeimage2.setBackgroundResource(R.drawable.uim);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -549,4 +561,58 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(Lesson lesson);
+    }
+
 }
+
+
+//1104
+
+/*
+        mn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, shorts1.class);
+                startActivity(i);
+                finish();
+            }
+        });
+
+        mn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, MyPage.class);
+                startActivity(i);
+                finish();
+            }
+        });*/
+
+
+        /*menu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, Map_0.class);
+                startActivity(i);
+                finish();
+            }
+        });*/
+
+////        TODO 1)파이어베이스 연결 - 수업 정보  2)유형 정보-영상 연결
+
+
+//        탭 연결
+        /*TabHost tabHost = getTabHost();
+
+        TabHost.TabSpec tabSpecClass = tabHost.newTabSpec("Class").setIndicator("클래스");
+        tabSpecClass.setContent(R.id.tabclass);
+        tabHost.addTab(tabSpecClass);
+
+        TabHost.TabSpec tabSpecDancer = tabHost.newTabSpec("Dancer").setIndicator("댄서");
+        tabSpecDancer.setContent(R.id.tabdancer);
+        tabHost.addTab(tabSpecDancer);
+
+        tabHost.setCurrentTab(0);*/
+
+

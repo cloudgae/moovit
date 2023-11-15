@@ -10,12 +10,14 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.main_01.MainActivity;
 import com.example.main_01.Map_0;
@@ -31,6 +33,7 @@ public class Apply_0 extends AppCompatActivity {
     ImageButton backbtn;
 
     ViewPager pager;
+    TextView genre;
     private BottomNavigationView bottomNavigationView;
 
     @Override
@@ -47,6 +50,19 @@ public class Apply_0 extends AppCompatActivity {
         pager.setOffscreenPageLimit(3);
         tabLayout.setupWithViewPager(pager);
         pager.setAdapter(new PageAdapter(getSupportFragmentManager(), this));
+
+        genre = (TextView) findViewById(R.id.genre);
+        Drawable drawable = getResources().getDrawable(R.drawable.genre_icon);
+
+        // dp 값을 px로 변환
+        int widthInDp = 35;
+        int heightInDp = 35;
+        float scale = getResources().getDisplayMetrics().density;
+        int widthInPx = (int) (widthInDp * scale + 0.5f);
+        int heightInPx = (int) (heightInDp * scale + 0.5f);
+
+        drawable.setBounds(0, 0, widthInPx, heightInPx);
+        genre.setCompoundDrawables(null, drawable, null, null);
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

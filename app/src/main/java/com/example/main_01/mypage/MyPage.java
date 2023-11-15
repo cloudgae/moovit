@@ -119,7 +119,6 @@ public class MyPage extends AppCompatActivity {
         });
 
 
-/*
         // 응답456 조회+연결해서 유형을 세자리수 코드로 로그에 출력
         db.collection("TypeTest")
                 .get()
@@ -208,7 +207,7 @@ public class MyPage extends AppCompatActivity {
                             Log.d(TAG, "Error getting documents: ", task.getException());
                         }
                     }
-                });*/
+                });
 
 
     }
