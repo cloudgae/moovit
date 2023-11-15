@@ -66,7 +66,7 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
         holder.nameTextView.setText(lesson.getName());
         holder.addressTextView.setText(lesson.getAddress());
         holder.rateTextView.setText(lesson.getRate());
-        holder.num_reviewTextView.setText(lesson.getNum_review());
+        holder.num_reviewTextView.setText(" (" + lesson.getNum_review() + ")");
 
         holder.favoriteCheckBox.setChecked(lesson.isChecked());
         holder.favoriteCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
