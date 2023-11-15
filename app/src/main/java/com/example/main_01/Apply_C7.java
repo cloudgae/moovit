@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
@@ -75,6 +76,19 @@ public class Apply_C7 extends AppCompatActivity {
         c7price = (TextView) findViewById(R.id.c7price);
 
         c7image = (ImageView) findViewById(R.id.c7image);
+
+
+        Drawable drawable = getResources().getDrawable(R.drawable.genre_icon);
+
+        // dp 값을 px로 변환
+        int widthInDp = 35;
+        int heightInDp = 35;
+        float scale = getResources().getDisplayMetrics().density;
+        int widthInPx = (int) (widthInDp * scale + 0.5f);
+        int heightInPx = (int) (heightInDp * scale + 0.5f);
+
+        drawable.setBounds(0, 0, widthInPx, heightInPx);
+        c7genre.setCompoundDrawables(null, drawable, null, null);
 
         pager = (ViewPager) findViewById(R.id.pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
@@ -156,7 +170,8 @@ public class Apply_C7 extends AppCompatActivity {
 //        String imageName = "C7image/C7image"; // S3 버킷 내 이미지 파일의 경로 및 파일명
 //        loadImageFromS3(imageName);
         String imageUrl = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/C7image/C7image"; // AWS S3 버킷의 이미지 URL로 변경
-        Glide.with(Apply_C7.this).load(imageUrl).into(c7image);
+        Glide.with(Apply_C7.this).load(imageUrl).diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true).into(c7image);
 
     }
     private void loadImageFromS3(String imageName) {

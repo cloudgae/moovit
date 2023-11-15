@@ -44,6 +44,7 @@
                 android:background="@color/white">
 
                 <TextView
+                    android:id="@+id/txtmax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
@@ -52,6 +53,7 @@
                     android:text="0/10명"/>
 
                 <TextView
+                    android:id="@+id/txttime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="13dp"
