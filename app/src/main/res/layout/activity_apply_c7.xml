@@ -15,22 +15,17 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/backbtn"
+            android:id="@+id/back_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/black"
-            app:srcCompat="@drawable/ic_sign_back" />
+            app:srcCompat="@drawable/back_key"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="275dp"
+            android:layout_marginVertical="10dp"/>
 
-        <TextView
-            android:id="@+id/c7name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/notosanskr_bold"
-            android:gravity="center"
-            android:text="에스파 타이틀곡 클래스"
-            android:textSize="15dp" />
+
     </LinearLayout>
 
 
@@ -66,15 +61,16 @@
 
             <TextView
                 android:id="@+id/c7name2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="5dp"
                 android:fontFamily="@font/notosanskr_medium"
                 android:includeFontPadding="false"
-                android:text="에스파 타이틀곡 클래스"
-                android:textSize="22dp" />
+                android:text="에스파 타이틀곡 클래스  "
+                android:textSize="22dp"
+                android:drawableRight="@drawable/studentdday1"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
