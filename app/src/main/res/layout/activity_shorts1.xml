@@ -32,6 +32,15 @@
         app:tabBackground="@android:color/transparent"
         app:tabTextColor="#707070" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:labelVisibilityMode="labeled"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_menu"
+        style="@style/MyBottomNavigationView" />
+
 </FrameLayout>
 
 

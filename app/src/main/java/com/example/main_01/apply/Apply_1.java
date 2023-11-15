@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.main_01.R;
@@ -51,7 +52,7 @@ public class Apply_1 extends AppCompatActivity {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.activity_apply1_bottomsheet); // 레이아웃 파일을 지정
 
-        Button applyButton = bottomSheetDialog.findViewById(R.id.apply_button);
+        ImageButton applyButton = bottomSheetDialog.findViewById(R.id.apply_button);
 
         if (applyButton != null) {
             applyButton.setOnClickListener(new View.OnClickListener() {

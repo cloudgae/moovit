@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
+        android:layout_marginBottom="35dp"
         android:orientation="vertical">
 
         <TextView
@@ -106,7 +107,7 @@
                     android:layout_width="54dp"
                     android:layout_height="54dp"
                     android:layout_gravity="center_vertical|center"
-                    android:background="@drawable/profile_image" />
+                    android:background="@drawable/review_student1" />
 
                 <!-- 링 형태의 스타일을 입히는 레이아웃 -->
                 <LinearLayout

@@ -21,7 +21,7 @@
             android:layout_margin="20dp"
             android:max="100"
             android:progress="80"
-            android:progressTint="#E87FEA"
+            android:progressTint="#EB4EC8"
             android:progressBackgroundTint="#2D2D2D"/>
 
         <TextView

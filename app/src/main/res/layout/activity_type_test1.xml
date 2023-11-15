@@ -97,17 +97,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_weight="1">
-        <Button
+
+        <ImageButton
             android:id="@+id/btnT1_next"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginHorizontal="20dp"
-            android:backgroundTint="#E87FEA"
-            android:text="계속하기"
-            android:textColor="#121212"
-            android:textSize="16dp"
-            android:padding="0dp"
-            android:fontFamily="@font/notosanskr_regular"/>
+            android:background="@drawable/test0_nextbtn"
+            android:layout_marginBottom="10dp"/>
         </LinearLayout>
 
     </LinearLayout>

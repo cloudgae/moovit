@@ -1,9 +1,11 @@
 package com.example.main_01;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -13,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.SlidingDrawer;
 
 import com.example.main_01.apply.Apply_0;
+import com.example.main_01.mypage.MyPage;
+import com.example.main_01.shorts.shorts1;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -21,11 +25,13 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.main_01.databinding.ActivityMap0Binding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Map_0 extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivityMap0Binding binding;
+    private BottomNavigationView bottomNavigationView;
     ImageButton more_button;
 
     @Override
@@ -35,6 +41,27 @@ public class Map_0 extends FragmentActivity implements OnMapReadyCallback {
         setContentView(binding.getRoot());
 
         ImageButton more_button = (ImageButton) findViewById(R.id.more_button);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        openMainActivity();
+                        return true;
+                    case R.id.map:
+                        return true;
+                    case R.id.shorts:
+                        openShorts();
+                        return true;
+                    case R.id.mypage:
+                        openMyPage();
+                        return true;
+                }
+                return false;
+            }
+        });
+        bottomNavigationView.setSelectedItemId(R.id.map);
 
         more_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,5 +132,26 @@ public class Map_0 extends FragmentActivity implements OnMapReadyCallback {
                 .position(position)
                 .title(title)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_png))); // 마커 이미지 설정
+    }
+
+    private void openMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void openMap() {
+        Intent intent = new Intent(this, Map_0.class);
+        startActivity(intent);
+    }
+
+    private void openShorts() {
+        Intent intent = new Intent(this, shorts1.class);
+        startActivity(intent);
+    }
+
+
+    private void openMyPage() {
+        Intent intent = new Intent(this, MyPage.class);
+        startActivity(intent);
     }
 }

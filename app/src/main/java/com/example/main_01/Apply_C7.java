@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -29,7 +30,10 @@ import com.example.main_01.apply.Apply_1;
 import com.example.main_01.apply.Apply_frag1;
 import com.example.main_01.apply.Apply_frag2;
 import com.example.main_01.apply.Apply_frag3;
+import com.example.main_01.mypage.MyPage;
+import com.example.main_01.shorts.shorts1;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -40,6 +44,7 @@ public class Apply_C7 extends AppCompatActivity {
     TextView c7name, c7name2, c7genre, c7diff, c7day, c7loc, c7price;
     ViewPager pager;
     ImageView c7image;
+    private BottomNavigationView bottomNavigationView;
 
     private FirebaseFirestore db;  // Firestore 인스턴스 선언 추가
 
@@ -70,6 +75,29 @@ public class Apply_C7 extends AppCompatActivity {
         pager.setOffscreenPageLimit(3);
         tabLayout.setupWithViewPager(pager);
         pager.setAdapter(new Apply_C7.PageAdapter(getSupportFragmentManager(), this));
+
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        return true;
+                    case R.id.map:
+                        openMap();
+                        return true;
+                    case R.id.shorts:
+                        openShorts();
+                        return true;
+                    case R.id.mypage:
+                        openMyPage();
+                        return true;
+                }
+                return false;
+            }
+        });
+        bottomNavigationView.setSelectedItemId(R.id.home);
 
 
 
@@ -220,5 +248,25 @@ public class Apply_C7 extends AppCompatActivity {
         }
 
 
+    }
+    private void openMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void openMap() {
+        Intent intent = new Intent(this, Map_0.class);
+        startActivity(intent);
+    }
+
+    private void openShorts() {
+        Intent intent = new Intent(this, shorts1.class);
+        startActivity(intent);
+    }
+
+
+    private void openMyPage() {
+        Intent intent = new Intent(this, MyPage.class);
+        startActivity(intent);
     }
 }

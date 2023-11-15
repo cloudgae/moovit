@@ -7,43 +7,21 @@
     android:gravity="center|top">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="378dp"
         app:cardCornerRadius="20dp"
         android:layout_margin="8dp">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_width="310dp"
+            android:layout_height="380dp">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="match_parent"
                 android:id="@+id/image"
-                android:src="@drawable/background_example"
+                android:src="@drawable/banner_2"
                 android:scaleType="centerCrop"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/title"
-                android:textColor="#262626"
-                android:layout_below="@+id/image"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="16dp"
-                android:text="Brochure"
-                android:textSize="16sp"/>
-            <TextView
-                android:id="@+id/desc"
-                android:layout_below="@id/title"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:maxLines="3"
-                android:drawablePadding="10dp"
-                android:ellipsize="end"
-                android:text="Description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

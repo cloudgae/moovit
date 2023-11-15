@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,6 +22,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.main_01.Home.Adapter;
+import com.example.main_01.Home.Lesson;
+import com.example.main_01.Home.LessonAdapter;
 import com.example.main_01.Home.Model;
 import com.example.main_01.apply.Apply_0;
 import com.example.main_01.mypage.MyPage;
@@ -35,6 +38,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.common.primitives.Shorts;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -54,13 +59,14 @@ public class MainActivity extends AppCompatActivity {
     Button menu2;
 
     LinearLayout typelayer;
+    private BottomNavigationView bottomNavigationView;
     private SimpleExoPlayer player;
     private com.google.android.exoplayer2.ui.PlayerView playerView1;
     private com.google.android.exoplayer2.ui.PlayerView playerView2;
     private com.google.android.exoplayer2.ui.PlayerView playerView3;
     Long moover, starter;
     String value4, value5, value6;
-//    private VideoView videoView1;
+    //    private VideoView videoView1;
 //    private VideoView videoView2;
 //    private VideoView videoView3;
     String videoURL1, videoURL2, videoURL3;
@@ -85,11 +91,11 @@ public class MainActivity extends AppCompatActivity {
 
         TextView tn = (TextView) findViewById(R.id.typenameclass);
 
-        Button mn3 = (Button) findViewById(R.id.menu3);
-        Button mn4 = (Button) findViewById(R.id.menu4);
+        /*Button mn3 = (Button) findViewById(R.id.menu3);
+        Button mn4 = (Button) findViewById(R.id.menu4);*/
         Button kpopbtn = (Button) findViewById(R.id.kpopbtn);
         Button streetbtn = (Button) findViewById(R.id.streetbtn);
-        Button menu2 = (Button) findViewById(R.id.menu2);
+        /*Button menu2 = (Button) findViewById(R.id.menu2);*/
 
         class1 = (ImageView) findViewById(R.id.class1);
         class1name = (TextView) findViewById(R.id.class1name);
@@ -110,25 +116,49 @@ public class MainActivity extends AppCompatActivity {
         //지금 가장 관심도가 높은 클래스 리사이클러뷰
 
         models = new ArrayList<>();
-        models.add(new Model(R.drawable.banner1, "목적지", "어디로 여행을 갈지 골라보자"));
-        models.add(new Model(R.drawable.background_example, "숙소", "근처 숙소들을 찾아보고 숙소 가격을 알아보자"));
-        models.add(new Model(R.drawable.thumbnail, "장보기", "무엇을 사고 대충 비용이 얼마나 드는지 알아보자"));
-       /* models.add(new Model(R.drawable.capuccino, "이동수단", "어떤 이동수단을 사용하고 비용이 얼마나 드는지 알아보자"));
-*/
+        models.add(new Model(R.drawable.banner_1, "목적지", "어디로 여행을 갈지 골라보자"));
+        models.add(new Model(R.drawable.banner_2, "숙소", "근처 숙소들을 찾아보고 숙소 가격을 알아보자"));
+        models.add(new Model(R.drawable.banner_3, "장보기", "무엇을 사고 대충 비용이 얼마나 드는지 알아보자"));
+        /* models.add(new Model(R.drawable.capuccino, "이동수단", "어떤 이동수단을 사용하고 비용이 얼마나 드는지 알아보자"));
+         */
 
         adapter = new Adapter(models, this);
+        List<Model> models;
+        ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
-        viewPager.setPadding(100, 300, 100, 0);
+        viewPager.setPadding(100, 250, 100, 0);
+
 
         Integer[] colors_temp = {
-                getResources().getColor(R.color.color1),
-                getResources().getColor(R.color.color2),
-                getResources().getColor(R.color.color3),
-                getResources().getColor(R.color.color4)
+                R.drawable.banner_bg1,
+                R.drawable.banner_bg2,
+                R.drawable.banner_bg3
         };
         colors = colors_temp;
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        return true;
+                    case R.id.map:
+                        openMap();
+                        return true;
+                    case R.id.shorts:
+                        openShorts();
+                        return true;
+                    case R.id.mypage:
+                        openMyPage();
+                        return true;
+                }
+                return false;
+            }
+        });
+
 
         class1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,14 +173,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                if(position < (adapter.getCount() -1) && position < (colors.length -1)){
-                    viewPager.setBackgroundColor((Integer) argbEvaluator.evaluate(positionOffset,
-                            colors[position], colors[position + 1]));
-                }
-                else{
-                    viewPager.setBackgroundColor(colors[colors.length - 1]);
+                if (position < (adapter.getCount() - 1) && position < (colors.length - 1)) {
+                    viewPager.setBackgroundResource(colors[position]);
+                } else {
+                    viewPager.setBackgroundResource(colors[colors.length - 1]);
                 }
             }
+
 
             @Override
             public void onPageSelected(int position) {
@@ -166,7 +195,8 @@ public class MainActivity extends AppCompatActivity {
         // Firestore 쿼리 생성
         CollectionReference collectionRef = db.collection("Class");
         Query query = collectionRef.whereGreaterThanOrEqualTo("weekly_rank", 1).whereLessThanOrEqualTo("weekly_rank", 6);
-//        Query query1 = collectionRef.whereEqualTo("weekly_rank", 1);
+        Query query2 = collectionRef.whereGreaterThanOrEqualTo("hot_rank", 1).whereLessThanOrEqualTo("hot_rank", 6);
+        //        Query query1 = collectionRef.whereEqualTo("weekly_rank", 1);
 
         // 쿼리 실행
         query.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -211,9 +241,52 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // hot_rank 쿼리 실행
+        query2.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                RecyclerView lessonRecyclerView2 = findViewById(R.id.lessonRecyclerView2);
+                List<Lesson> lessons = new ArrayList<>();
+                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                    // 문서 데이터에 접근
+                    String documentId = documentSnapshot.getId();
+                    String hotRank = String.valueOf(documentSnapshot.getLong("hot_rank")); // 'hot_rank' 필드 값 가져오기
+                    String address = documentSnapshot.getString("location"); // 다른 필드 값 가져오기
+                    String name = documentSnapshot.getString("name");
+                    String num_review = documentSnapshot.getString("review");
+                    String rate = documentSnapshot.getString("rate");
+                    boolean isliked = documentSnapshot.getBoolean("like");
+
+//                    Integer thumb = R.drawable.c1;
+                    Log.d("FirestoreData", "Document ID: " + documentId);
+                    Log.d("FirestoreData", "Address: " + address);
+
+                    lessons.add(new Lesson(hotRank, name, address, rate, num_review, R.drawable.c1, documentId, isliked));
+
+
+                }
+                LessonAdapter lessonAdapter2 = new LessonAdapter(lessons, null);
+
+                List<Lesson> rearrangedList = lessonAdapter2.rearrangeLessonList(lessons);
+
+                lessonAdapter2 = new LessonAdapter(rearrangedList, null);
+
+                GridLayoutManager layoutManager = new GridLayoutManager(MainActivity.this, 2);
+                lessonRecyclerView2.setLayoutManager(layoutManager);
+                lessonRecyclerView2.setAdapter(lessonAdapter2);
+
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e("FirestoreData", "데이터 검색 중 오류 발생: " + e.getMessage());
+            }
+        });
+
         //1104
 
-
+/*
         mn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -230,7 +303,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        });
+        });*/
 
         kpopbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -250,17 +323,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        menu2.setOnClickListener(new View.OnClickListener() {
+        /*menu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, Map_0.class);
                 startActivity(i);
                 finish();
             }
-        });
+        });*/
 
         ////        TODO 1)파이어베이스 연결 - 수업 정보  2)유형 정보-영상 연결
-
 
 
 //        탭 연결
@@ -454,6 +526,27 @@ public class MainActivity extends AppCompatActivity {
         if (player != null) {
             player.release(); // 플레이어 해제
         }
+    }
+
+    private void openMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void openMap() {
+        Intent intent = new Intent(this, Map_0.class);
+        startActivity(intent);
+    }
+
+    private void openShorts() {
+        Intent intent = new Intent(this, shorts1.class);
+        startActivity(intent);
+    }
+
+
+    private void openMyPage() {
+        Intent intent = new Intent(this, MyPage.class);
+        startActivity(intent);
     }
 
 }

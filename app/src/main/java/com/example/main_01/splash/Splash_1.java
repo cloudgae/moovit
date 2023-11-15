@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.main_01.MainActivity;
 import com.example.main_01.R;
@@ -16,14 +17,15 @@ import org.checkerframework.checker.units.qual.A;
 
 public class Splash_1 extends AppCompatActivity {
 
-    Button starttest, gotomain;
+    Button gotomain;
+    ImageButton starttest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash1);
 
-        starttest = (Button) findViewById(R.id.starttest);
+        starttest = (ImageButton) findViewById(R.id.starttest);
         gotomain = (Button) findViewById(R.id.gotomain);
 
         starttest.setOnClickListener(new View.OnClickListener() {

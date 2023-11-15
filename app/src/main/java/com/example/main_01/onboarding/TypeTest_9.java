@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -38,7 +39,7 @@ import com.google.firebase.storage.StorageReference;
 public class TypeTest_9 extends AppCompatActivity {
     TextView typename, typefeature1, typefeature2, typefeature3;
     LinearLayout typelayer;
-    Button btnNext;
+    ImageButton btnNext;
     Long moover, starter;
     String value4, value5, value6;
     String TCODE; // 클래스의 멤버 변수로 선언
@@ -68,7 +69,7 @@ public class TypeTest_9 extends AppCompatActivity {
         typefeature2 = (TextView) findViewById(R.id.typefeature2);
         typefeature3 = (TextView) findViewById(R.id.typefeature3);
         typelayer = (LinearLayout) findViewById(R.id.typelayer);
-        btnNext = (Button) findViewById(R.id.btnT1_next);
+        btnNext = (ImageButton) findViewById(R.id.btnT1_next);
 
 //        videoView1 = findViewById(R.id.player_view1);
 //        videoView2 = findViewById(R.id.player_view2);

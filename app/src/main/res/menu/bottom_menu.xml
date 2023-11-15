@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="홈"
+        android:icon="@drawable/home"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/map"
+        android:title="근처 클래스"
+        android:icon="@drawable/map"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/shorts"
+        android:title="쇼츠"
+        android:icon="@drawable/shorts"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/mypage"
+        android:title="마이페이지"
+        android:icon="@drawable/mypage"
+        android:enabled="true"/>
+</menu>

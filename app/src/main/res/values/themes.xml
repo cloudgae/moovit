@@ -39,6 +39,12 @@
         <item name="android:textColor">#FFFFFF</item> <!-- 텍스트 색상을 흰색으로 설정합니다. -->
     </style>
 
+    <style name="MyBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">#404040</item>
+        <item name="itemIconTint">@drawable/menu_selector_color</item>
+        <item name="itemTextColor">@drawable/menu_selector_color</item>
+    </style>
+
     <!--    <style name="textviewtheme">-->
 <!--        <item name="android:background">#313131</item>-->
 <!--        <item name="android:radius">30dp</item>-->

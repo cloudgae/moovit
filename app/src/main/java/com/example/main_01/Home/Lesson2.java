@@ -1,8 +1,8 @@
-package com.example.main_01;
+package com.example.main_01.Home;
 
 import com.google.firebase.firestore.DocumentReference;
 
-public class Lesson {
+public class Lesson2 {
     private String rank;
     private String name;
     private String address;
@@ -13,7 +13,7 @@ public class Lesson {
     private DocumentReference lessonDocument; // Firebase Firestore 문서에 대한 참조 추가
     private String documentId;
 
-    public Lesson(String rank, String name, String address, String rate, String num_review, int imageResource, String documentId, boolean isChecked){
+    public Lesson2(String rank, String name, String address, String rate, String num_review, int imageResource, String documentId, boolean isChecked){
         this.rank = rank;
         this.name = name;
         this.address = address;

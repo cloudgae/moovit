@@ -96,7 +96,7 @@
                         android:id="@+id/dancer_profile"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@drawable/profile_image"/>
+                        android:background="@drawable/dancer_1"/>
 
 
                     <TextView
@@ -105,7 +105,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/notosanskr_regular"
                         android:layout_marginLeft="10dp"
-                        android:text="강사 이름"
+                        android:text="레닌"
                         android:layout_gravity="center"
                         android:includeFontPadding="false"
                         android:textSize="12dp" />

@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CheckedTextView;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -35,7 +36,7 @@ import java.util.Map;
 public class TypeTest_1 extends AppCompatActivity {
 
     CheckBox chkT1_kpop, chkT1_street, chkT1_choreo;
-    Button btnT1_next;
+    ImageButton btnT1_next;
     LinearLayout chkT1_sample;
     CheckedTextView chkTV;
 
@@ -47,7 +48,7 @@ public class TypeTest_1 extends AppCompatActivity {
         chkT1_kpop = (CheckBox) findViewById(R.id.chkT1_kpop);
         chkT1_street = (CheckBox) findViewById(R.id.chkT1_street);
         chkT1_choreo = (CheckBox) findViewById(R.id.chk1_choreo);
-        btnT1_next = (Button) findViewById(R.id.btnT1_next);
+        btnT1_next = (ImageButton) findViewById(R.id.btnT1_next);
 
 
 //Cloud Firestore 인스턴스를 초기화합니다.

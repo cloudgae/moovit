@@ -1,7 +1,9 @@
 package com.example.main_01.shorts;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
@@ -11,7 +13,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
+import com.example.main_01.MainActivity;
+import com.example.main_01.Map_0;
 import com.example.main_01.R;
+import com.example.main_01.mypage.MyPage;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 public class shorts1 extends AppCompatActivity {
@@ -19,6 +26,7 @@ public class shorts1 extends AppCompatActivity {
     private Tab_fragment1 fragment1;
     private Tab_fragment2 fragment2;
     private int currentTab = 1;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +42,31 @@ public class shorts1 extends AppCompatActivity {
         pager.setOffscreenPageLimit(2);
         tabLayout.setupWithViewPager(pager);
         pager.setAdapter(new PageAdapter(getSupportFragmentManager(), this));
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        openMainActivity();
+                        return true;
+                    case R.id.map:
+                        openMap();
+                        return true;
+                    case R.id.shorts:
+                        return true;
+                    case R.id.mypage:
+                        openMyPage();
+                        return true;
+                }
+                return false;
+            }
+        });
+
+// 초기 화면 설정
+        bottomNavigationView.setSelectedItemId(R.id.shorts);
+
     }
 
     private void switchTab(int tab) {
@@ -99,6 +132,26 @@ public class shorts1 extends AppCompatActivity {
                 return "댄서";
             }
         }
+    }
+    private void openMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void openMap() {
+        Intent intent = new Intent(this, Map_0.class);
+        startActivity(intent);
+    }
+
+    private void openShorts() {
+        Intent intent = new Intent(this, shorts1.class);
+        startActivity(intent);
+    }
+
+
+    private void openMyPage() {
+        Intent intent = new Intent(this, MyPage.class);
+        startActivity(intent);
     }
 }
 

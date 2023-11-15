@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -16,9 +17,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.main_01.MainActivity;
+import com.example.main_01.Map_0;
 import com.example.main_01.R;
+import com.example.main_01.shorts.shorts1;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -32,6 +36,7 @@ public class MyPage extends AppCompatActivity {
     TextView typename;
     Long moover, starter;
     String value4, value5, value6;
+    private BottomNavigationView bottomNavigationView;
 
 
     @Override
@@ -54,6 +59,28 @@ public class MyPage extends AppCompatActivity {
 
 
         CollectionReference collectionRef = db.collection("Class");
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        openMainActivity();
+                        return true;
+                    case R.id.map:
+                        openMap();
+                        return true;
+                    case R.id.shorts:
+                        openShorts();
+                        return true;
+                    case R.id.mypage:
+                        return true;
+                }
+                return false;
+            }
+        });
+        bottomNavigationView.setSelectedItemId(R.id.mypage);
 
 
         arw.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +119,7 @@ public class MyPage extends AppCompatActivity {
         });
 
 
-
+/*
         // 응답456 조회+연결해서 유형을 세자리수 코드로 로그에 출력
         db.collection("TypeTest")
                 .get()
@@ -181,8 +208,29 @@ public class MyPage extends AppCompatActivity {
                             Log.d(TAG, "Error getting documents: ", task.getException());
                         }
                     }
-                });
+                });*/
 
 
+    }
+
+    private void openMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void openMap() {
+        Intent intent = new Intent(this, Map_0.class);
+        startActivity(intent);
+    }
+
+    private void openShorts() {
+        Intent intent = new Intent(this, shorts1.class);
+        startActivity(intent);
+    }
+
+
+    private void openMyPage() {
+        Intent intent = new Intent(this, MyPage.class);
+        startActivity(intent);
     }
 }
