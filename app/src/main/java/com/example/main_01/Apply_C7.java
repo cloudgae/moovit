@@ -65,9 +65,9 @@ public class Apply_C7 extends AppCompatActivity {
         String newClassId = newClassRef.getId();
         Map<String, Object> data = new HashMap<>();
 
-        backbtn = (ImageButton) findViewById(R.id.backbtn);
+        backbtn = (ImageButton) findViewById(R.id.back_btn);
         applybtn = (ImageButton) findViewById(R.id.apply_button);
-        c7name = (TextView) findViewById(R.id.c7name);
+//        c7name = (TextView) findViewById(R.id.c7name);
         c7name2 = (TextView) findViewById(R.id.c7name2);
         c7genre = (TextView) findViewById(R.id.c7genre);
         c7diff = (TextView) findViewById(R.id.c7diff);
@@ -148,7 +148,7 @@ public class Apply_C7 extends AppCompatActivity {
                 if (documentSnapshot.exists()) {
                     // Firestore 문서에서 데이터 가져오기
                     String title = documentSnapshot.getString("name");
-                    c7name.setText(title);
+//                    c7name.setText(title);
                     c7name2.setText(title);
                     String genre = documentSnapshot.getString("genre");
                     // 다른 필드도 유사하게 가져올 수 있음
