@@ -47,7 +47,7 @@ public class TypeTest_1 extends AppCompatActivity {
 
         chkT1_kpop = (CheckBox) findViewById(R.id.chkT1_kpop);
         chkT1_street = (CheckBox) findViewById(R.id.chkT1_street);
-        chkT1_choreo = (CheckBox) findViewById(R.id.chk1_choreo);
+        chkT1_choreo = (CheckBox) findViewById(R.id.chkT1_choreo);
         btnT1_next = (ImageButton) findViewById(R.id.btnT1_next);
 
 
