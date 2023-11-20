@@ -600,7 +600,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializePlayer(String videoUrl, com.google.android.exoplayer2.ui.PlayerView playerView) {
         // ExoPlayer 초기화
-        player = new SimpleExoPlayer.Builder(this).build();
+        SimpleExoPlayer player = new SimpleExoPlayer.Builder(this).build();
+//        player = new SimpleExoPlayer.Builder(this).build();
         playerView.setPlayer(player);
 
         // 미디어 소스 생성
