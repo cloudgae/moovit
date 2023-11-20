@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
@@ -22,9 +24,12 @@ import com.example.main_01.MainActivity;
 import com.example.main_01.R;
 import com.example.main_01.mypage.MyPage;
 import com.google.android.exoplayer2.ExoPlayer;
+import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import com.google.android.exoplayer2.ui.PlayerControlView;
+import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
@@ -324,6 +329,8 @@ public class TypeTest_9 extends AppCompatActivity {
                     }
                 });
 
+
+
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -499,6 +506,25 @@ public class TypeTest_9 extends AppCompatActivity {
         player.prepare();
         player.setPlayWhenReady(true); // 재생 시작
         player.setVolume(0f);
+
+        // Player.EventListener를 추가하여 영상 재생 상태 변경 이벤트를 감지합니다.
+        player.addListener(new Player.EventListener() {
+            @Override
+            public void onPlaybackStateChanged(int state) {
+                // 영상이 시작될 때 재생바를 감추고, 터치해도 나타나지 않도록 설정합니다.
+                if (state == Player.STATE_READY) {
+                    playerView.hideController();
+                    playerView.setUseController(false);
+                }
+
+                // 영상이 끝나면 자동으로 반복 재생합니다.
+                if (state == Player.STATE_ENDED) {
+                    player.seekTo(0); // 영상을 처음으로 되감깁니다.
+                    player.setPlayWhenReady(true); // 자동으로 재생합니다.
+                }
+            }
+        });
+
     }
 
     @Override
@@ -508,4 +534,6 @@ public class TypeTest_9 extends AppCompatActivity {
             player.release(); // 플레이어 해제
         }
     }
+
+
 }

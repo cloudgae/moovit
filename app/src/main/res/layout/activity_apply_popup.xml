@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="328dp"
+    android:layout_height="230dp"
+    android:layout_gravity="center"
+    card_view:cardCornerRadius="40dp"
+    card_view:cardElevation="100dp"
+    card_view:cardBackgroundColor="@android:color/transparent">
+
+    <!--//팝업창 벡터이미지로 추출해서 이미지뷰에-->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/customdialog"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="bottom|center_horizontal"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/negativebtn"
+            android:layout_width="152dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/positivebtn"
+            android:layout_width="152dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

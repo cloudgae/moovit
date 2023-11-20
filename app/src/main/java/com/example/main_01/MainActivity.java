@@ -8,8 +8,10 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -35,9 +37,12 @@ import com.example.main_01.Home.Model;
 import com.example.main_01.apply.Apply_0;
 import com.example.main_01.mypage.MyPage;
 import com.example.main_01.shorts.shorts1;
+import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import com.google.android.exoplayer2.ui.PlayerControlView;
+import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
@@ -187,6 +192,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // onCreate 메서드 내부에서 PlayerView를 초기화한 후에 다음 코드를 추가합니다.
+        playerView1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                // 사용자가 영상에 상호 작용할 때만 재생바를 표시합니다.
+                playerView1.showController();
+                return false;
+            }
+        });
+
+        playerView2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                // 사용자가 영상에 상호 작용할 때만 재생바를 표시합니다.
+                playerView2.showController();
+                return false;
+            }
+        });
+
+        playerView3.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                // 사용자가 영상에 상호 작용할 때만 재생바를 표시합니다.
+                playerView3.showController();
+                return false;
+            }
+        });
 
         class1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -276,13 +308,13 @@ public class MainActivity extends AppCompatActivity {
                         // Apply_0 액티비티로 이동하는 Intent 생성
                         Intent intent = new Intent(MainActivity.this, Apply_0.class);
                         // Apply_0 액티비티 시작
+                        /*intent.putExtra("selectedLesson", lesson);*/
                         startActivity(intent);
                     }
                 });
 
 
                 lessonRecyclerView.setAdapter(lessonAdapter);
-
 
 
             }
@@ -292,8 +324,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("FirestoreData", "데이터 검색 중 오류 발생: " + e.getMessage());
             }
         });
-
-
 
 
         // hot_rank 쿼리 실행
@@ -543,6 +573,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     private void loadImageFromS3(String imageName) {
         // 디바이스 독립적인 픽셀 (dp)를 픽셀로 변환
         int widthInPixels = (int) (120 * getResources().getDisplayMetrics().density);
@@ -566,6 +597,7 @@ public class MainActivity extends AppCompatActivity {
                 .override(widthInPixels, heightInPixels)  // 디바이스 독립적인 픽셀로 크기 지정
                 .into(class1);
     }
+
     private void initializePlayer(String videoUrl, com.google.android.exoplayer2.ui.PlayerView playerView) {
         // ExoPlayer 초기화
         player = new SimpleExoPlayer.Builder(this).build();
@@ -582,6 +614,26 @@ public class MainActivity extends AppCompatActivity {
         player.prepare();
         player.setPlayWhenReady(true); // 재생 시작
         player.setVolume(0f);
+        playerView.setUseController(false); // 재생바를 처음부터 숨깁니다.
+
+        // Player.EventListener를 추가하여 영상 재생 상태 변경 이벤트를 감지합니다.
+        player.addListener(new Player.EventListener() {
+            @Override
+            public void onPlaybackStateChanged(int state) {
+                // 영상이 시작될 때 재생바를 감추고, 터치해도 나타나지 않도록 설정합니다.
+                if (state == Player.STATE_READY) {
+                    playerView.hideController();
+                    playerView.setUseController(false);
+                }
+
+                // 영상이 끝나면 자동으로 반복 재생합니다.
+                if (state == Player.STATE_ENDED) {
+                    player.seekTo(0); // 영상을 처음으로 되감깁니다.
+                    player.setPlayWhenReady(true); // 자동으로 재생합니다.
+                }
+            }
+        });
+
     }
 
     @Override
@@ -616,8 +668,6 @@ public class MainActivity extends AppCompatActivity {
     public interface OnItemClickListener {
         void onItemClick(Lesson lesson);
     }
-
-
 
 }
 

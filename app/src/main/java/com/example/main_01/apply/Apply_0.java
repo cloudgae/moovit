@@ -17,8 +17,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.example.main_01.Home.Lesson;
 import com.example.main_01.MainActivity;
 import com.example.main_01.Map_0;
 import com.example.main_01.R;
@@ -49,7 +52,28 @@ public class Apply_0 extends AppCompatActivity {
 
         pager.setOffscreenPageLimit(3);
         tabLayout.setupWithViewPager(pager);
-        pager.setAdapter(new PageAdapter(getSupportFragmentManager(), this));
+        /*pager.setAdapter(new PageAdapter(getSupportFragmentManager(), this));
+*/
+        /*// 인텐트에서 선택된 Lesson 객체를 가져옵니다.
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("selectedLesson")) {
+            Lesson selectedLesson = (Lesson) intent.getSerializableExtra("selectedLesson");
+
+            // 이제 선택된 Lesson의 정보로 레이아웃을 채울 수 있습니다.
+            ImageView imageView = findViewById(R.id.image);
+            TextView nameTextView = findViewById(R.id.name);
+            RatingBar ratingbar = findViewById(R.id.ratingbar);
+            TextView rateTextView = findViewById(R.id.rate);
+            TextView locationTextView = findViewById(R.id.loc);
+
+            // 값 설정
+            imageView.setImageResource(selectedLesson.getImageResource());
+            nameTextView.setText(selectedLesson.getName());
+            ratingbar.setRating(Float.parseFloat(selectedLesson.getRate()));
+            rateTextView.setText(selectedLesson.getRate());
+            locationTextView.setText(selectedLesson.getAddress());*/
+
+            // 필요한 경우 다른 UI 요소를 추가합니다.
 
         genre = (TextView) findViewById(R.id.genre);
         Drawable drawable = getResources().getDrawable(R.drawable.genre_icon);
