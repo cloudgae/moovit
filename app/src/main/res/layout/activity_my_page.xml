@@ -65,7 +65,7 @@
                     android:drawableLeft="@drawable/ellipse"
                     android:fontFamily="@font/notosanskr_bold"
                     android:gravity="left|center"
-                    android:text="무빗 유저 01"
+                    android:text="김무빗"
                     android:drawablePadding="10dp"
                     android:textColor="@color/white"/>
 
@@ -84,7 +84,7 @@
                 android:id="@+id/typelayer2"
                 android:layout_width="match_parent"
                 android:layout_height="365dp"
-                android:background="@drawable/background_example1">
+                android:background="@color/black">
 
                 <FrameLayout
                     android:layout_width="match_parent"

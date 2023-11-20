@@ -422,8 +422,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS3.mp4";
-                                                                typeimage.setBackgroundResource(R.drawable.pcs2);
-                                                                typeimage2.setBackgroundResource(R.drawable.pcs2);
+                                                                typeimage.setBackgroundResource(R.drawable.pcs3);
+                                                                typeimage2.setBackgroundResource(R.drawable.pcs3);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -433,8 +433,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM3.mp4";
-                                                                typeimage.setBackgroundResource(R.drawable.pcm2);
-                                                                typeimage2.setBackgroundResource(R.drawable.pcm2);
+                                                                typeimage.setBackgroundResource(R.drawable.pcm3);
+                                                                typeimage2.setBackgroundResource(R.drawable.pcm3);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -444,8 +444,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCS3.mp4";
-                                                                typeimage.setBackgroundResource(R.drawable.ucs2);
-                                                                typeimage2.setBackgroundResource(R.drawable.ucs2);
+                                                                typeimage.setBackgroundResource(R.drawable.ucs3);
+                                                                typeimage2.setBackgroundResource(R.drawable.ucs3);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -455,8 +455,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UCM3.mp4";
-                                                                typeimage.setBackgroundResource(R.drawable.ucm2);
-                                                                typeimage2.setBackgroundResource(R.drawable.ucm2);
+                                                                typeimage.setBackgroundResource(R.drawable.ucm3);
+                                                                typeimage2.setBackgroundResource(R.drawable.ucm3);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -466,8 +466,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIS3.mp4";
-                                                                typeimage.setBackgroundResource(R.drawable.pis2);
-                                                                typeimage2.setBackgroundResource(R.drawable.pis2);
+                                                                typeimage.setBackgroundResource(R.drawable.pis3);
+                                                                typeimage2.setBackgroundResource(R.drawable.pis3);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -477,8 +477,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PIM3.mp4";
-                                                                typeimage.setBackgroundResource(R.drawable.pim2);
-                                                                typeimage2.setBackgroundResource(R.drawable.pim2);
+                                                                typeimage.setBackgroundResource(R.drawable.pim3);
+                                                                typeimage2.setBackgroundResource(R.drawable.pim3);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -488,8 +488,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIS3.mp4";
-                                                                typeimage.setBackgroundResource(R.drawable.uis2);
-                                                                typeimage2.setBackgroundResource(R.drawable.uis2);
+                                                                typeimage.setBackgroundResource(R.drawable.uis3);
+                                                                typeimage2.setBackgroundResource(R.drawable.uis3);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -499,8 +499,8 @@ public class MainActivity extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/UIM3.mp4";
-                                                                typeimage.setBackgroundResource(R.drawable.uim2);
-                                                                typeimage2.setBackgroundResource(R.drawable.uim2);
+                                                                typeimage.setBackgroundResource(R.drawable.uim3);
+                                                                typeimage2.setBackgroundResource(R.drawable.uim3);
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);

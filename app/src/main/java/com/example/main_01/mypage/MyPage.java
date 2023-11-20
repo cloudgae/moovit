@@ -33,6 +33,7 @@ public class MyPage extends AppCompatActivity {
     Button arw;
     ImageButton btn1, btn2, btn3;
     ImageView typelayer;
+    LinearLayout typelayer2;
     TextView typename;
     Long moover, starter;
     String value4, value5, value6;
@@ -53,6 +54,7 @@ public class MyPage extends AppCompatActivity {
 
         typename = (TextView) findViewById(R.id.typename);
         typelayer = (ImageView) findViewById(R.id.typelayer);
+        typelayer2 = (LinearLayout) findViewById(R.id.typelayer2);
 
         moover = Long.valueOf(0);
         starter = Long.valueOf(0);
@@ -172,27 +174,35 @@ public class MyPage extends AppCompatActivity {
                                                         switch (TCODE) {
                                                             case "PCS":
                                                                 typelayer.setBackgroundResource(R.drawable.pcs2);
+                                                                typelayer2.setBackgroundResource(R.drawable.pcs4);
                                                                 break;
                                                             case "PCM":
                                                                 typelayer.setBackgroundResource(R.drawable.pcm2);
+                                                                typelayer2.setBackgroundResource(R.drawable.pcm4);
                                                                 break;
                                                             case "UCS":
                                                                 typelayer.setBackgroundResource(R.drawable.ucs2);
+                                                                typelayer2.setBackgroundResource(R.drawable.ucs4);
                                                                 break;
                                                             case "UCM":
                                                                 typelayer.setBackgroundResource(R.drawable.ucm2);
+                                                                typelayer2.setBackgroundResource(R.drawable.ucm4);
                                                                 break;
                                                             case "PIS":
                                                                 typelayer.setBackgroundResource(R.drawable.pis2);
+                                                                typelayer2.setBackgroundResource(R.drawable.pis4);
                                                                 break;
                                                             case "PIM":
                                                                 typelayer.setBackgroundResource(R.drawable.pim2);
+                                                                typelayer2.setBackgroundResource(R.drawable.pim4);
                                                                 break;
                                                             case "UIS":
                                                                 typelayer.setBackgroundResource(R.drawable.uis2);
+                                                                typelayer2.setBackgroundResource(R.drawable.uis4);
                                                                 break;
                                                             case "UIM":
                                                                 typelayer.setBackgroundResource(R.drawable.uim2);
+                                                                typelayer2.setBackgroundResource(R.drawable.uim4);
                                                                 break;
                                                         }
 
