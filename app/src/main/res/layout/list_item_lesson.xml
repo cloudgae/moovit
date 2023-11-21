@@ -38,7 +38,12 @@
 
         </androidx.cardview.widget.CardView>
 
-        <CheckBox
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/shadow_frame"
+            android:layout_gravity="top|end"/>
+        <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/checkbox_like"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -49,6 +54,7 @@
             android:layout_marginTop="0dp"
             android:button="@drawable/chkbox_like"
             android:checked="false" />
+
     </FrameLayout>
 
     <LinearLayout

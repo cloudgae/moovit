@@ -79,11 +79,11 @@ public class Apply_1 extends AppCompatActivity {
                 if (selectedDate.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY) {
                     // 선택한 날짜가 금요일인 경우 원하는 동작을 수행합니다.
                     // 여기에 코드를 추가하세요.
-                    Toast.makeText(Apply_1.this, "금요일을 선택했습니다.", Toast.LENGTH_SHORT).show();
+                    /*Toast.makeText(Apply_1.this, "금요일을 선택했습니다.", Toast.LENGTH_SHORT).show();*/
                     showClassSelectionBottomSheet();
                 } else {
-                    // 선택한 날짜가 금요일이 아닌 경우 메시지를 표시하거나 선택을 취소할 수 있습니다.
-                    Toast.makeText(Apply_1.this, "금요일을 선택해야 합니다.", Toast.LENGTH_SHORT).show();
+                    // 선택한 날짜가 금요일이 아닌 경우 메시지를 표시하거나 선택을 취소할 수 있습니다./**/
+                    /*Toast.makeText(Apply_1.this, "금요일을 선택해야 합니다.", Toast.LENGTH_SHORT).show();*/
                 }
             }
         });
