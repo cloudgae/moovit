@@ -4,14 +4,14 @@ import com.google.firebase.firestore.DocumentReference;
 
 public class Lesson {
     private String rank;
-    private String name;
-    private String address;
+    private  String name;
+    private  String address;
     private String rate;
     private String num_review;
     private int imageResource;
     private boolean isChecked; // 즐겨찾기 상태 추가
     private DocumentReference lessonDocument; // Firebase Firestore 문서에 대한 참조 추가
-    private String documentId;
+    private  String documentId;
 
     public Lesson(String rank, String name, String address, String rate, String num_review, int imageResource, String documentId, boolean isChecked){
         this.rank = rank;
@@ -26,10 +26,10 @@ public class Lesson {
     public String getRank(){
         return rank;
     }
-    public String getName(){
+    public  String getName(){
         return name;
     }
-    public String getAddress(){
+    public  String getAddress(){
         return address;
     }
     public String getRate(){
@@ -61,7 +61,7 @@ public class Lesson {
         // Firestore 문서의 ID를 반환
         return lessonDocument.getId();
     }
-    public String getDocumentId() {
+    public  String getDocumentId() {
         return documentId;
     }
 
