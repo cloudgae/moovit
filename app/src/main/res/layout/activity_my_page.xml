@@ -19,7 +19,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginVertical="10dp"
-            android:background="@drawable/white_arrow"
+            android:background="@drawable/back_key_vector"
             android:gravity="center"
             android:layout_marginLeft="10dp"
             />
