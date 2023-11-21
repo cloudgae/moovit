@@ -167,7 +167,8 @@
                     android:includeFontPadding="false"
                     android:padding="10dp"
                     android:text="노원구 공릉동"
-                    android:textSize="11dp" />
+                    android:textSize="11dp"
+                    android:singleLine="true"/>
             </LinearLayout>
 
             <com.google.android.material.tabs.TabLayout

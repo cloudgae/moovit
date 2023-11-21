@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,7 @@ import java.util.Map;
 public class Apply_2 extends AppCompatActivity {
     ImageButton finish_button;
     private FirebaseFirestore db;  // Firestore 인스턴스 선언 추가
+    private static final int REQUEST_CODE_ACTIVITY_2 = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,8 +154,8 @@ public class Apply_2 extends AppCompatActivity {
     private void moveNext() {
         // Apply_3로 이동
         Intent i = new Intent(Apply_2.this, Apply_3.class);
-        startActivity(i);
-
+//        startActivity(i);
+        startActivityForResult(i, REQUEST_CODE_ACTIVITY_2);
         /*// 2초 후에 다시 Apply_2로 돌아가서 팝업 표시
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -172,7 +174,64 @@ public class Apply_2 extends AppCompatActivity {
             }
         }, 1500 * sec); // sec초 정도 딜레이를 준 후 시작
     }*/
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if (requestCode == REQUEST_CODE_ACTIVITY_2 && resultCode == RESULT_OK) {
+            // 팝업창 띄우기
+            showPopup();
+        }
+    }
+    private void showPopup() {
+        // 다이얼로그 변수 선언
+        final AlertDialog[] alertDialog = {null};
 
+        AlertDialog.Builder dlgBuilder = new AlertDialog.Builder(Apply_2.this);
+        LayoutInflater inflater = getLayoutInflater();
+        View customLayout = inflater.inflate(R.layout.activity_apply_popup, null);
+        dlgBuilder.setView(customLayout);
+
+        // 버튼 찾기
+        Button positiveButton = customLayout.findViewById(R.id.positivebtn);
+        Button negativeButton = customLayout.findViewById(R.id.negativebtn);
+
+        // 긍정 버튼 클릭 이벤트 설정
+        positiveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 여기에 긍정 버튼을 클릭했을 때 수행할 동작을 추가하세요.
+                Intent i2 = new Intent(Apply_2.this, MainActivity.class);
+                startActivity(i2);
+                showPopup();
+
+                // 다이얼로그를 닫는 코드
+                if (alertDialog[0] != null) {
+                    alertDialog[0].dismiss();
+                }
+            }
+        });
+
+        // 부정 버튼 클릭 이벤트 설정
+        negativeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 여기에 부정 버튼을 클릭했을 때 수행할 동작을 추가하세요.
+                // 예: 다이얼로그를 닫거나 다른 동작 수행
+
+                // 다이얼로그를 닫는 코드
+                if (alertDialog[0] != null) {
+                    alertDialog[0].dismiss();
+                }
+            }
+        });
+
+        alertDialog[0] = dlgBuilder.create();
+        alertDialog[0].show();
+        alertDialog[0].getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
+        // 로그 추가
+        Log.d("Popup", "Popup shown");
+    }
 
 }
