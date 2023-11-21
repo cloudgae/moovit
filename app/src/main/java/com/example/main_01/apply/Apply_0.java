@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -24,13 +25,19 @@ import android.widget.TextView;
 import com.example.main_01.Home.Lesson;
 import com.example.main_01.MainActivity;
 import com.example.main_01.Map_0;
+import com.example.main_01.OnDocumentIdReceivedListener;
 import com.example.main_01.R;
 import com.example.main_01.mypage.MyPage;
 import com.example.main_01.shorts.shorts1;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-public class Apply_0 extends AppCompatActivity {
+public class Apply_0 extends AppCompatActivity implements OnDocumentIdReceivedListener {
 
     ImageButton applybtn;
     ImageButton backbtn;
@@ -38,6 +45,9 @@ public class Apply_0 extends AppCompatActivity {
     ViewPager pager;
     TextView genre;
     private BottomNavigationView bottomNavigationView;
+    ImageView image;
+    TextView cname, cgenre, cdiff, cday, cloc, cprice;
+    private FirebaseFirestore db;  // Firestore 인스턴스 선언 추가
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +56,72 @@ public class Apply_0 extends AppCompatActivity {
 
         ImageButton applybtn = (ImageButton) findViewById(R.id.apply_button);
         ImageButton backbtn = (ImageButton) findViewById(R.id.back_btn);
+        //
+        cname = (TextView) findViewById(R.id.name);
+        cgenre = (TextView) findViewById(R.id.genre);
+        cdiff = (TextView) findViewById(R.id.diff);
+        cday = (TextView) findViewById(R.id.day);
+        cloc = (TextView) findViewById(R.id.loc);
+        cprice = (TextView) findViewById(R.id.price);
 
+        image = (ImageView) findViewById(R.id.image);
+
+        // getIntent()로 Intent를 받아옴
+        Intent intent = getIntent();
+
+        // Intent에서 데이터 추출
+        String documentId = intent.getStringExtra("documentId");
+        String weeklyRank = intent.getStringExtra("weeklyRank");
+        String address = intent.getStringExtra("address");
+        String name = intent.getStringExtra("name");
+        String numReview = intent.getStringExtra("numReview");
+        String rate = intent.getStringExtra("rate");
+        int imageResource = intent.getIntExtra("imageResource", 0);
+        boolean isLiked = intent.getBooleanExtra("isLiked", false);
+
+        // Firestore 초기화
+        db = FirebaseFirestore.getInstance();
+// Firestore에서 문서 가져오기
+        DocumentReference documentRef = db.collection("Class").document(documentId);
+        documentRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if (documentSnapshot.exists()) {
+                    // 문서가 존재할 경우 해당 데이터를 UI에 표시
+                    cname.setText(documentSnapshot.getString("name"));
+                    cgenre.setText(documentSnapshot.getString("genre"));
+                    cdiff.setText(documentSnapshot.getString("difficulty"));
+                    cday.setText(documentSnapshot.getString("day"));
+                    cloc.setText(documentSnapshot.getString("location"));
+                    cprice.setText(documentSnapshot.getString("price"));
+
+                    // 이미지 리소스 설정
+                    int imageResource = intent.getIntExtra("imageResource", 0);
+                    image.setImageResource(imageResource);
+
+                    // 나머지 필요한 UI 업데이트 작업 수행
+                    // ...
+                } else {
+                    Log.d("Apply_0", "Document does not exist");
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e("Apply_0", "Error fetching document: " + e.getMessage());
+            }
+        });
+
+        //
+
+
+        //
         pager = (ViewPager) findViewById(R.id.pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
 
         pager.setOffscreenPageLimit(3);
         tabLayout.setupWithViewPager(pager);
         pager.setAdapter(new PageAdapter(getSupportFragmentManager(), this));
-
-
 
         genre = (TextView) findViewById(R.id.genre);
         Drawable drawable = getResources().getDrawable(R.drawable.genre_icon);
@@ -108,6 +175,11 @@ public class Apply_0 extends AppCompatActivity {
                 finish();
             }
         });
+
+    }
+
+    @Override
+    public void onDocumentIdReceived(String documentId) {
 
     }
 

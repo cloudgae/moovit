@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +29,7 @@ public class LessonAdapter2 extends RecyclerView.Adapter<LessonAdapter2.LessonVi
     private List<Lesson2> lessonList;
     private AdapterView.OnItemClickListener listener;
     private OnCheckboxClickListener onCheckboxClickListener;
+    private LessonAdapter.OnItemClickListener onItemClickListener;
 
     public interface OnItemClickListener {
         void onItemClick(Lesson2 lesson);
@@ -72,6 +74,7 @@ public class LessonAdapter2 extends RecyclerView.Adapter<LessonAdapter2.LessonVi
                 }
             }
         });
+
     }
 
     @Override

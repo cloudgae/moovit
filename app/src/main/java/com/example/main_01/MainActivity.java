@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -32,6 +31,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.main_01.Home.Adapter;
 import com.example.main_01.Home.Lesson;
+import com.example.main_01.Home.Lesson2;
 import com.example.main_01.Home.LessonAdapter;
 import com.example.main_01.Home.Model;
 import com.example.main_01.apply.Apply_0;
@@ -41,8 +41,6 @@ import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
-import com.google.android.exoplayer2.ui.PlayerControlView;
-import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 import com.google.android.exoplayer2.util.Util;
@@ -51,7 +49,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.common.primitives.Shorts;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -59,8 +56,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -307,6 +302,19 @@ public class MainActivity extends AppCompatActivity {
                     public void onItemClick(Lesson lesson) {
                         // Apply_0 액티비티로 이동하는 Intent 생성
                         Intent intent = new Intent(MainActivity.this, Apply_0.class);
+//                        Intent intent2 = new Intent(MainActivity.this, Apply_frag1.class);
+                        // 선택된 레슨의 정보를 Intent에 추가
+                        intent.putExtra("documentId", lesson.getDocumentId());
+//                        intent2.putExtra("documentId", lesson.getDocumentId());
+//                        intent.putExtra("weeklyRank", lesson.getWeeklyRank());
+                        intent.putExtra("address", lesson.getAddress());
+                        intent.putExtra("name", lesson.getName());
+//                        intent.putExtra("numReview", lesson.getNumReview());
+                        intent.putExtra("rate", lesson.getRate());
+                        intent.putExtra("imageResource", lesson.getImageResource());
+//                        intent2.putExtra("imageResource", lesson.getImageResource());
+                        intent.putExtra("isLiked", lesson.isChecked());
+
                         // Apply_0 액티비티 시작
                         startActivity(intent);
                     }

@@ -1,0 +1,8 @@
+<!-- res/drawable/likebtn6.xml -->
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/likebtn6"
+    android:gravity="center"
+    android:antialias="true"
+    android:dither="true"
+    android:width="10dp"
+    android:height="10dp"/>

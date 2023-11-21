@@ -33,6 +33,15 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
     private String itemId; // LessonAdapter 클래스 내에서 사용할 itemId 변수
     private OnItemClickListener onItemClickListener;
 
+    // Lesson 리스트에서 documentId에 해당하는 Lesson 객체를 찾는 메서드
+    public Lesson findLessonById(String documentId) {
+        for (Lesson lesson : lessonList) {
+            if (documentId.equals(lesson.getDocumentId())) {
+                return lesson;
+            }
+        }
+        return null;
+    }
 
     public interface OnItemClickListener{
         void onItemClick(Lesson lesson);
@@ -116,18 +125,18 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonView
             num_reviewTextView = itemView.findViewById(R.id.num_reviewTextView);
             favoriteCheckBox = itemView.findViewById(R.id.checkbox_like);
 
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    int position = getAdapterPosition();
-//                    if(position != RecyclerView.NO_POSITION && LessonViewHolder.this.listener != null){
-//                        LessonViewHolder.this.listener.onItemClick(lessonList.get(position));
-//
-//                    }
-//                }
-//            });
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (onItemClickListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            onItemClickListener.onItemClick(lessonList.get(position));
+                        }
+                    }
+                }
+            });
         }
-
     }
 
     public List<Lesson> rearrangeLessonList(List<Lesson> originalList){

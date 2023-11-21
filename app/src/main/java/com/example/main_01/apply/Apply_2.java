@@ -29,6 +29,8 @@ public class Apply_2 extends AppCompatActivity {
     private FirebaseFirestore db;  // Firestore 인스턴스 선언 추가
     private static final int REQUEST_CODE_ACTIVITY_2 = 1;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
