@@ -541,6 +541,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
+                        android:layout_marginHorizontal="10dp"
                         android:orientation="horizontal">
 
                         <!--TODO : id수정 필요,유형테스트 결과와 연동되게끔-->

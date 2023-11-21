@@ -15,11 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:background="@drawable/shorts_gradient2">
-    </LinearLayout>
 
 
     <com.google.android.material.tabs.TabLayout
@@ -31,6 +26,12 @@
         style="@style/CustomTabLayoutStyle"
         app:tabBackground="@android:color/transparent"
         app:tabTextColor="#707070" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/shorts_line"
+        android:layout_marginTop="48dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

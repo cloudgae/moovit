@@ -53,7 +53,7 @@ public class Apply_2 extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                moveNext(1);
+                                moveNext();
                                 // 업데이트 성공 시 처리
                             }
                         })
@@ -119,7 +119,7 @@ public class Apply_2 extends AppCompatActivity {
         });*/
     }
 
-    private void showPopup() {
+    /*private void showPopup() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(getLayoutInflater().inflate(R.layout.apply_popup_layout, null));
         builder.setCancelable(false);
@@ -147,23 +147,23 @@ public class Apply_2 extends AppCompatActivity {
         // 확인 버튼 텍스트 색상 설정
         Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
         positiveButton.setTextColor(getResources().getColor(R.color.pink));
-    }
+    }*/
 
-    private void moveNext(int sec) {
+    private void moveNext() {
+        // Apply_3로 이동
+        Intent i = new Intent(Apply_2.this, Apply_3.class);
+        startActivity(i);
+
+        /*// 2초 후에 다시 Apply_2로 돌아가서 팝업 표시
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                // Apply_3로 이동
-                Intent i = new Intent(Apply_2.this, Apply_3.class);
-                startActivity(i);
-
-                // 1초 후에 다시 Apply_2로 돌아가서 팝업 표시
-                moveBack(3);
+                showPopup();
             }
-        }, 1500 * sec); // sec초 정도 딜레이를 준 후 시작
+        }, 2000);*/
     }
 
-    private void moveBack(int sec) {
+    /*private void moveBack(int sec) {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -171,7 +171,7 @@ public class Apply_2 extends AppCompatActivity {
                 showPopup();
             }
         }, 1500 * sec); // sec초 정도 딜레이를 준 후 시작
-    }
+    }*/
 
 
 

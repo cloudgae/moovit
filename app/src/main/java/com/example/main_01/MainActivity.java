@@ -308,7 +308,6 @@ public class MainActivity extends AppCompatActivity {
                         // Apply_0 액티비티로 이동하는 Intent 생성
                         Intent intent = new Intent(MainActivity.this, Apply_0.class);
                         // Apply_0 액티비티 시작
-                        /*intent.putExtra("selectedLesson", lesson);*/
                         startActivity(intent);
                     }
                 });

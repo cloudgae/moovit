@@ -100,7 +100,7 @@
                 android:fontFamily="@font/notosanskr_regular"
                 android:includeFontPadding="false"
                 android:text="(333)"
-                android:textColor="#797979"
+                android:textColor="@color/pink"
                 android:textSize="10dp" />
         </LinearLayout>
 

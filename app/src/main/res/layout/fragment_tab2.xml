@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="210dp"
-        android:background="@drawable/shorts_gradient2">
+        android:background="@drawable/shorts_gradiant">
     </LinearLayout>
 
     <VideoView
