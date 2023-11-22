@@ -48,11 +48,6 @@ public class TypeTest_6 extends AppCompatActivity {
                 if(rbT6_1.isChecked() == true){
                     dbref.update("M", 3);
                     dbref.update("S", 0);
-//                    dbref.update("Q6", "1");
-//                    dbref.update("Q6", "S");
-//                    dbref.update("TYPE", FieldValue.arrayUnion("S"));
-//                    dbref.update("S", true);
-//                    dbref.update("TYPE", "S", SetOptions.merge());
                 }
                 prbar.setIndeterminate(false);
 //                prbar.setProgress(100);
@@ -68,11 +63,6 @@ public class TypeTest_6 extends AppCompatActivity {
                 if(rbT6_2.isChecked() == true){
                     dbref.update("M", 2);
                     dbref.update("S", 0);
-//                    dbref.update("Q6", "2");
-//                    dbref.update("Q6", "M");
-//                    dbref.update("TYPE", FieldValue.arrayUnion("M"));
-//                    dbref.update("M", true);
-//                    dbref.update("TYPE", "M", SetOptions.merge());
                 }
                 prbar.setIndeterminate(false);
 //                prbar.setProgress(100);

@@ -143,39 +143,6 @@ public class TypeTest_9 extends AppCompatActivity {
                                                         typefeature2.setText((String) document.getData().get("feature2"));
                                                         typefeature3.setText((String) document.getData().get("feature3"));
 
-//                                                        // Firestore에서 영상 이름 가져오기
-//                                                        String videoName1 = (String) document.getData().get("video1");
-//                                                        String videoName2 = (String) document.getData().get("video2");
-//                                                        String videoName3 = (String) document.getData().get("video3");
-//
-//                                                        // 영상 다운로드 URL 가져오기
-//                                                        FirebaseStorage storage = FirebaseStorage.getInstance();
-//                                                        StorageReference storageRef = storage.getReference();
-//                                                        StorageReference videoRef1 = storageRef.child("videos/" + videoName1);
-//                                                        StorageReference videoRef2 = storageRef.child("videos/" + videoName2);
-//                                                        StorageReference videoRef3 = storageRef.child("videos/" + videoName3);
-//
-//                                                        videoRef1.getDownloadUrl().addOnSuccessListener(uri -> {
-//                                                            String videoUrl1 = uri.toString();
-//                                                            initializePlayer(videoUrl1, playerView1);
-//                                                        }).addOnFailureListener(e -> {
-//                                                            e.printStackTrace();
-//                                                        });
-//
-//                                                        videoRef2.getDownloadUrl().addOnSuccessListener(uri -> {
-//                                                            String videoUrl2 = uri.toString();
-//                                                            initializePlayer(videoUrl2, playerView2);
-//                                                        }).addOnFailureListener(e -> {
-//                                                            e.printStackTrace();
-//                                                        });
-//
-//                                                        videoRef3.getDownloadUrl().addOnSuccessListener(uri -> {
-//                                                            String videoUrl3 = uri.toString();
-//                                                            initializePlayer(videoUrl3, playerView3);
-//                                                        }).addOnFailureListener(e -> {
-//                                                            e.printStackTrace();
-//                                                        });
-
                                                         // TCODE에 따라 배경 이미지 설정
                                                         switch (TCODE) {
                                                             case "PCS":
@@ -183,14 +150,6 @@ public class TypeTest_9 extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCS3.mp4";
-
-                                                                // VideoView에 영상 설정
-//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-//                                                                videoView1.start(); // 영상 재생 시작
-//                                                                videoView2.start();
-//                                                                videoView3.start();
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);
@@ -200,14 +159,6 @@ public class TypeTest_9 extends AppCompatActivity {
                                                                 videoURL1 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM1.mp4";
                                                                 videoURL2 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM2.mp4";
                                                                 videoURL3 = "https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/PCM3.mp4";
-
-                                                                // VideoView에 영상 설정
-//                                                                videoView1.setVideoURI(Uri.parse(videoURL1));
-//                                                                videoView2.setVideoURI(Uri.parse(videoURL2));
-//                                                                videoView3.setVideoURI(Uri.parse(videoURL3));
-//                                                                videoView1.start(); // 영상 재생 시작
-//                                                                videoView2.start();
-//                                                                videoView3.start();
                                                                 initializePlayer(videoURL1, playerView1);
                                                                 initializePlayer(videoURL2, playerView2);
                                                                 initializePlayer(videoURL3, playerView3);

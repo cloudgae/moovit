@@ -251,8 +251,6 @@ public class MainActivity extends AppCompatActivity {
         CollectionReference collectionRef = db.collection("Class");
         Query query = collectionRef.whereGreaterThanOrEqualTo("weekly_rank", 1).whereLessThanOrEqualTo("weekly_rank", 6);
         Query query2 = collectionRef.whereGreaterThanOrEqualTo("hot_rank", 1).whereLessThanOrEqualTo("hot_rank", 6);
-        //        Query query1 = collectionRef.whereEqualTo("weekly_rank", 1);
-
 
         // 쿼리 실행
         query.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
