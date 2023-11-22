@@ -156,7 +156,7 @@ public class Apply_C7 extends AppCompatActivity {
                     String day = documentSnapshot.getString("frequency");
                     String loc = documentSnapshot.getString("location");
                     c7loc.setText(loc);
-                    String price = String.valueOf(documentSnapshot.getLong("fee"));
+                    String price = documentSnapshot.getString("price");
                     c7price.setText(price + "원");
 
                     // Firestore 데이터를 기반으로 TextView 업데이트

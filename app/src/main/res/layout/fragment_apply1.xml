@@ -124,13 +124,13 @@
                     android:text="- 댄서 대학원 6주 과정 수료\n- 서울여자대학교 무용학과 졸업\n- 댄스 자격증 1급 취득"
                     android:textSize="12dp" />
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:fontFamily="@font/notosanskr_regular"-->
-<!--                    android:text="안녕하세요 튜터 ~~입니다.\n춤을 사랑하고 춤을 좋아하는 사람들과 함께 있는 시간을 소중히 여기겠습니다 :)"-->
-<!--                    android:textSize="12dp"-->
-<!--                    android:layout_marginBottom="20dp"/>-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:text="안녕하세요 댄서 레닌입니다.\n춤을 사랑하고 춤을 좋아하는 사람들과 함께 있는 시간을 소중히 여기겠습니다 :)"
+                    android:textSize="12dp"
+                    android:layout_marginBottom="20dp"/>
 
                 </LinearLayout>
 

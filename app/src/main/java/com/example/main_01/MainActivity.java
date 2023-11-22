@@ -309,7 +309,7 @@ public class MainActivity extends AppCompatActivity {
 //                        intent.putExtra("weeklyRank", lesson.getWeeklyRank());
                         intent.putExtra("address", lesson.getAddress());
                         intent.putExtra("name", lesson.getName());
-//                        intent.putExtra("numReview", lesson.getNumReview());
+                        intent.putExtra("numReview", lesson.getNum_review());
                         intent.putExtra("rate", lesson.getRate());
                         intent.putExtra("imageResource", lesson.getImageResource());
 //                        intent2.putExtra("imageResource", lesson.getImageResource());

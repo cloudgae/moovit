@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -46,8 +47,9 @@ public class Apply_0 extends AppCompatActivity implements OnDocumentIdReceivedLi
     TextView genre;
     private BottomNavigationView bottomNavigationView;
     ImageView image;
-    TextView cname, cgenre, cdiff, cday, cloc, cprice;
+    TextView cname, cgenre, cdiff, cday, cloc, cprice, crate_numreview;
     private FirebaseFirestore db;  // Firestore 인스턴스 선언 추가
+    CheckBox checkbox_like;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +65,9 @@ public class Apply_0 extends AppCompatActivity implements OnDocumentIdReceivedLi
         cday = (TextView) findViewById(R.id.day);
         cloc = (TextView) findViewById(R.id.loc);
         cprice = (TextView) findViewById(R.id.price);
-
+        crate_numreview = (TextView) findViewById(R.id.rate_numreview);
         image = (ImageView) findViewById(R.id.image);
+        checkbox_like = (CheckBox) findViewById(R.id.checkbox_like);
 
         // getIntent()로 Intent를 받아옴
         Intent intent = getIntent();
@@ -91,14 +94,16 @@ public class Apply_0 extends AppCompatActivity implements OnDocumentIdReceivedLi
                     cname.setText(documentSnapshot.getString("name"));
                     cgenre.setText(documentSnapshot.getString("genre"));
                     cdiff.setText(documentSnapshot.getString("difficulty"));
-                    cday.setText(documentSnapshot.getString("day"));
+                    cday.setText(documentSnapshot.getString("frequency"));
                     cloc.setText(documentSnapshot.getString("location"));
-                    cprice.setText(documentSnapshot.getString("price"));
-
+                    cprice.setText(documentSnapshot.getString("price") + "원");
+//                    crate_numreview.setText(documentSnapshot.getString("rate") + " ("
+//                            + documentSnapshot.getString("review") + ")");
                     // 이미지 리소스 설정
                     int imageResource = intent.getIntExtra("imageResource", 0);
                     image.setImageResource(imageResource);
-
+                    crate_numreview.setText(rate + " (" + numReview + ")");
+                    checkbox_like.setChecked(isLiked);
                     // 나머지 필요한 UI 업데이트 작업 수행
                     // ...
                 } else {
@@ -238,7 +243,6 @@ public class Apply_0 extends AppCompatActivity implements OnDocumentIdReceivedLi
         Intent intent = new Intent(this, MyPage.class);
         startActivity(intent);
     }
-
 
 
 }
