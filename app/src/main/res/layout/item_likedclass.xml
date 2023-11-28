@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginVertical="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:id="@+id/lessonImageView"
+                    android:layout_width="155dp"
+                    android:layout_height="155dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/c1" />
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="top|end"
+                android:background="@drawable/shadow_frame" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_like"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="0dp"
+                android:button="@drawable/chkbox_like"
+                android:checked="false"
+                android:gravity="center"
+                android:padding="0dp" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/day_loc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:includeFontPadding="false"
+            android:text="원데이클래스 · 마포구 연남동"
+            android:textColor="#7E7E7E"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:gravity="left"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="케이팝 걸그룹 타이틀곡 메들리 클래스"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            android:layout_marginBottom="5dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:drawableLeft="@drawable/ratestar_pink"
+                android:fontFamily="@font/notosanskr_regular"
+                android:gravity="left"
+                android:includeFontPadding="false"
+                android:text="4.9"
+                android:textColor="#F177DE"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/num_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:gravity="left"
+                android:includeFontPadding="false"
+                android:text="(42)"
+                android:textColor="#797979"
+                android:textSize="10dp" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginVertical="5dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:gravity="left"
+            android:includeFontPadding="false"
+            android:text="52,000원"
+            android:textColor="#F177DE"
+            android:textSize="10dp" />
+    </LinearLayout>
+</LinearLayout>
