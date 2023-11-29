@@ -9,6 +9,8 @@ public class ClassItem {
     private String num_review;
     private String price;
     private String thumbnailResourceName; // 리소스 이름 추가
+    private String documentId; // Firestore 문서 ID
+    private boolean isChecked;
 
     public ClassItem(String className, boolean isLiked, String dayloc, String rate, String num_review, String price) {
         // Default constructor required for Firestore
@@ -23,6 +25,7 @@ public class ClassItem {
         this.num_review = num_review;
         this.price = price;
         this.thumbnailResourceName = thumbnailResourceName;
+        this.isChecked = isLiked; // 초기에는 isLiked 상태와 동일하게 설정
 
     }
 
@@ -59,5 +62,22 @@ public class ClassItem {
     public String getThumbnailResourceName() {
         return thumbnailResourceName;
     }
+    public void setLiked(boolean liked) {
+        isLiked = liked;
+    }
+    // Firestore 문서 ID를 반환하는 메서드
+    public String getDocumentId() {
+        return documentId;
+    }
+    // Firestore 문서 ID를 설정하는 메서드
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
+    public boolean isChecked() {
+        return isChecked;
+    }
 
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
 }

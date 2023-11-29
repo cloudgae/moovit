@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,8 @@ import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.example.main_01.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -63,10 +66,13 @@ public class MyPageLikelistTab1 extends Fragment {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 // Firestore에서 가져온 데이터를 ClassItem 객체로 변환하여 리스트에 추가
                                 String className = document.getString("name");
-                                String dayloc = document.getString("frequency") + " · " + document.getString("location");
+                                String frequency = document.getString("frequency");
+                                String location = document.getString("location");
+                                String dayloc = frequency + (frequency != null && location != null ? " · " + location : "");
                                 boolean isLiked = true;
                                 String rate = document.getString("rate");
-                                String num_review = "(" + document.getString("review") + ")";
+                                String review = document.getString("review");
+                                String num_review = "(" + (review != null ? review : "0") + ")";
                                 String price = document.getString("price") + "원";
 
                                 // 썸네일 이미지 리소스 이름 가져오기
@@ -74,6 +80,9 @@ public class MyPageLikelistTab1 extends Fragment {
 
                                 // ClassItem 객체에 설정된 값으로 생성
                                 ClassItem classItem = new ClassItem(className, thumbnailResourceName, isLiked, dayloc, rate, num_review, price);
+
+                                // Firestore 문서 ID 설정
+                                classItem.setDocumentId(document.getId());
 
                                 classList.add(classItem);
                             }
@@ -83,9 +92,14 @@ public class MyPageLikelistTab1 extends Fragment {
                         } else {
                             // Firestore에서 데이터 가져오기 실패
                             // 처리 필요
+                            Exception exception = task.getException();
+                            if (exception != null) {
+                                Log.e("MyPageLikelistTab1", "Error fetching data: " + exception.getMessage());
+                            }
                         }
                     }
                 });
+
 
 
 
@@ -95,8 +109,59 @@ public class MyPageLikelistTab1 extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(requireContext(), 2));
 
 
-    }
+        // 클릭 리스너 설정
+        adapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+//                // 아이템이 클릭되었을 때의 동작 처리
+//                ClassItem classItem = classList.get(position);
+//                boolean newLikeState = !classItem.isLiked(); // 현재 상태의 반대로 변경
+//
+//                // Firestore에서 해당 문서의 like 필드 업데이트
+//                String documentId = classItem.getDocumentId(); // 여기서 documentId를 가져옵니다.
+//                updateFirestoreLikeState(documentId, newLikeState);
+//
+//                // RecyclerView에서 아이템의 like 필드 갱신
+//                adapter.updateItem(position, newLikeState);
+                // 아이템이 클릭되었을 때의 동작 처리
+                ClassItem classItem = classList.get(position);
+                boolean newLikeState = !classItem.isLiked(); // 현재 상태의 반대로 변경
+                classItem.setLiked(newLikeState);
+                classItem.setChecked(newLikeState); // 체크박스 상태 업데이트
 
+                // Firestore에서 해당 문서의 like 필드 업데이트
+                String documentId = classItem.getDocumentId(); // 여기서 documentId를 가져옵니다.
+                updateFirestoreLikeState(documentId, newLikeState);
+
+                // RecyclerView에서 아이템의 like 필드 갱신
+//                adapter.updateItem(position, newLikeState);
+                adapter.notifyItemChanged(position);
+                // 아이템이 좋아요에서 해제되면 리사이클러뷰에서 제거
+                if (!newLikeState) {
+                    adapter.removeClass(position);
+                }
+            }
+        });
+
+    }
+    // Firestore에서 like 필드 업데이트 메서드
+    private void updateFirestoreLikeState(String documentId, boolean newLikeState) {
+        db.collection("Class")
+                .document(documentId)
+                .update("like", newLikeState)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // 업데이트 성공 처리
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // 업데이트 실패 처리
+                    }
+                });
+    }
     private void setupRecyclerView(List<ClassItem> classList) {
         RecyclerView recyclerView = requireView().findViewById(R.id.recyclerView);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(classList, requireContext());
