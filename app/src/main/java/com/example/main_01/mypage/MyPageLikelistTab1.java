@@ -107,9 +107,9 @@ public class MyPageLikelistTab1 extends Fragment {
     // Drawable에서 리소스 ID를 가져오는 메서드
     private int getResourceIdFromDrawable(Drawable drawable) {
         if (drawable instanceof BitmapDrawable) {
-            return R.drawable.c1; // 기본 이미지 리소스 ID
+            return R.drawable.c3; // 기본 이미지 리소스 ID
         } else if (drawable instanceof VectorDrawableCompat || drawable instanceof VectorDrawable) {
-            return R.drawable.c1; // 기본 이미지 리소스 ID
+            return R.drawable.c3; // 기본 이미지 리소스 ID
         } else {
             return 0;
         }

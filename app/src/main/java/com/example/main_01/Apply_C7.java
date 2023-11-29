@@ -236,7 +236,7 @@ public class Apply_C7 extends AppCompatActivity {
         } else if ("n".equals(day)) {
             return "다회차 클래스";
         }
-        return "";// 매핑이 없을 경우 원래의 장르로 기본 설정
+        return day;// 매핑이 없을 경우 원래의 장르로 기본 설정
     }
 
     static class PageAdapter extends FragmentStatePagerAdapter {
