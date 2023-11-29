@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Main_01</string>
+    <string name="app_name">Moovit</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_map0">Map_0</string>
