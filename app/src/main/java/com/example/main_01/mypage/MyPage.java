@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.main_01.MainActivity;
-import com.example.main_01.Map_0;
+import com.example.main_01.map.Map_0;
 import com.example.main_01.R;
 import com.example.main_01.shorts.shorts1;
 import com.google.android.gms.tasks.OnCompleteListener;

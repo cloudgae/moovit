@@ -1,4 +1,4 @@
-package com.example.main_01;
+package com.example.main_01.apply_C7;
 
 
 import androidx.annotation.NonNull;
@@ -15,7 +15,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,11 +25,10 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.example.main_01.apply.Apply_0;
+import com.example.main_01.MainActivity;
+import com.example.main_01.R;
 import com.example.main_01.apply.Apply_1;
-import com.example.main_01.apply.Apply_frag1;
-import com.example.main_01.apply.Apply_frag2;
-import com.example.main_01.apply.Apply_frag3;
+import com.example.main_01.map.Map_0;
 import com.example.main_01.mypage.MyPage;
 import com.example.main_01.shorts.shorts1;
 import com.google.android.gms.tasks.OnSuccessListener;

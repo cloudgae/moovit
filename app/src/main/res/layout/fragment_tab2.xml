@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="360dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="360dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+
+
+    <!--<VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top|bottom"
+        />-->
+
+</FrameLayout>
+<!--
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
@@ -124,7 +149,7 @@
 
 
 
-<!--            <ImageView
+&lt;!&ndash;            <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="20dp"
@@ -143,7 +168,7 @@
                 android:singleLine="false"
                 android:text="바다 BADA"
                 android:textColor="#FFFFFF"
-                android:textSize="20dp" />-->
+                android:textSize="20dp" />&ndash;&gt;
 
             <android.widget.Button
                 android:id="@+id/likebutton"
@@ -162,3 +187,4 @@
     </LinearLayout>
 
 </FrameLayout>
+-->

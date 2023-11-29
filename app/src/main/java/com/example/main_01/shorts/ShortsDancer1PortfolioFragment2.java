@@ -12,13 +12,12 @@ import android.view.ViewGroup;
 
 import com.example.main_01.R;
 
-
-public class ShortsDancerPortfolioFragment2 extends Fragment {
+public class ShortsDancer1PortfolioFragment2 extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_shorts_dancer_portfolio2, container, false);
+        return inflater.inflate(R.layout.fragment_shorts_dancer1_portfolio2, container, false);
     }
 
     @Override

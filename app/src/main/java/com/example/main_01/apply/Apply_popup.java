@@ -1,8 +1,10 @@
-package com.example.main_01;
+package com.example.main_01.apply;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.main_01.R;
 
 public class Apply_popup extends AppCompatActivity {
 

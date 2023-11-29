@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".shorts.ShortsDancer1Profile"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.widget.Button
+            android:id="@+id/goback"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginVertical="15dp"
+            android:background="@drawable/white_arrow"
+            android:gravity="left"
+            android:layout_marginLeft="10dp"
+            />
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:background="@drawable/dancer1_image_2"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="15dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="러셔 LUSHER"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false" />
+
+            <ImageButton
+                android:layout_width="64dp"
+                android:layout_height="28dp"
+                app:srcCompat="@drawable/follow_button"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:text="안녕하세요. 베베의 러셔입니다. 안녕하세요. 베베의 러셔입니다."
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            android:fontFamily="@font/notosanskr_regular"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:tabIndicatorColor="#FFFFFF"
+        app:tabSelectedTextColor="#FFFFFF"
+        app:tabBackground="@drawable/tab_background"
+        app:tabTextColor="#707070" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

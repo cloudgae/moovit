@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/framelayout">
 
     <VideoView
         android:id="@+id/videoView1"
@@ -35,7 +36,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/classinfo_name"
+            android:id="@+id/dancer_name"
             android:layout_width="231dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -45,7 +46,7 @@
             android:gravity="center"
             android:padding="0dp"
             android:singleLine="false"
-            android:text="케이팝 걸그룹 타이틀곡 메들리 클래스"
+            android:text="태터\nTATTER"
             android:includeFontPadding="false"
             android:textColor="#FFFFFF"
             android:textSize="24dp" />
@@ -53,7 +54,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginVertical="20dp"
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"
@@ -90,8 +91,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="#원데이"
                 android:includeFontPadding="false"
+                android:text="#원데이"
                 android:background="@drawable/hashtag_box"
                 android:fontFamily="@font/notosanskr_medium"
                 android:textSize="12dp" />
@@ -124,7 +125,7 @@
                     android:layout_width="54dp"
                     android:layout_height="54dp"
                     android:layout_gravity="center_vertical|center"
-                    android:background="@drawable/dancer_ex1" />
+                    android:background="@drawable/dancer2_image_1" />
 
                 <!-- 링 형태의 스타일을 입히는 레이아웃 -->
                 <LinearLayout
@@ -152,9 +153,6 @@
 
         </LinearLayout>
 
-
-
     </LinearLayout>
-
 
 </FrameLayout>

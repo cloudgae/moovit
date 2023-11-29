@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".shorts.ShortsDancerProfile"
+    tools:context=".shorts.ShortsDancer1Profile"
     android:background="#000000"
     android:orientation="vertical">
 
@@ -26,7 +26,7 @@
     <ImageView
         android:layout_width="78dp"
         android:layout_height="78dp"
-        android:background="@drawable/profile_image"
+        android:background="@drawable/dancer2_image_2"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="15dp"
@@ -44,24 +44,24 @@
             <TextView
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="에이미"
+                android:text="태터 TATTER"
                 android:textColor="#FFFFFF"
                 android:textSize="20dp"
                 android:fontFamily="@font/notosanskr_bold"
                 android:includeFontPadding="false" />
 
-            <android.widget.Button
+            <ImageButton
                 android:layout_width="64dp"
                 android:layout_height="28dp"
-                android:background="@drawable/follow_button"
+                app:srcCompat="@drawable/follow_button"
                 />
 
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="230dp"
             android:layout_height="60dp"
-            android:text="안녕하세요. 원밀리언의 에이미입니다. 안녕하세요. 원밀리언의 에이미입니다."
+            android:text="안녕하세요. 베베의 태터입니다. 안녕하세요. 베베의 태터입니다."
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:textColor="#FFFFFF"

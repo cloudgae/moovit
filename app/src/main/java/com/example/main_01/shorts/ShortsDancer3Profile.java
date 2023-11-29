@@ -15,25 +15,23 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.main_01.R;
-import com.example.main_01.mypage.MyPage;
-import com.example.main_01.mypage.MyPageClass;
 import com.google.android.material.tabs.TabLayout;
 
-public class ShortsDancerProfile extends AppCompatActivity {
+public class ShortsDancer3Profile extends AppCompatActivity {
 
     Button arw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shorts_dancer_profile);
+        setContentView(R.layout.activity_shorts_dancer3_profile);
 
         Button arw = (Button) findViewById(R.id.goback);
 
         arw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ShortsDancerProfile.this, shorts1.class);
+                Intent i = new Intent(ShortsDancer3Profile.this, shorts1.class);
                 startActivity(i);
                 finish();
             }
@@ -63,9 +61,9 @@ public class ShortsDancerProfile extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             if (position == 0) { //프래그먼트 사용 포지션 설정 0 이 첫탭
-                return new ShortsDancerPortfolioFragment1();
+                return new ShortsDancer3PortfolioFragment1();
             } else {
-                return new ShortsDancerPortfolioFragment2();
+                return new ShortsDancer3PortfolioFragment2();
             }
 
         }

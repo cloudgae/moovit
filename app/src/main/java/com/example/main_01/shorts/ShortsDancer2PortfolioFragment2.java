@@ -1,4 +1,4 @@
-package com.example.main_01;
+package com.example.main_01.shorts;
 
 import android.os.Bundle;
 
@@ -10,13 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class C7_tab3 extends Fragment {
+import com.example.main_01.R;
 
+public class ShortsDancer2PortfolioFragment2 extends Fragment {
+
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_c7_tab3, container, false);
-        // Your code for Fragment 1
-        return view;
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_shorts_dancer2_portfolio2, container, false);
     }
 
     @Override

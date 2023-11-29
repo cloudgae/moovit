@@ -1,4 +1,4 @@
-package com.example.main_01;
+package com.example.main_01.map;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SlidingDrawer;
 
-import com.example.main_01.apply.Apply_0;
+import com.example.main_01.MainActivity;
+import com.example.main_01.R;
+import com.example.main_01.databinding.ActivityMap0Binding;
 import com.example.main_01.mypage.MyPage;
 import com.example.main_01.shorts.shorts1;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -24,7 +24,6 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.main_01.databinding.ActivityMap0Binding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Map_0 extends FragmentActivity implements OnMapReadyCallback {
@@ -73,7 +72,6 @@ public class Map_0 extends FragmentActivity implements OnMapReadyCallback {
         });
 
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);

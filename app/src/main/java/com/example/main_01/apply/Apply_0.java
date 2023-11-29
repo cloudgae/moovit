@@ -6,26 +6,21 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.example.main_01.Home.Lesson;
 import com.example.main_01.MainActivity;
-import com.example.main_01.Map_0;
+import com.example.main_01.map.Map_0;
 import com.example.main_01.OnDocumentIdReceivedListener;
 import com.example.main_01.R;
 import com.example.main_01.mypage.MyPage;

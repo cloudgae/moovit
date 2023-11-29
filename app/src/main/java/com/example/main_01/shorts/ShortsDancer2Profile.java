@@ -1,4 +1,4 @@
-package com.example.main_01.mypage;
+package com.example.main_01.shorts;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,21 +17,21 @@ import android.widget.Button;
 import com.example.main_01.R;
 import com.google.android.material.tabs.TabLayout;
 
-public class MyPageLikelist extends AppCompatActivity {
+public class ShortsDancer2Profile extends AppCompatActivity {
 
     Button arw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_page_likelist);
+        setContentView(R.layout.activity_shorts_dancer2_profile);
 
         Button arw = (Button) findViewById(R.id.goback);
 
         arw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MyPageLikelist.this, MyPage.class);
+                Intent i = new Intent(ShortsDancer2Profile.this, shorts1.class);
                 startActivity(i);
                 finish();
             }
@@ -44,7 +44,7 @@ public class MyPageLikelist extends AppCompatActivity {
 
         pager.setOffscreenPageLimit(2); //현재 페이지의 양쪽에 보유해야하는 페이지 수를 설정 (상황에 맞게 사용하시면 됩니다.)
         tabLayout.setupWithViewPager(pager); //텝레이아웃과 뷰페이저를 연결
-        pager.setAdapter(new MyPageLikelist.PageAdapter(getSupportFragmentManager(),this)); //뷰페이저 어뎁터 설정 연결
+        pager.setAdapter(new PageAdapter(getSupportFragmentManager(),this)); //뷰페이저 어뎁터 설정 연결
 
 
     }
@@ -61,9 +61,9 @@ public class MyPageLikelist extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             if (position == 0) { //프래그먼트 사용 포지션 설정 0 이 첫탭
-                return new MyPageLikelistTab1();
+                return new ShortsDancer2PortfolioFragment1();
             } else {
-                return new MyPageLikelistTab2();
+                return new ShortsDancer2PortfolioFragment2();
             }
 
         }
@@ -78,9 +78,9 @@ public class MyPageLikelist extends AppCompatActivity {
         @Override
         public CharSequence getPageTitle(int position) {
             if (position == 0) { //텝 레이아웃의 타이틀 설정
-                return "클래스";
+                return "포트폴리오";
             } else {
-                return "동영상";
+                return "진행중인 클래스";
             }
         }
     }
