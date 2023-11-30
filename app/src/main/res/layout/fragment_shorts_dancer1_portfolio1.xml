@@ -43,6 +43,7 @@
                             app:cardCornerRadius="10dp">
 
                             <ImageView
+                                android:id="@+id/pf1"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/lusher_pf1"/>
@@ -97,6 +98,7 @@
                             app:cardCornerRadius="10dp">
 
                             <ImageView
+                                android:id="@+id/pf2"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/lusher_pf2"/>
@@ -165,6 +167,7 @@
                         app:cardCornerRadius="10dp">
 
                         <ImageView
+                            android:id="@+id/pf3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/lusher_pf3"/>

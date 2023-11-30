@@ -57,7 +57,7 @@ public class Shorts_tab2_video3_fragment extends Fragment {
         dancer_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), ShortsDancer2Profile.class);
+                Intent i = new Intent(getActivity(), ShortsDancer3Profile.class);
                 startActivity(i);
             }
         });
@@ -65,7 +65,7 @@ public class Shorts_tab2_video3_fragment extends Fragment {
         profileimage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), ShortsDancer2Profile.class);
+                Intent i = new Intent(getActivity(), ShortsDancer3Profile.class);
                 startActivity(i);
             }
         });

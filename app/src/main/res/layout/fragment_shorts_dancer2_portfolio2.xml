@@ -43,6 +43,7 @@
                             app:cardCornerRadius="10dp">
 
                             <ImageView
+                                android:id="@+id/class1"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/tatter_class1"
@@ -98,6 +99,7 @@
                             app:cardCornerRadius="10dp">
 
                             <ImageView
+                                android:id="@+id/class2"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/tatter_class2"/>
@@ -166,6 +168,7 @@
                         app:cardCornerRadius="10dp">
 
                         <ImageView
+                            android:id="@+id/class3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/tatter_class3"
