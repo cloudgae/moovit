@@ -161,7 +161,12 @@ public class Apply_0 extends AppCompatActivity implements OnDocumentIdReceivedLi
         applybtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Apply_0.this, Apply_1.class);
+                Intent i = new Intent(Apply_0.this, Apply_1_recycle.class);
+                i.putExtra("documentId1", documentId);
+                //썸네일,제목,장르,난이도
+                i.putExtra("imageResource1", imageResource);
+//                intent.putExtra("name", name);
+
                 startActivity(i);
                 finish();
             }
