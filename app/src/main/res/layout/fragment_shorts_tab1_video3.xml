@@ -6,12 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <VideoView
-        android:id="@+id/videoView1"
-        android:layout_width="360dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="top|bottom"
-        />
+    <TextureView
+        android:id="@+id/textureView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <ImageView
         android:layout_width="match_parent"
