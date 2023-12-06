@@ -38,12 +38,17 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class Apply_C7 extends AppCompatActivity {
     ImageButton backbtn, applybtn;
-    TextView c7name, c7name2, c7genre, c7diff, c7day, c7loc, c7price;
+    TextView c7name, c7name2, c7genre, c7diff, c7day, c7loc, c7price, dday;
     ViewPager pager;
     ImageView c7image;
     private BottomNavigationView bottomNavigationView;
@@ -74,7 +79,7 @@ public class Apply_C7 extends AppCompatActivity {
         c7price = (TextView) findViewById(R.id.c7price);
 
         c7image = (ImageView) findViewById(R.id.c7image);
-
+        dday= (TextView) findViewById(R.id.dday);
 
         Drawable drawable = getResources().getDrawable(R.drawable.genre_icon);
 
@@ -159,6 +164,26 @@ public class Apply_C7 extends AppCompatActivity {
 
                     // Firestore 데이터를 기반으로 TextView 업데이트
                     updateTextViews(genre, diff, day /*, 다른 필요한 필드 */);
+
+                    // 'date' 필드 값 가져오기
+                    String dateString = documentSnapshot.getString("date");
+
+                    // dateString을 Date 객체로 변환
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                    Date eventDate = null;
+                    try {
+                        eventDate = dateFormat.parse(dateString);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
+                    // 오늘 날짜 가져오기
+                    Date today = Calendar.getInstance().getTime();
+
+                    // 디데이 계산
+                    int dDay = calculateDDay(today, eventDate);
+
+                    dday.setText("D-" + dDay);
 
                 }
             }
@@ -291,5 +316,12 @@ public class Apply_C7 extends AppCompatActivity {
     private void openMyPage() {
         Intent intent = new Intent(this, MyPage.class);
         startActivity(intent);
+    }
+
+    private int calculateDDay(Date today, Date eventDate) {
+        // 디데이 계산 (오늘 날짜와 이벤트 날짜의 차이를 일수로 계산)
+        long diffInMillies = eventDate.getTime() - today.getTime();
+        long diffInDays = diffInMillies / (24 * 60 * 60 * 1000);
+        return (int) (diffInDays + 1); // 디데이는 오늘 포함
     }
 }

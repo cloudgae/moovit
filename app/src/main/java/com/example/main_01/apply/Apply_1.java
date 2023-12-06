@@ -39,6 +39,7 @@ public class Apply_1 extends AppCompatActivity {
     TextView name, txt;
     CalendarView calendarView;
     Calendar lastSelectedDate;
+    ImageButton back_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,15 @@ public class Apply_1 extends AppCompatActivity {
         name = (TextView) findViewById(R.id.name);
         txt = (TextView) findViewById(R.id.txt);
         calendarView = findViewById(R.id.calendarView);
+        back_btn = (ImageButton) findViewById(R.id.back_btn);
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("Class").document("C7");
