@@ -82,6 +82,7 @@ public class C7_tab1 extends Fragment {
                             "- " +dc2 + "\n"/* +
                             "- " +dc3 + "\n"*/);
                     dancer_intro.setText(documentSnapshot.getString("introduce"));
+                    dancername.setText(documentSnapshot.getString("dancername"));
 
 //                    String dancerNameValue = documentSnapshot.getString("dancername");
 //                    String dancerCareerValue = documentSnapshot.getString("dancercareer");

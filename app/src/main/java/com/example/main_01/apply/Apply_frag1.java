@@ -52,6 +52,8 @@ public class Apply_frag1 extends Fragment {
         // getIntent()로 Intent를 받아옴
 //        Intent intent = getIntent();
 
+
+
         return view;
         // 최초에는 documentId가 없으므로 초기 데이터를 가져오지 않도록 주의
     }
