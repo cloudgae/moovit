@@ -96,6 +96,15 @@ public class Shorts_tab1_video3_fragment extends Fragment implements TextureView
         super.onPause();
         if (mediaPlayer != null && mediaPlayer.isPlaying()) {
             mediaPlayer.pause();
+            mediaPlayer.seekTo(0); // 일시 중지된 상태에서 다시 시작할 때 처음으로 돌아가도록 설정
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mediaPlayer != null) {
+            mediaPlayer.start(); // 프래그먼트로 돌아올 때 비디오를 다시 시작
         }
     }
 
