@@ -32,6 +32,7 @@ public class Shorts_tab2_video1_fragment extends Fragment implements TextureView
     private TextureView textureView;
     private TextView dancer_name;
     private ImageView profileimage;
+    private MediaPlayer mediaPlayer;
 
     @Nullable
     @Override
@@ -73,7 +74,7 @@ public class Shorts_tab2_video1_fragment extends Fragment implements TextureView
         Surface videoSurface = new Surface(surface);
 
         try {
-            MediaPlayer mediaPlayer = new MediaPlayer();
+            mediaPlayer = new MediaPlayer(); // 클래스 레벨 mediaPlayer 사용
             mediaPlayer.setDataSource("https://moovitbucket2.s3.ap-northeast-2.amazonaws.com/dancer/lusher/lusher_class1.mp4");
             mediaPlayer.setSurface(videoSurface);
             mediaPlayer.setLooping(true);
@@ -118,5 +119,22 @@ public class Shorts_tab2_video1_fragment extends Fragment implements TextureView
     @Override
     public void onSurfaceTextureUpdated(SurfaceTexture surface) {
         // 업데이트 시 필요한 로직
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.pause();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }
