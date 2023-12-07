@@ -4,6 +4,8 @@ import static android.content.ContentValues.TAG;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,12 +23,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MyPageClass extends AppCompatActivity {
 
     Button arw;
     TextView n1,n2,n3,l1,l2,l3;
     ImageButton i1;
-
+    private MyPageApplyclassAdapter adapter; // 어댑터 선언
 
 
     @Override
@@ -35,15 +40,6 @@ public class MyPageClass extends AppCompatActivity {
         setContentView(R.layout.activity_my_page_class);
 
         Button arw = (Button) findViewById(R.id.goback);
-
-        n1 = (TextView) findViewById(R.id.name1);
-        n2 = (TextView) findViewById(R.id.name2);
-        n3 = (TextView) findViewById(R.id.name3);
-        l1 = (TextView) findViewById(R.id.location1);
-        l2 = (TextView) findViewById(R.id.location2);
-        l3 = (TextView) findViewById(R.id.location3);
-        i1 = (ImageButton) findViewById(R.id.image1);
-
         arw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,46 +49,61 @@ public class MyPageClass extends AppCompatActivity {
             }
         });
 
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // Firestore 인스턴스 가져오기
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        for (int i = 1; i <= 6; i++) {
-            final int number = i; // 주간 값
 
-            db.collection("Danceclass")
-                    .whereEqualTo("no", number)
-                    .get()
-                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                            if (task.isSuccessful()) {
-                                for (QueryDocumentSnapshot document : task.getResult()) {
-                                    String finTYPE = document.getId();
-                                    Log.d(TAG, finTYPE);
+// 'Class' 컬렉션에서 'mozip' 필드 값이 문자열 '0'과 일치하지 않는 문서 가져오기
+        db.collection("Class")
+                .whereNotEqualTo("mozip", "0")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<MyPageApplyclass> itemList = new ArrayList<>();
 
-                                    // 텍스트 바꾸는 작업
-                                    String title = (String) document.getData().get("name");
-                                    String location = (String) document.getData().get("location");
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                // 각 문서에서 필요한 데이터 추출
+                                String name = document.getString("name");
+                                String location = document.getString("location");
+                                String daytime = document.getString("date") + "  " +  document.getString("starttime") +
+                                        " ~ " + document.getString("endtime");
 
-                                    // 해당 주간 값에 맞는 버튼을 찾아서 텍스트 설정
-                                    switch (number) {
-                                        case 1:
-                                            n1.setText(title);
-                                            l1.setText(location);
-                                            break;
-                                        case 2:
-                                            n2.setText(title);
-                                            l2.setText(location);
-                                            break;
-                                        case 3:
-                                            n3.setText(title);
-                                            l3.setText(location);
-                                            break;
-                                    }
-
-                                    // 이후 작업을 수행하거나 버튼을 클릭하는 등의 추가 동작을 여기에 추가할 수 있습니다.
-                                }
+                                // 썸네일 이미지 리소스 이름 가져오기
+                                String thumbnailResourceName = document.getString("thumbnailResourceName");
+                                // MyItem 객체 생성 및 리스트에 추가
+                                MyPageApplyclass item = new MyPageApplyclass(thumbnailResourceName, name, location, daytime);
+                                itemList.add(item);
                             }
+
+                            // 어댑터 초기화
+                            // 어댑터 초기화
+                            adapter = new MyPageApplyclassAdapter(itemList, MyPageClass.this); // MyPageClass의 context 전달
+
+                            // 어댑터에 데이터 설정
+                            adapter.setItems(itemList);
+
+                            // RecyclerView 설정
+                            recyclerView.setAdapter(adapter);
+
+                            adapter.notifyDataSetChanged();
+                        } else {
+                            // 실패 처리
+                            Log.e(TAG, "Error getting documents: ", task.getException());
                         }
-                    });
-        }
+                    }
+                });
+
+
+
+
     }
+
+    private int getResourceId(String resourceName, String resourceType) {
+        return getResources().getIdentifier(resourceName, resourceType, getPackageName());
+    }
+
 }

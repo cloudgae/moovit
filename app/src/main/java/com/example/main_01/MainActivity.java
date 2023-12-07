@@ -4,7 +4,9 @@ import static android.content.ContentValues.TAG;
 
 import android.animation.ArgbEvaluator;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -49,17 +51,23 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -92,6 +100,10 @@ public class MainActivity extends AppCompatActivity {
     TextView class1name, class1txt;
     ImageView typeimage, typeimage2;
     TextView typename, typename2;
+
+    private static final String PREFS_NAME = "MyPrefs";
+    private static final String INITIALIZED_KEY = "initialized";
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -129,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
         videoURL1 = ".";
         videoURL2 = ".";
         videoURL3 = ".";
+
         //지금 가장 관심도가 높은 클래스 리사이클러뷰
 
         models = new ArrayList<>();
@@ -677,53 +690,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-
-
-//1104
-
-/*
-        mn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, shorts1.class);
-                startActivity(i);
-                finish();
-            }
-        });
-
-        mn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, MyPage.class);
-                startActivity(i);
-                finish();
-            }
-        });*/
-
-
-        /*menu2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, Map_0.class);
-                startActivity(i);
-                finish();
-            }
-        });*/
-
-////        TODO 1)파이어베이스 연결 - 수업 정보  2)유형 정보-영상 연결
-
-
-//        탭 연결
-        /*TabHost tabHost = getTabHost();
-
-        TabHost.TabSpec tabSpecClass = tabHost.newTabSpec("Class").setIndicator("클래스");
-        tabSpecClass.setContent(R.id.tabclass);
-        tabHost.addTab(tabSpecClass);
-
-        TabHost.TabSpec tabSpecDancer = tabHost.newTabSpec("Dancer").setIndicator("댄서");
-        tabSpecDancer.setContent(R.id.tabdancer);
-        tabHost.addTab(tabSpecDancer);
-
-        tabHost.setCurrentTab(0);*/
 
 

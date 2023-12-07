@@ -253,6 +253,7 @@ public class Apply_1 extends AppCompatActivity {
                 public void onClick(View view) {
                     // apply_button을 누를 때 Apply_2.java로 이동
                     Intent intent = new Intent(Apply_1.this, Apply_2.class);
+                    intent.putExtra("documentId2", "C7");
                     startActivity(intent);
                     bottomSheetDialog.dismiss(); // 바텀 시트 닫기
                 }
