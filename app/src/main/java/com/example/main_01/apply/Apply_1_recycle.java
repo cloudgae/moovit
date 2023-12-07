@@ -38,6 +38,8 @@ public class Apply_1_recycle extends AppCompatActivity {
     CalendarView calendarView;
     Calendar lastSelectedDate;
     ImageButton back_btn;
+    String documentId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +62,7 @@ public class Apply_1_recycle extends AppCompatActivity {
         Intent intent = getIntent();
 
 // Intent에서 데이터 추출
-        String documentId = intent.getStringExtra("documentId1");
+        documentId = intent.getStringExtra("documentId1");
 
 // documentId가 null이거나 비어있는지 확인 후 초기화
         if (documentId == null || documentId.isEmpty()) {
@@ -151,6 +153,7 @@ public class Apply_1_recycle extends AppCompatActivity {
                 public void onClick(View view) {
                     // apply_button을 누를 때 Apply_2.java로 이동
                     Intent intent = new Intent(Apply_1_recycle.this, Apply_2.class);
+                    intent.putExtra("documentId2", documentId);
                     startActivity(intent);
                     bottomSheetDialog.dismiss(); // 바텀 시트 닫기
                 }

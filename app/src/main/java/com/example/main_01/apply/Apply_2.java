@@ -28,7 +28,7 @@ public class Apply_2 extends AppCompatActivity {
     ImageButton finish_button;
     private FirebaseFirestore db;  // Firestore 인스턴스 선언 추가
     private static final int REQUEST_CODE_ACTIVITY_2 = 1;
-
+    String documentId;
 
 
     @Override
@@ -36,10 +36,22 @@ public class Apply_2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apply2);
 
+        // getIntent()로 Intent를 받아옴
+        Intent intent = getIntent();
+
+// Intent에서 데이터 추출
+        documentId = intent.getStringExtra("documentId2");
+
+// documentId가 null이거나 비어있는지 확인 후 초기화
+        if (documentId == null || documentId.isEmpty()) {
+            // documentId를 적절한 값으로 초기화 (예: 기본값 또는 다른 값)
+            documentId = "defaultDocumentId";
+        }
+
         // Firestore 초기화
         db = FirebaseFirestore.getInstance();
 //        DocumentReference newClassRef = db.collection("Class").document("C7");
-        DocumentReference docRef = db.collection("Class").document("C7");
+        DocumentReference docRef = db.collection("Class").document(documentId);
 //        새로운 문서의 id 가져오기
 //        String newClassId = newClassRef.getId();
         // 업데이트할 필드 및 값 설정
