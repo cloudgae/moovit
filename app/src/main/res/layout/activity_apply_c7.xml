@@ -178,7 +178,7 @@
                     android:layout_height="78dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/selector_radio_button"
-                    android:drawableTop="@drawable/icon_day"
+                    android:drawableTop="@drawable/class_detail_icon3"
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:padding="10dp"

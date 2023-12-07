@@ -82,16 +82,27 @@ public class Apply_C7 extends AppCompatActivity {
         dday= (TextView) findViewById(R.id.dday);
 
         Drawable drawable = getResources().getDrawable(R.drawable.genre_icon);
-
         // dp 값을 px로 변환
         int widthInDp = 35;
         int heightInDp = 35;
         float scale = getResources().getDisplayMetrics().density;
         int widthInPx = (int) (widthInDp * scale + 0.5f);
         int heightInPx = (int) (heightInDp * scale + 0.5f);
-
         drawable.setBounds(0, 0, widthInPx, heightInPx);
         c7genre.setCompoundDrawables(null, drawable, null, null);
+
+        Drawable drawable1 = getResources().getDrawable(R.drawable.class_detail_icon3);
+        // dp 값을 px로 변환
+        int widthInDp1 = 35;
+        int heightInDp1 = 35;
+        float scale1 = getResources().getDisplayMetrics().density;
+        int widthInPx1 = (int) (widthInDp1 * scale1 + 0.5f);
+        int heightInPx1 = (int) (heightInDp1 * scale1 + 0.5f);
+        drawable1.setBounds(0, 0, widthInPx1, heightInPx1);
+        c7day.setCompoundDrawables(null, drawable1, null, null);
+
+
+
 
         pager = (ViewPager) findViewById(R.id.pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);

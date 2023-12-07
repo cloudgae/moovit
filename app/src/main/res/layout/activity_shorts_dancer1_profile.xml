@@ -17,7 +17,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginVertical="15dp"
-            android:background="@drawable/white_arrow"
+            android:background="@drawable/back_key_vector"
             android:gravity="left"
             android:layout_marginLeft="10dp"
             />
@@ -59,9 +59,9 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="230dp"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:text="안녕하세요. 베베의 러셔입니다. 안녕하세요. 베베의 러셔입니다."
+            android:text="안녕하세요. 베베의 부리더 러셔입니다! 주장르는 코레오그래피입니다."
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:textColor="#FFFFFF"

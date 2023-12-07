@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
-        viewPager.setPadding(80, 250, 70, 0);
+        viewPager.setPadding(50, 210, 70, 0);
 
 
         Integer[] colors_temp = {

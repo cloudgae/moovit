@@ -209,7 +209,7 @@
                     android:layout_height="78dp"
                     android:layout_marginLeft="5dp"
                     android:background="@drawable/class_detail"
-                    android:drawableTop="@drawable/class_detail_icon3"
+                    android:drawableTop="@drawable/class_detail_icon4"
                     android:gravity="center"
                     android:includeFontPadding="false"
                     android:padding="10dp"
