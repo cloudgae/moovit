@@ -88,7 +88,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="#챌린지"
+                android:text="#스맨파"
                 android:includeFontPadding="false"
                 android:background="@drawable/hashtag_box"
                 android:fontFamily="@font/notosanskr_medium"

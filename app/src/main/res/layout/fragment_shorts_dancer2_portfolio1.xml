@@ -118,7 +118,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="#로버챌린"
+                                    android:text="#로버챌린지"
                                     android:textColor="#FFFFFF"
                                     android:fontFamily="@font/notosanskr_medium"
                                     android:textSize="12dp"/>
