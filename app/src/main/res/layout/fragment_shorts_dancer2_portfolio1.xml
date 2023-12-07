@@ -63,7 +63,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="#걸스힙합"
+                                    android:text="#chili"
                                     android:textColor="#FFFFFF"
                                     android:fontFamily="@font/notosanskr_medium"
                                     android:textSize="12dp"/>
@@ -71,7 +71,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="#챌린지"
+                                    android:text="#스우파2"
                                     android:textColor="#FFFFFF"
                                     android:layout_marginLeft="5dp"
                                     android:fontFamily="@font/notosanskr_medium"
@@ -118,7 +118,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="#걸스힙합"
+                                    android:text="#로버챌린"
                                     android:textColor="#FFFFFF"
                                     android:fontFamily="@font/notosanskr_medium"
                                     android:textSize="12dp"/>
@@ -126,7 +126,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="#챌린지"
+                                    android:text="#케이팝"
                                     android:textColor="#FFFFFF"
                                     android:layout_marginLeft="5dp"
                                     android:fontFamily="@font/notosanskr_medium"

@@ -15,8 +15,7 @@
         android:orientation="vertical"
         android:padding="5dp"
         android:background="#2F2F2F"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        android:layout_marginBottom="30dp">
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <LinearLayout
             android:layout_width="match_parent"

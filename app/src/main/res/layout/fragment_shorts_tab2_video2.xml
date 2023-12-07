@@ -90,7 +90,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:includeFontPadding="false"
-                android:text="#원데이"
+                android:text="#챌린지"
                 android:background="@drawable/hashtag_box"
                 android:fontFamily="@font/notosanskr_medium"
                 android:textSize="12dp" />
